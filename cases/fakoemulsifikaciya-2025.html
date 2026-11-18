@@ -1,0 +1,994 @@
+<!doctype html><html><head><!-- frame-runtime --><script>window.__FRAME_PREAMBLE={"v":1,"capabilities":{"artifact":"artifact.BoUB4pxl.js","assets":"assets.B6H5Rue4.js","comments":"comments.CJGulO07.js","db":"db.D373BnLH.js","downloads":"downloads.CKk-Yshd.js","embed":"embed.Hf7Acqy1.js","endpoints":"endpoints.BGpYVATw.js","mcp":"mcp.GIBQRXCC.js","network":"network.B5UA9Su4.js","permissions":"permissions.DAF5cUfF.js","room":"room.Dptr10ye.js","sample":"sample.BTkq5Oaj.js","self":"artifact.BoUB4pxl.js","user":"user.DV7k6YjV.js"},"transforms":"_transforms.C6t_n-gA.js","comments":"_comments.Daca5pvt.js","translate":"_translate.B2LIOQT7.js","ldx":"_ldx.CMCg6PeI.js"}                                                                                                                                                                                                                    </script><script>(function(){"use strict";var St=["light","dark","system"],At=/^[A-Za-z0-9_-]{1,64}$/,Xe=/^[a-zA-Z_:][a-zA-Z0-9_:.-]{0,127}$/,kt=new Set(["class","hidden","value","checked","style","title","alt","placeholder","lang","dir","role","tabindex","disabled","readonly","contenteditable","open","colspan","rowspan"]);function Tt(t){const e=t.toLowerCase();return e.startsWith("data-")||e.startsWith("aria-")||kt.has(e)}var Ye="data-ldx-props";function Rt(t,e){if(e.toLowerCase()===Ye)return!0;const n=t.getAttribute(Ye);if(n===null)return!1;try{const o=JSON.parse(n);if(o===null||typeof o!="object"||Array.isArray(o))return!0;const s=e.toLowerCase();return Object.keys(o).some(a=>a.toLowerCase()===s)}catch{return!0}}var qr="http://www.w3.org/1999/xhtml",Ot="http://www.w3.org/2000/svg",Lt=new Set(["script","style","iframe","noscript","noframes","noembed","xmp","plaintext","template","title","textarea","object","embed"]),Pt=new Set(["script","style"]);function Mt(t){const e=t.localName.toLowerCase();return t.namespaceURI==="http://www.w3.org/1999/xhtml"?!Lt.has(e):t.namespaceURI===Ot?!Pt.has(e):!1}function Te(t,e){return t===e||(t===160||t===32)&&(e===160||e===32)}function Nt(t,e){const n=t.length,o=e.length;let s=0;for(;s<n&&s<o&&Te(t.charCodeAt(s),e.charCodeAt(s));)s++;let a=0;for(;a<n-s&&a<o-s&&Te(t.charCodeAt(n-1-a),e.charCodeAt(o-1-a));)a++;return{p:s,s:a}}function Ct(t,e){const n=t.firstChild;if(t.childNodes.length!==1||n===null||n.nodeType!==Node.TEXT_NODE){t.textContent=e;return}const o=n.data,s=o.length,a=e.length,{p:i,s:f}=Nt(o,e);i===s&&f===0&&s===a||n.replaceData(i,s-i-f,e.slice(i,a-f));const S=n.data,w=t.ownerDocument.getSelection?.()??null,y=w!==null&&w.rangeCount>0&&(w.anchorNode===n||w.focusNode===n)?{anchor:w.anchorNode,anchorOffset:w.anchorOffset,focus:w.focusNode,focusOffset:w.focusOffset}:null;let A=-1,p=-1;for(let b=0;b<S.length&&b<e.length;b++){const L=S.charCodeAt(b),P=e.charCodeAt(b);L!==P&&Te(L,P)&&(A<0&&(A=b),p=b)}const v=A>=0;if(v&&n.replaceData(A,p-A+1,e.slice(A,p+1)),v&&y!==null&&y.anchor!==null&&y.focus!==null)try{w.setBaseAndExtent(y.anchor,y.anchorOffset,y.focus,y.focusOffset)}catch{}}var jt=new Set(["html","head","body","frameset"]);function It(t){return t.namespaceURI==="http://www.w3.org/1999/xhtml"&&jt.has(t.localName)}function xt(t){if(t===null||typeof t!="object")return!1;const e=t;if(typeof e.target!="string"||!At.test(e.target)||e.text!==void 0&&typeof e.text!="string")return!1;if(e.attrsSet!==void 0){if(e.attrsSet===null||typeof e.attrsSet!="object")return!1;for(const[n,o]of Object.entries(e.attrsSet))if(!Xe.test(n)||typeof o!="string")return!1}if(e.attrsRemoved!==void 0){if(!Array.isArray(e.attrsRemoved))return!1;for(const n of e.attrsRemoved)if(typeof n!="string"||!Xe.test(n))return!1}return!0}function Ft(t,e){if(t===null||typeof t!="object")return!1;const{seq:n,elements:o}=t;if(typeof n!="number"||!Number.isSafeInteger(n)||!Array.isArray(o)||o.length===0||o.length>64)return!1;for(let s=0;s<o.length;s++)if(!e(o[s]))return!1;return!0}function Dt(t){return t===null||typeof t!="object"?!1:Ft(t.__frame_patch,xt)}function Ht(t){if(t===null||typeof t!="object")return!1;const e=t.__frame_init;return e!==null&&typeof e=="object"}function qt(t){return t!==null&&typeof t=="object"&&t.__frame_size_poke===!0}function Bt(t){if(t===null||typeof t!="object")return!1;const e=t.__frame_host_visible;return e!==null&&typeof e=="object"&&typeof e.visible=="boolean"}function Ut(t){if(t===null||typeof t!="object")return!1;const e=t.__frame_theme;if(e===null||typeof e!="object")return!1;const n=e.theme;return typeof n=="string"&&St.includes(n)}var zt=["ok","empty","snapshot_error","snapshot_timeout","unclonable","oversize","unavailable","restore_error","withheld"],Kt=["TypeError","RangeError","ReferenceError","SyntaxError","DataCloneError","QuotaExceededError","AbortError","TimeoutError","SecurityError","Error","other"];function Wt(t){return typeof t=="string"&&Kt.includes(t)?t:"other"}var $t=Object.freeze({until:null,now:!1}),Xt="__claude_hot",Yt="__claude_hot_in",Gt=/^__claude_hot(?:_in)?(?::|$)/,Ge=/^[0-9a-z]{1,32}$/,Re=t=>t===void 0?Xt:"__claude_hot:"+t,se=t=>t===void 0?Yt:"__claude_hot_in:"+t;function Vt(t,e){const n=[];for(let o=0;o<t.length;o++){const s=t.key(o);s!==null&&s!==e&&Gt.test(s)&&n.push(s)}for(const o of n)t.removeItem(o)}function Jt(t){let e=null;try{e=q(JSON.parse(t)?.hot)}catch{return null}return e===null||typeof e.k!="string"||!Ge.test(e.k)?null:le(e.g)?{k:e.k,g:e.g}:{k:e.k}}var Br=262144,Zt=3e3,Ve=/^[a-z0-9._:-]{1,64}$/,Qt=["none","hot-restart","hard-reload"],er=["asset","doc","added","removed"],tr=1500,rr=/^[0-9a-f]{64}$/;function q(t){return t!==null&&typeof t=="object"?t:null}function le(t){return typeof t=="number"&&Number.isInteger(t)&&t>=0&&t<2**31}function Je(t){return t===void 0||typeof t=="number"&&Number.isFinite(t)}function nr(t){return t===void 0||typeof t=="string"&&Ve.test(t)}function Ze(t){const e=q(t);return e!==null&&(e.until===null||typeof e.until=="number"&&Number.isFinite(e.until))&&typeof e.now=="boolean"}function Oe(t){const e=q(t);return e!==null&&typeof e.ver=="string"&&e.ver.length<=128&&Je(e.seq)&&typeof e.handoff=="string"&&zt.includes(e.handoff)&&nr(e.note)}function or(t){const e=q(t);return e!==null&&le(e.gen)&&(e.phase==="final"||e.phase==="pending")&&(e.from===null||Oe(e.from))}function ar(t){const e=q(t);return e!==null&&e.kv===1&&le(e.gen)&&Oe(e.from)&&Object.hasOwn(e,"data")}function sr(t){const e=q(t);return e!==null&&e.__frame_hot_snapshot===!0&&le(e.gen)&&typeof e.timeoutMs=="number"&&e.timeoutMs>=0&&e.timeoutMs<=6e4&&(e.handoff===void 0||typeof e.handoff=="boolean")&&(e.deadline===void 0||Ze(e.deadline))&&Je(e.seq)&&(e.note===void 0||typeof e.note=="string")&&(e.key===void 0||typeof e.key=="string")}function lr(t){const e=q(t);return e!==null&&e.__frame_hot_start===!0&&le(e.gen)&&Oe(e.from)}function Qe(t){const e=q(t);return e!==null&&typeof e.ver=="string"&&e.ver.length<=128&&Number.isFinite(e.seq)}function et(t){if(t==null||typeof t=="string")return!0;const e=q(t);return e!==null&&typeof e.doc=="string"&&typeof e.profile=="string"}function ir(t){const e=q(t);return e!==null&&typeof e.path=="string"&&er.includes(e.kind)&&et(e.from)&&et(e.to)}function cr(t){return t===null?null:Object.freeze(t.filter(ir))}function ur(t){const e=q(t);return e!==null&&e.__frame_hot_update===!0&&Number.isFinite(e.id)&&Qe(e.from)&&Qe(e.to)&&(e.changed===null||Array.isArray(e.changed))&&Qt.includes(e.required)&&Ze(e.deadline)&&typeof e.verdictTimeoutMs=="number"&&e.verdictTimeoutMs>=0&&e.verdictTimeoutMs<=6e4&&(e.preflight===void 0||typeof e.preflight=="string"&&rr.test(e.preflight))}var Z=/^[\w.-]+\.js$/;function fr(t,e,n){return n?"inert":typeof e=="string"&&Z.test(e)?t?[e]:"inert":t?"inert":"framed"}var tt=Object.freeze({[Symbol("claude.hot.restart")]:!0});function rt(t,e){let n;try{n=t??sessionStorage}catch{return null}const o=Re(e?.k),s=se(e?.k);let a=null;try{a=n.getItem(o)}catch{}try{n.removeItem(o)}catch{}try{Vt(n,s)}catch{}let i=null;if(a!==null&&!(e!==null&&e.g===void 0))try{const f=JSON.parse(a);ar(f)&&(e===null||f.gen===e.g)&&(i=f)}catch{}if(i===null)try{n.removeItem(s)}catch{}return i}function dr(){const t=/^\/_f\/([^/]{1,128})\//.exec(location.pathname);return t?t[1]:""}var he="{}";function ie(t){if(!t)return null;const e={ver:t.ver,handoff:t.handoff};return t.seq!==void 0&&(e.seq=t.seq),t.note!==void 0&&(e.note=t.note),e}function nt(t,e){return t!==null&&t.note===void 0&&e?.note!==void 0?{...t,note:e.note}:t}function ot(t){const e=t?.k;return e!==null&&typeof e=="object"?e:void 0}function hr(t,e,n,o=null){const s=setTimeout,a=clearTimeout,i=queueMicrotask,f=performance.now.bind(performance),S=new TextEncoder,w=dr();let y=null;try{y=sessionStorage}catch{}const A={storage:y,fetch:typeof fetch=="function"?fetch.bind(globalThis):null,entry:location.origin+location.pathname+location.search,ver:w,key:o?.k};let p=o?.k;const v=typeof requestAnimationFrame=="function"?requestAnimationFrame:r=>s(()=>r(f()),16);let b=e?.data??{},L=ie(e?.from),P=e?.gen??0,h=e!==null,k=!1,E=!1,j=null,ce=!1;const ue=new AbortController;let fe=null,I=null,ee=null,we=!1,$=()=>{};const l=new Promise(r=>{$=r});let m=!1,g=!1,C=!1,M,R=null,D=!1,B=!1;const te=r=>{for(const c of[Re(r),se(r)])try{y?.removeItem(c)}catch{}},x=(r,c)=>{try{c!==null&&n.post(r,c)}catch{}},K=()=>{const r={__frame_hot:!0,ready:I!==null,accept:ee!==null};m&&(r.readData=!0),C&&(r.threw=!0),R?.assess&&(r.preflight=!0),x(r,j)};let d=!1,re=!1,z=!1,ne=!1;const oe=()=>{d||!ce||z||(d=!0,x({__frame_reveal_hold:!0},"*"))},W=()=>new Promise(r=>{let c,u=0;const _=O=>{if(c===void 0)c=O;else if(O!==c||++u>=8){r();return}try{v(_)}catch{r()}};try{v(_)}catch{r()}}),be=()=>{z=!0,x({__frame_reveal_ready:!0},"*")},qe=r=>{re||(re=!0,r.then(c=>{if(c===!1)return;let u=null;try{u=R?.settle?.()??null}catch{}return(u===null?W():new Promise(_=>{s(_,50),Promise.resolve(u).then(_,_)}).then(W)).then(be)}))},Cr=()=>{if(ne||!z)return;ne=!0;const r=()=>{try{R?.afterReveal?.()}catch{}};r(),W().then(()=>{r(),be()})},Ee=(r=!1)=>{if(we||I===null||!h||!E)return;we=!0;const c=I,u=b;i(()=>{let _;try{_=c(u)}catch(H){throw $(!1),H}let O=!1;try{O=typeof _?.then=="function"}catch{}if(!O){$(!0);return}Promise.resolve(_).then(()=>$(!0),H=>{$(!1),i(()=>{throw H})})}),qe(r?l:n.dcl.then(()=>l))},Se=r=>typeof r=="string"&&Ve.test(r)?r:void 0,mt=r=>{const c={__frame_hot_restart:!0},u=Se(r?.note);u!==void 0&&(c.note=u),r?.required==="hard-reload"&&(c.required="hard-reload"),x(c,j)},_t=Object.freeze({get data(){return E||(g=!0),!h&&!m&&(m=!0,E&&K()),b},get from(){return L},get gen(){return P},signal:ue.signal,snapshot(r){typeof r=="function"&&(fe=r)},ready(r){typeof r!="function"||I!==null||(I=r,oe(),K(),k&&x({__frame_hot_ready:!0,gen:P},j),Ee())},accept(r){typeof r=="function"&&(ee=r,K())},restart(r){const c={note:r?.note,required:r?.required};if(E){mt(c);return}const u=M;M={note:Se(u?.note)??c.note,required:u?.required==="hard-reload"||c.required==="hard-reload"?"hard-reload":void 0}}});let Ae=null,yt=()=>{};const jr=new Promise(r=>{yt=r});let Ir=null;const vt=()=>Ir??=n.dcl.then(()=>{let r=!1;try{r=Ae!==null&&Ae.expect()}catch{}if(!r)return;const c=Ae.maxMs;return new Promise(u=>{jr.then(u),s(u,c)})}),gt=()=>{if(!D||B||R===null)return;B=!0;const r=R;vt().then(()=>{try{z||r.afterStart(ot(e),!1)}catch{}})},wt=r=>{e!==null&&g&&(m=!0),b={},L=null,P=0;try{y?.removeItem(se(o?.k))}catch{}e!==null&&!r&&qe(n.dcl.then(()=>I!==null?l:void 0))},xr=()=>{D=!0,qe(vt().then(()=>I!==null?l:void 0)),gt()};try{addEventListener("error",()=>{C||I!==null||(C=!0,K())})}catch{}let X=-1,Be,Ue,de=!0,ze=!1,Ke,ke=null;const We=r=>{const c=ke===null;ke=de&&r[0]!=="withheld"?r:["withheld",r[1],he];let u=r[0];if(de&&u!=="withheld"){const O={ver:w,handoff:u};Be!==void 0&&(O.seq=Be),Ue!==void 0&&(O.note=Ue);try{if(y===null)throw new Error("no storage");y.setItem(Re(p),'{"kv":1,"gen":'+X+',"from":'+JSON.stringify(O)+(Ke!==void 0?',"k":'+JSON.stringify(Ke):"")+',"data":'+(u==="ok"?r[2]:he)+"}")}catch{u="unavailable"}}else{u="withheld",te(p);try{R?.release?.()}catch{}}const _={__frame_hot_snapshotted:!0,gen:X,handoff:u,bytes:r[1]};if(r[3]!==void 0&&(_.errName=r[3]),x(_,j),c&&(u==="snapshot_error"||u==="unclonable"||u==="oversize"))try{console.warn("claude.hot: snapshot",u,r[3])}catch{}},bt=r=>{try{return Wt(r?.name)}catch{return"other"}},ae=(r,c,u=0)=>We(c===void 0?[r,u,he]:[r,u,he,bt(c)]),Fr=r=>{if(r.gen<=X)return;const c=X>=0;if(X=r.gen,Be=r.seq,Ue=Se(r.note),typeof r.key=="string"&&Ge.test(r.key)&&r.key!==p&&(te(p),p=r.key),de&&=r.handoff!==!1,c){ke!==null?We(ke):ze&&x({__frame_hot_held:!0,gen:X},j);return}ue.abort();const u=Object.freeze({handoff:de,timeoutMs:r.timeoutMs,deadline:r.deadline??$t}),_=fe,O=()=>{if(de)try{Ke=R?.capture()}catch{}if(_===null){ae("empty");return}let F=!1;const Y=s(()=>{F||(F=!0,ae("snapshot_timeout"))},Math.max(0,u.timeoutMs));Promise.resolve().then(()=>_(u)).then(G=>{if(F)return;F=!0,a(Y);let V;try{V=JSON.stringify(G)}catch(J){ae("unclonable",J);return}if(typeof V!="string"){ae("unclonable");return}let N=V.length;try{N=S.encode(V).length}catch{}if(N>262144){ae("oversize",void 0,N);return}We(["ok",N,V])},G=>{F||(F=!0,a(Y),ae("snapshot_error",G))})};let H=null;try{H=R?.holdForIme()??null}catch{}if(H===null)O();else{ze=!0,x({__frame_hot_held:!0,gen:X},j);const F=()=>{ze=!1,O()};H.then(F,F)}},Dr=r=>{if(!k||h||I===null||r.gen!==P)return;let c=null;try{c=rt(y,o&&{k:o.k,g:r.gen})}catch{}if(c!==null&&c.gen!==r.gen){c=null;try{y?.removeItem(se(o?.k))}catch{}}b=c?.data??{},L=nt(ie(c?.from??r.from),ie(r.from)),c!==null&&(P=c.gen),h=!0,k=!1;const u=ot(c);l.then(_=>{try{_&&R?.afterStart(u,!0)}catch{}}),Ee(!0)};let $e=0;const Hr=r=>{const c=ee;if(c===null||r.id<=$e)return;$e=r.id;const u=R?.assess;if(r.preflight===void 0||u===void 0){Et(r,c);return}let _=!1;const O=Y=>{_||(_=!0,a(F),r.id===$e&&Et(r,c,Y))},H=()=>O(u.timeout(r)),F=s(H,tr+100);u.run(r,window).then(O,H)},Et=(r,c,u)=>{let _,O=!1;const H=Object.freeze({from:{ver:r.from.ver,seq:r.from.seq},to:{ver:r.to.ver,seq:r.to.seq},changed:cr(r.changed),required:r.required,deadline:r.deadline,restart(N){return _??=Se(N?.note),O||=N?.required==="hard-reload",tt},...u?.update}),F=N=>{const J={__frame_hot_verdict:!0,id:r.id};N==="applied"||N==="deferred"?J.verdict=N:N===tt&&(J.verdict="restart",O&&(J.required="hard-reload"),_!==void 0&&(J.note=_)),x(Object.assign(J,u?.verdict),j)};let Y=!1;const G=N=>Y?!1:(Y=!0,a(V),F(N),!0),V=s(G,r.verdictTimeoutMs);Promise.resolve().then(()=>c(H)).then(G,N=>{if(G(void 0))try{console.warn("claude.hot: accept",bt(N))}catch{}})};try{t.hot===void 0&&Object.defineProperty(t,"hot",{value:_t,writable:!1,configurable:!1,enumerable:!1})}catch{}return{hot:_t,boot:A,afterConnect(){ce=!0,(e!==null||I!==null)&&oe()},onInit(r,c){j=c,E=!0;const u=or(r)?r:null;u?.phase==="final"&&e!==null&&e.gen===u.gen?(h=!0,L=nt(L,ie(u.from)),xr()):(k=u?.phase==="pending",wt(k),h=!k,P=u?.gen??0,L=ie(u?.from)),K(),k&&I!==null&&x({__frame_hot_ready:!0,gen:P},c),M!==void 0&&(mt(M),M=void 0),Ee()},onNoInit(){E=!0,wt(!1),h=!0,Ee()},onShell(r){return r?.__frame_revealed===!0?(Cr(),!1):sr(r)?(Fr(r),!0):lr(r)?(Dr(r),!0):ur(r)?(Hr(r),!0):!1},attachExtras(r){R=r,gt(),r.assess&&K()},inSlot:()=>se(p),hydration(r,c){Ae??={expect:r,maxMs:c}},hydrated(){yt()},carried(){return h?b:{}},presented:()=>z}}var Ur="frame_ldx_runtime",pr="frame_ldx_build",zr="script#an-form",mr=256;function at(t,e,n){for(const o of t)n(o)&&t.delete(o);t.size>=mr&&!t.has(e)&&t.delete(t.values().next().value),t.add(e)}function Le(t,e,n){try{const o=t[e];if(typeof o!="function")return;t[e]=function(...s){const a=o.apply(this,s);try{n(this)}catch{}return a}}catch{}}var Pe;function _r(){if(Pe)return Pe;const t={media:new Set,contexts:new Set,onStart:null,onPause:null};Pe=t;const e=window.HTMLMediaElement?.prototype;e&&(Le(e,"play",s=>{at(t.media,s,a=>a.paused),t.onStart?.(s)}),Le(e,"pause",s=>t.onPause?.(s)));const n=window.AudioContext,o=window.AudioNode?.prototype;return n&&o&&Le(o,"connect",s=>{const a=s.context;a instanceof n&&(at(t.contexts,a,i=>i.state==="closed"),t.onStart?.(a))}),t}function yr(t){let e=window;for(let n=0;e.parent&&e.parent!==e&&n<8;n++)if(e=e.parent,t(e))return!0;return!1}function vr(){let t=null;const e=()=>t??parent,n=o=>t?o===t:yr(s=>s===o);return{post(o,s){if(t){e().postMessage(o,s);return}let a=parent;for(let i=0;i<8&&(a.postMessage(o,s),!(!a.parent||a.parent===a));i++)a=a.parent},on(o){const s=a=>{const i=a.source;n(i)&&o(a.data,a.origin,a.isTrusted,()=>{t??=i})};return addEventListener("message",s),()=>removeEventListener("message",s)},port:o=>({post(s,a){if(a?.activation){e().postMessage(s,{targetOrigin:o,includeUserActivation:!0});return}if(a?.transfer){e().postMessage(s,o,a.transfer);return}e().postMessage(s,o)},on(s,a){const i=f=>{n(f.source)&&f.origin===o&&s(f.data,f)};return addEventListener("message",i,a),()=>removeEventListener("message",i,a)}})}}function gr(){const t={post:()=>{},on:()=>()=>{}};return{...t,port:()=>t}}var Me="__frame_scroll",wr=150,br=310,Er=160,Sr=3e4;function Ar(){let t=0,e=!1,n=!1,o=!1,s=0,a=null;const i=h=>{try{sessionStorage.setItem(Me,JSON.stringify({y:h}))}catch{}},f=()=>{if(clearTimeout(t),a===null)return;const h=a;a=null,i(h)},S=()=>{if(e){e=!1;return}n=!0,a=scrollY,clearTimeout(t),t=setTimeout(f,wr)};try{addEventListener("scroll",S,{passive:!0}),addEventListener("pagehide",f)}catch{}const w=()=>{let h;try{h=sessionStorage.getItem(Me)}catch{return null}if(h===null)return null;let k;try{k=JSON.parse(h)}catch{k=null}const E=k?.y;if(!(typeof E=="number"&&Number.isFinite(E)&&E>=0)){try{sessionStorage.removeItem(Me)}catch{}return null}return E};let y=!1;const A=h=>{try{const k=scrollY;scrollTo({top:h,left:0,behavior:"instant"}),s=h,o=!0,clearTimeout(t),a=null,i(h);const E=scrollY;E!==k&&(e=!0),E!==h&&!y&&(y=!0,addEventListener("load",()=>{try{if(scrollY===E){const j=w();A(j!==null?j:s)}}catch{}},{once:!0}))}catch{}},p=()=>{try{return!!location.hash}catch{return!0}};let v=!1;const b=()=>{try{if(v||innerWidth>br||innerHeight>Er)return;v=!0;const h=Date.now(),k=()=>{try{removeEventListener("resize",k)}catch{}if(Date.now()-h>Sr||n||p())return;const E=w();A(E!==null?E:s)};addEventListener("resize",k)}catch{}};let L=!1,P=!1;return{restore(){if(L||(L=!0,p()))return;const h=w();h!==null&&(A(h),b())},promoted(){if(P||(P=!0,p()))return;const h=w();h!==null?(A(h),b()):o&&A(s)}}}function kr(t,e,n,o){let s=null;try{s=window.trustedTypes?.createPolicy("frame-runtime",{createScriptURL:S=>S})??null}catch{}const a=window.Worker,i=a?.prototype,f=Object.freeze({Worker:a,workerOn:i?.addEventListener,workerPost:i?.postMessage,workerTerminate:i?.terminate,fetch:window.fetch.bind(window),preventDefault:Event.prototype.preventDefault,now:Date.now,policy:s,origins:e});n(t).then(S=>S?.bootTopLevel?S.bootTopLevel(f,o):o.settle()).catch(()=>o.settle())}var Kr="modulepreload",Wr=function(t){return"/"+t},$r={},Tr=function(e,n,o){let s=Promise.resolve();function a(i){const f=new Event("vite:preloadError",{cancelable:!0});if(f.payload=i,window.dispatchEvent(f),!f.defaultPrevented)throw i}return s.then(i=>{for(const f of i||[])f.status==="rejected"&&a(f.reason);return e().catch(a)})},Rr=window===top,st=Object.getOwnPropertyDescriptor(window,"claude"),pe=fr(Rr,window.__FRAME_PREAMBLE?.topLevel,st?.writable===!1),Ne=typeof pe=="object"&&pe[0],T=Ne?gr():vr();(function(){const t=Object.defineProperty,e=globalThis,n=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let o=0;for(let s=0;s<n.length;s++){const a=n[s];try{t(e,a,{value:void 0,writable:!1,configurable:!1})}catch{try{delete e[a]}catch{}try{t(e,a,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof e[a]=="function"&&o++}if(o&&pe==="framed")try{T.post({__frame_rtc_lockdown_failed:o},"*")}catch{}})();var Or=1e4,Lr=2e3,Ce=2e3,lt=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function it(t){for(const e of lt)if(e.endsWith(":*"))try{const n=new URL(t);if(`${n.protocol}//${n.hostname}:*`===e)return!0}catch{}else if(t===e)return!0;return!1}var me=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),je=window.__FRAME_PREAMBLE?.transforms,Ie=window.__FRAME_PREAMBLE?.comments,xe=window.__FRAME_PREAMBLE?.translate,_e=window.__FRAME_PREAMBLE?.ldx;function Q(t){return Tr(()=>import("/_runtime/"+t),void 0)}function ct(t,e,n){return{contract:t.contract,changes:new Set(t.changes??[]),flags:new Set(t.flags??[]),capabilities:t.capabilities??{},capBudgets:t.capBudgets??{},transforms:new Map,shellOrigin:e,shell:n,mount:He,hooks:ve,pipe:()=>({wrap:(o,s)=>(...a)=>{try{return s(...a)}catch(i){return Promise.reject(i)}}})}}var ye=null,U=null;function ut(t,e,n){try{Object.defineProperty(t,e,{value:n,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(t,e,{value:n,writable:!1,configurable:!0,enumerable:!0})}catch{}}}var Fe=!1,ve={editBefore:null,edit:null};function Pr(t,e,n=!1){const o=[];let s;if(n)try{ve.editBefore?.(t)}catch{}for(const a of t.elements){const i=document.querySelector(`[data-id="${a.target}"]`);if(!i){s=a.target;break}if([...Object.keys(a.attrsSet??{}),...a.attrsRemoved??[]].some(f=>!Tt(f)||Rt(i,f))){s=a.target;break}if(a.text!==void 0&&(!Mt(i)||It(i))){s=a.target;break}for(const[f,S]of Object.entries(a.attrsSet??{}))if(!dt(i,f)){try{i.setAttribute(f,S)}catch{}ft(i,f,S)}for(const f of a.attrsRemoved??[])dt(i,f)||(i.removeAttribute(f),ft(i,f,null));typeof a.text=="string"&&Ct(i,a.text),o.push(a.target)}if(n)try{ve.edit?.(t.seq,o,s)}catch{}if(s!==void 0){T.post({__frame_patch_miss:{seq:t.seq}},e);return}try{document.dispatchEvent(new CustomEvent("claude:edit",{detail:{seq:t.seq,targets:o}}))}catch{}}function ft(t,e,n){if(!(t instanceof HTMLInputElement))return;const o=e.toLowerCase();o==="checked"?t.checked=n!==null:o==="value"&&t.type!=="file"&&(t.value=n??"")}function dt(t,e){const n=e.toLowerCase(),o=t;return n==="data-id"||(n==="value"||n==="checked")&&(o.__artifactSecret===!0||/^(password|hidden|file)$/.test(o.type??"")||/(^|\s)(cc-|one-time-code|current-password|new-password)/i.test(`${t.getAttribute("autocomplete")??""} ${o.autocomplete??""}`))}function ht(t){const e=document.documentElement;t==="light"||t==="dark"?(e.dataset.theme=t,e.style.colorScheme=t,Fe=!0):Fe&&(delete e.dataset.theme,e.style.colorScheme="",Fe=!1)}var ge=new Map;function Mr(){let t;const e={u:new Promise(n=>{t=n}),r:n=>{e.done=!0,t(n)},done:!1,nulled:!1};return e}function De(){for(const t of ge.values())t.done||(t.nulled=!0,t.r(null))}var Nr=Object.freeze(Object.assign(Object.create(null),{call:Function.prototype.call,apply:Function.prototype.apply,bind:Function.prototype.bind})),He=(t,e)=>{const n=ge.get(t);if(!n||n.done){n?.nulled&&U&&T.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:t}},U);return}const o=typeof e=="function"?Object.setPrototypeOf(e,Nr):Object.assign(Object.create(null),e);typeof o.then=="function"&&delete o.then,n.r(Object.freeze(o))};function pt(){const t=st?.value??{};ut(window,"claude",t);for(const e of Object.keys(me)){if(t[e]!==void 0){ut(t,e,t[e]);continue}ge.set(e,Mr())}if(t.use===void 0){const e=n=>{if(typeof n!="string"||!Object.hasOwn(me,n))return Promise.resolve(null);const o=ge.get(n);return o?o.u:Promise.resolve(t[n]??null)};try{Object.defineProperty(t,"use",{value:e,writable:!0,configurable:!0,enumerable:!1})}catch{}}return t}if(pe==="framed"){const t=je&&Z.test(je)?Q(je).catch(()=>{}):Promise.resolve(void 0),e=l=>{if(l.type==="auxclick"&&l.button!==1)return;const m=l.target,g=m&&m.closest?m.closest("a[href],area[href]"):null;if(!g)return;const C=g.getAttribute("href");if(!C)return;let M;try{M=new URL(C,document.baseURI)}catch{return}if((M.protocol==="http:"||M.protocol==="https:")&&M.origin!==location.origin){l.preventDefault();const R=(g.getAttribute("target")??"").toLowerCase(),D=l.type==="auxclick"||l.metaKey||l.ctrlKey||l.shiftKey||l.altKey||!["","_self","_top","_parent"].includes(R);T.post({__frame_nav:!0,url:M.href,newTab:D},"*")}};addEventListener("click",e,!0),addEventListener("auxclick",e,!0);const n={},o=l=>{l.isTrusted&&(n.pointer=!0)},s=l=>{l.isTrusted&&(n.click=!0)};addEventListener("pointermove",o,{capture:!0,passive:!0}),addEventListener("click",s,{capture:!0,passive:!0});const a={cb:null};addEventListener("keydown",l=>a.cb?.(l),!0);const i=_r();t.then(l=>l?.installEscapeForward?.(a,m=>{U&&T.post(m,U)})),t.then(l=>{try{l?.installFocusKeep?.()}catch{}}),t.then(l=>{if(!l?.wireNav)return;const m=T.port("*");l.wireNav(m),removeEventListener("click",e,!0),removeEventListener("auxclick",e,!0),removeEventListener("pointermove",o,!0),removeEventListener("click",s,!0),l.wireEngagement?.(n,m)});let f=null;try{f=Ar()}catch{}const S=document.readyState==="loading"?new Promise(l=>document.addEventListener("DOMContentLoaded",()=>l(),{once:!0})):Promise.resolve();let w=null,y=null;try{y=Jt(window.name),w=rt(null,y)}catch{}const A=pt();let p=null;try{p=hr(A,w,{post:(l,m)=>T.post(l,m),dcl:S},y)}catch{}t.then(l=>{try{p&&l?.installHotExtras?.(p)}catch{}});let v=null;const b=()=>Array.isArray(v?.flags)&&v.flags.includes("frame_ldx_runtime")&&!!_e&&Z.test(_e)&&document.querySelector("script#an-form")!==null;try{p?.hydration(b,Zt)}catch{}let L=null,P=0;const h=T.on((l,m,g,C)=>{it(m)&&Ht(l)&&(C(),v=l.__frame_init,U=m,h(),clearTimeout(P),L?.())});T.post({__frame_connect:!0},"*");try{p?.afterConnect()}catch{}const k=setTimeout,E=clearTimeout;let j=()=>NaN;try{j=performance.now.bind(performance)}catch{}let ce=0;const ue=()=>{try{T.post({__frame_alive:!0},"*")}catch{}ce=k(ue,Lr)},fe=()=>E(ce);ue(),addEventListener("load",fe,{once:!0});const I=new Promise(l=>{L=l,P=setTimeout(()=>{h(),l()},Or)}),ee=new WeakSet;addEventListener("error",l=>{l.target&&ee.add(l.target)},!0);const we=()=>{let l=[];try{l=[...document.querySelectorAll("link[rel~=stylesheet]:not([rel~=alternate])")].filter(g=>!g.sheet&&!g.disabled&&!ee.has(g)&&g.getAttribute("href")&&URL.canParse(g.href)&&(!g.media||matchMedia(g.media).matches))}catch{}let m=l.length;return m===0?Promise.resolve():new Promise(g=>{try{const C=Ce-j(),M=k(g,C>0?C<Ce?C:Ce:0),R=()=>{--m===0&&(E(M),g())};for(const D of l)D.addEventListener("load",R,{once:!0}),D.addEventListener("error",R,{once:!0})}catch{g()}})};S.then(()=>{try{f?.restore()}catch{}});const $={cb:null};T.on((l,m)=>{if(it(m)&&qt(l)){try{f?.promoted()}catch{}$.cb?.()}}),I.then(async()=>{if(!v||!U){De();try{p?.onNoInit()}catch{}return}ht(v.theme),v.hostVisible===!1&&t.then(d=>d?.applyHostVisible?.(!1,i));try{p?.onInit(v.hot,U)}catch{}const l=U,m=T.port(l);let g=!1,C=!1;T.on((d,re,z)=>{if(re!==l)return;try{if(p?.onShell(d))return}catch{}if(Ut(d)&&ht(d.__frame_theme.theme),Bt(d)){const W=d.__frame_host_visible.visible;t.then(be=>be?.applyHostVisible?.(W,i))}Dt(d)&&Pr(d.__frame_patch,l,z);const ne=d?.__fc_mode;ne&&typeof ne=="object"&&!g&&Ie&&Z.test(Ie)&&(g=!0,Q(Ie).then(W=>W.install?.(l,ne.on===!0,m)).catch(()=>{}));const oe=d?.__ft_cmd;oe&&typeof oe=="object"&&!C&&xe&&Z.test(xe)&&(C=!0,Q(xe).then(W=>W.install?.(l,oe,m)).catch(()=>{}))});const M=Object.keys(v.capabilities??{}).filter(d=>Object.hasOwn(me,d)).map(d=>[d,me[d]]).filter(d=>typeof d[1]=="string"&&Z.test(d[1])),R=await Promise.allSettled(M.map(([,d])=>Q(d))),D=await t,B=U;if(D?.buildBoot||T.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},B),D?.buildBoot)try{ye=D.buildBoot(v,D.TRANSFORMS??{},{shellOrigin:B,mount:He,hooks:ve,shell:m},d=>T.post({__frame_cap_telemetry:d},B))}catch{T.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},B),ye=ct(v,B,m)}else ye=ct(v,B,m);const te=d=>T.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:d}},B),x=ye;R.forEach((d,re)=>{const z=M[re][0];if(d.status!=="fulfilled"){te(z);return}try{d.value?.install?.(x)}catch{te(z)}}),De(),await S,await we(),fe(),T.post({__frame_ready:!0},U),t.then(d=>d?.installSizeReporter?.(B,$,m));let K=!1;try{K=b()}catch{}_e&&K?Q(_e).then(d=>d?.boot?.({shellOrigin:l,build:x.flags.has(pr),hot:p?.hot??null,carried:p?.carried(),presented:()=>p?.presented()??!0})).catch(()=>!1).then(d=>{p?.hydrated(),d!==!0&&te("_ldx")}):p?.hydrated()})}else Ne&&(pt(),kr(Ne,lt,Q,{settle:De,mount:He}))})();</script><!-- /frame-runtime --><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
+<title>Факоэмульсификация и витрэктомия — рынок 2025</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+
+  :root{
+    --bg:#f3f5f3; --card:#ffffff; --line:#e3e8e5; --ink:#132a24; --muted:#5b6b64;
+    --dark:#132a24; --green:#2f6b57; --mint:#9ec9b8; --sand:#c49a6c; --red:#b7544a;
+    --frame:#c3ddd0; --accent-ink:#ffffff;
+    --shadow: 0 1px 2px rgba(19,42,36,.05), 0 8px 24px -12px rgba(19,42,36,.12);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0c1613; --card:#12211c; --line:#233a32; --ink:#e9f2ee; --muted:#8fa89f;
+      --dark:#0a1512; --green:#5fa588; --mint:#89bfa9; --sand:#d3a878; --red:#d6837a;
+      --frame:#274139; --accent-ink:#0a1512;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px -12px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0c1613; --card:#12211c; --line:#233a32; --ink:#e9f2ee; --muted:#8fa89f;
+    --dark:#0a1512; --green:#5fa588; --mint:#89bfa9; --sand:#d3a878; --red:#d6837a;
+    --frame:#274139; --accent-ink:#0a1512;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px -12px rgba(0,0,0,.5);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:'Lato',-apple-system,'Segoe UI',sans-serif;
+    line-height:1.45; font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{max-width:100%;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px 80px;}
+  a{color:inherit;}
+  ::selection{background:var(--mint); color:var(--dark);}
+
+  /* ---------- topbar ---------- */
+  .topbar{border-bottom:3px solid var(--dark); background:var(--bg);}
+  .topbar-inner{max-width:1180px;margin:0 auto;padding:22px 24px; display:flex; align-items:center; gap:16px;}
+  .topbar .logo-name{font-weight:900; font-size:22px; letter-spacing:.2px;}
+  .topbar .logo-tag{font-size:12px; font-weight:700; letter-spacing:1.6px; color:var(--muted); text-transform:uppercase; margin-top:2px;}
+  .topbar .brandcol{display:flex; flex-direction:column; justify-content:center;}
+  .topbar .contacts{margin-left:auto; text-align:right; font-size:14px;}
+  .topbar .contacts .tg{color:var(--green); font-weight:700;}
+  .topbar .contacts div{margin:2px 0;}
+
+  /* ---------- hero ---------- */
+  .hero{padding:56px 0 8px;}
+  h1{font-size:44px; font-weight:900; line-height:1.08; margin:0 0 14px; text-wrap:balance; letter-spacing:-.5px;}
+  .hero p.lead{font-size:19px; color:var(--muted); max-width:760px; margin:0 0 22px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px;}
+  .chip{border:1px solid var(--line); background:var(--card); border-radius:999px; padding:6px 14px; font-size:13px; color:var(--muted); font-weight:700;}
+
+  /* ---------- kpi ---------- */
+  .kpi-row{display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin:34px 0;}
+  .kpi{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px 20px 18px; position:relative; overflow:hidden; box-shadow:var(--shadow);}
+  .kpi::before{content:"";position:absolute; left:0; top:0; bottom:0; width:5px; background:var(--kpi-accent, var(--green));}
+  .kpi .v{font-size:30px; font-weight:900; letter-spacing:-.5px; font-variant-numeric:tabular-nums;}
+  .kpi .l{font-size:13.5px; color:var(--muted); margin-top:4px;}
+
+  /* ---------- band ---------- */
+  .band{background:var(--dark); color:#fff; border-radius:16px; padding:28px 32px; margin:34px 0;}
+  .band .eyebrow{text-transform:uppercase; letter-spacing:2px; font-size:12.5px; font-weight:700; color:var(--mint); margin-bottom:10px;}
+  .band p{font-size:22px; font-weight:700; margin:0; line-height:1.4; max-width:840px;}
+  .band p b{color:var(--sand);}
+
+  /* ---------- sections ---------- */
+  section.block{margin:52px 0;}
+  .sec-label{text-transform:uppercase; letter-spacing:1.8px; font-size:13px; font-weight:700; color:var(--green); margin-bottom:14px;}
+  h2{font-size:27px; font-weight:900; margin:0 0 18px; letter-spacing:-.3px;}
+  .cards-2{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px 24px; box-shadow:var(--shadow);}
+  .card h3{margin:0 0 4px; font-size:19px; font-weight:900;}
+  .card .sub{color:var(--muted); font-size:13.5px; margin-bottom:16px;}
+
+  .row{margin-bottom:16px;}
+  .row:last-child{margin-bottom:0;}
+  .row .rowtop{display:flex; justify-content:space-between; align-items:baseline; gap:12px; font-weight:700; font-size:15px; margin-bottom:7px;}
+  .row .rowtop .val{color:var(--accent-c, var(--green)); font-variant-numeric:tabular-nums;}
+  .track{background:var(--line); border-radius:6px; height:9px; overflow:hidden;}
+  .fill{height:100%; border-radius:6px; background:var(--accent-c, var(--green));}
+  .row .note{font-size:13px; color:var(--muted); margin-top:6px;}
+
+  details{border-top:1px dashed var(--line); margin-top:14px; padding-top:12px;}
+  details summary{cursor:pointer; font-weight:700; font-size:14px; color:var(--green); list-style:none;}
+  details summary::-webkit-details-marker{display:none;}
+  details summary::before{content:"+ "; }
+  details[open] summary::before{content:"– ";}
+  details .content{margin-top:12px;}
+
+  table{width:100%; border-collapse:collapse; font-size:14px;}
+  table.simple th{text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); padding:6px 10px; border-bottom:1px solid var(--line);}
+  table.simple td{padding:8px 10px; border-bottom:1px solid var(--line); vertical-align:top;}
+  table.simple tr:last-child td{border-bottom:none;}
+  .num{font-variant-numeric:tabular-nums; text-align:right; white-space:nowrap;}
+
+  .findings-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px;}
+  .finding-card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; box-shadow:var(--shadow);}
+  .finding-card .tag{font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--sand); margin-bottom:8px;}
+  .finding-card h4{margin:0 0 8px; font-size:17px; font-weight:900;}
+  .finding-card p{margin:0; color:var(--muted); font-size:14.5px;}
+
+  /* ---------- directory ---------- */
+  .dir-tabs{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:14px;}
+  .dir-tab{border:1px solid var(--line); background:var(--card); padding:9px 18px; border-radius:10px; font-weight:700; font-size:14.5px; cursor:pointer; color:var(--muted);}
+  .dir-tab.active{background:var(--dark); color:#fff; border-color:var(--dark);}
+  .dir-toolbar{position:sticky; top:0; z-index:5; background:var(--bg); padding:12px 0; border-bottom:1px solid var(--line); margin-bottom:14px; display:flex; flex-wrap:wrap; gap:12px; align-items:center;}
+  .dir-search{flex:1; min-width:220px; padding:10px 14px; border-radius:10px; border:1px solid var(--line); background:var(--card); color:var(--ink); font-size:14.5px; font-family:inherit;}
+  .metric-switch{display:flex; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  .metric-switch button{border:none; background:var(--card); color:var(--muted); padding:9px 14px; font-size:13.5px; font-weight:700; cursor:pointer; font-family:inherit; border-right:1px solid var(--line);}
+  .metric-switch button:last-child{border-right:none;}
+  .metric-switch button.active{background:var(--green); color:#fff;}
+  .metric-hint{font-size:12.5px; color:var(--muted); width:100%; margin-top:-4px;}
+  .cols-switch{display:flex; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  .cols-switch button{border:none; background:var(--card); color:var(--muted); width:34px; height:36px; cursor:pointer; font-weight:700; border-right:1px solid var(--line);}
+  .cols-switch button:last-child{border-right:none;}
+  .cols-switch button.active{background:var(--dark); color:#fff;}
+  .btn-ghost{border:1px solid var(--line); background:var(--card); color:var(--muted); padding:9px 14px; border-radius:10px; font-size:13px; font-weight:700; cursor:pointer; font-family:inherit;}
+
+  .dir-table-wrap{border:1px solid var(--line); border-radius:14px; background:var(--card); box-shadow:var(--shadow); height:460px; overflow:auto; margin-bottom:22px;}
+  .dir-table{width:100%; border-collapse:collapse; font-size:13.8px;}
+  .dir-table thead th{position:sticky; top:0; background:var(--card); z-index:2; text-align:left; padding:11px 12px; border-bottom:2px solid var(--line); cursor:pointer; user-select:none; white-space:nowrap; color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.5px;}
+  .dir-table thead th:hover{color:var(--ink);}
+  .dir-table thead th .arrow{margin-left:4px; opacity:.6;}
+  .dir-table tbody td{padding:9px 12px; border-bottom:1px solid var(--line); white-space:nowrap;}
+  .dir-table tbody tr{cursor:pointer;}
+  .dir-table tbody tr:hover{background:var(--bg);}
+  .dir-table tbody tr.open-row{background:var(--frame);}
+  .dir-table .name-cell{white-space:normal; max-width:340px; font-weight:700;}
+  .dir-table .inn-cell{color:var(--muted); font-size:12.5px;}
+  .dir-count{font-size:13px; color:var(--muted); margin:-14px 0 16px;}
+
+  .cards-toolbar{display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;}
+  .cards-toolbar .btn-ghost{font-size:12.5px;}
+  #cardArea{display:grid; gap:16px;}
+  .pcard{background:var(--card); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow); padding:20px; resize:both; overflow:auto; min-width:280px; min-height:220px; height:480px; max-height:80vh; position:relative;}
+  .pcard.highlight{outline:2px solid var(--sand);}
+  .pcard .pc-head{display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:4px;}
+  .pcard .pc-type{font-size:11px; text-transform:uppercase; letter-spacing:1px; font-weight:700; color:var(--green);}
+  .pcard h4{margin:2px 0 2px; font-size:17px; font-weight:900; line-height:1.25;}
+  .pcard .pc-sub{font-size:12.5px; color:var(--muted); margin-bottom:14px;}
+  .pcard .pc-close{border:none; background:transparent; color:var(--muted); font-size:20px; cursor:pointer; line-height:1; padding:0 2px;}
+  .pc-stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(110px,1fr)); gap:10px; margin-bottom:14px;}
+  .pc-stat{background:var(--bg); border-radius:10px; padding:10px 12px;}
+  .pc-stat .v{font-weight:900; font-size:17px; font-variant-numeric:tabular-nums;}
+  .pc-stat .l{font-size:11.5px; color:var(--muted); margin-top:2px;}
+  .pc-note{font-size:12.5px; color:var(--sand); background:rgba(196,154,108,.12); border-radius:8px; padding:8px 10px; margin-bottom:14px;}
+  .pc-sub-table{margin-top:14px;}
+  .pc-sub-table .stt{font-size:11.5px; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); font-weight:700; margin-bottom:6px;}
+  .pc-link{color:var(--green); font-weight:700; cursor:pointer; text-decoration:underline; text-decoration-style:dotted;}
+  .pc-empty{color:var(--muted); font-size:13px; padding:24px; text-align:center; border:1px dashed var(--line); border-radius:12px;}
+
+  /* ---------- conclusions ---------- */
+  .concl-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+  .concl-card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px; box-shadow:var(--shadow); border-left:4px solid var(--green);}
+  .concl-card .k{font-weight:900; font-size:15.5px; margin-bottom:6px;}
+  .concl-card .d{color:var(--muted); font-size:14px;}
+
+  .cta{background:var(--dark); color:#fff; border-radius:16px; padding:34px 36px; margin:52px 0 40px;}
+  .cta h3{margin:0 0 10px; font-size:24px; font-weight:900;}
+  .cta p{color:var(--frame); font-size:15.5px; max-width:680px; margin:0 0 16px;}
+  .cta ul{margin:0 0 18px; padding-left:20px; color:var(--frame); font-size:14.5px;}
+  .cta li{margin-bottom:4px;}
+  .cta .cta-contacts{font-weight:700; font-size:16px;}
+  .cta .cta-contacts .tg{color:var(--mint);}
+
+  footer{border-top:1px solid var(--line); padding:28px 0 40px; color:var(--muted); font-size:13px;}
+  footer .fsrc{margin-bottom:16px;}
+  .copyright{display:flex; align-items:flex-start; gap:10px; max-width:760px;}
+  .copyright .csign{flex:0 0 auto; width:22px; height:22px; border-radius:50%; border:1.5px solid var(--muted); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700;}
+  .copyright .ctext{line-height:1.55;}
+
+  @media (max-width:920px){
+    .kpi-row{grid-template-columns:repeat(2,1fr);}
+    .cards-2, .findings-grid, .concl-grid{grid-template-columns:1fr;}
+    h1{font-size:32px;}
+    .topbar .contacts{display:none;}
+  }
+</style>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <svg id="logoSvg" width="44" height="44" viewBox="0 0 140 140"></svg>
+    <div class="brandcol">
+      <div class="logo-name">ТендерСтат</div>
+      <div class="logo-tag">Аналитика госзакупок</div>
+    </div>
+    <div class="contacts">
+      <div>tenderstatt.ru</div>
+      <div class="tg">@tenderstatt</div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section class="hero">
+    <h1>Рынок систем факоэмульсификации<br>и витрэктомии</h1>
+    <p class="lead">60 контрактов на 814 млн ₽ за 2025 год — и на два бренда приходится почти четыре рубля из каждых пяти. Разобрали, кто на самом деле определяет цену на этом рынке и почему поставки срываются именно там, где всё должно быть проще всего.</p>
+    <div class="chips">
+      <span class="chip">44-ФЗ и 223-ФЗ</span>
+      <span class="chip">2025 год</span>
+      <span class="chip">60 лотов в реестре ЕИС</span>
+      <span class="chip">Данные из открытых источников</span>
+    </div>
+  </section>
+
+  <div class="kpi-row" id="kpiRow"></div>
+
+  <div class="band">
+    <div class="eyebrow">Главное</div>
+    <p id="bandText"></p>
+  </div>
+
+  <section class="block">
+    <div class="sec-label">Находки</div>
+    <h2>Где на этом рынке нет конкуренции</h2>
+    <div class="cards-2">
+      <div class="card">
+        <h3>Заявки на лот</h3>
+        <div class="sub">Доля лотов по числу поданных заявок</div>
+        <div id="competitionBars"></div>
+      </div>
+      <div class="card">
+        <h3>Кто фактически поставляет системы</h3>
+        <div class="sub">Доля рынка по сумме контрактов</div>
+        <div id="manufacturerBars"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="sec-label">Находки</div>
+    <h2>Как устроены закупки: сегменты и форма сделки</h2>
+    <div class="cards-2">
+      <div class="card">
+        <h3>Факоэмульсификация или сразу с витрэктомией</h3>
+        <div class="sub">Доля рынка по сумме контрактов</div>
+        <div id="segmentBars"></div>
+      </div>
+      <div class="card">
+        <h3>Покупка или аренда</h3>
+        <div class="sub">Доля лотов и сумм</div>
+        <div id="rentBars"></div>
+        <details>
+          <summary>Что происходит с контрактами после подписания</summary>
+          <div class="content" id="statusDetails"></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="findingsSection">
+    <div class="sec-label">Находки</div>
+    <h2>То, что видно только при разборе по заказчикам</h2>
+    <div class="findings-grid" id="findingsGrid"></div>
+  </section>
+
+  <section class="block">
+    <div class="sec-label">Справочник участников</div>
+    <h2>Регионы, заказчики, поставщики, производители</h2>
+
+    <div class="dir-tabs" id="dirTabs"></div>
+
+    <div class="dir-toolbar">
+      <input class="dir-search" id="dirSearch" type="text" placeholder="Поиск по названию, ИНН, региону…">
+      <div class="metric-switch" id="metricSwitch"></div>
+      <span class="metric-hint" id="metricHint"></span>
+    </div>
+
+    <div class="dir-count" id="dirCount"></div>
+    <div class="dir-table-wrap">
+      <table class="dir-table">
+        <thead><tr id="dirHead"></tr></thead>
+        <tbody id="dirBody"></tbody>
+      </table>
+    </div>
+
+    <div class="cards-toolbar">
+      <div class="cols-switch" id="colsSwitch">
+        <button data-cols="1">1</button>
+        <button data-cols="2">2</button>
+        <button data-cols="3">3</button>
+      </div>
+      <button class="btn-ghost" id="closeAllBtn">закрыть все карточки</button>
+    </div>
+    <div id="cardArea"></div>
+  </section>
+
+  <section class="block">
+    <div class="sec-label">Выводы</div>
+    <h2>Что это значит для читателя</h2>
+    <div class="concl-grid" id="conclGrid"></div>
+  </section>
+
+  <div class="cta">
+    <h3>Такой разбор делаем по любому сегменту рынка госзакупок</h3>
+    <p>В полный отчёт входит то, что не помещается в открытую публикацию:</p>
+    <ul>
+      <li>ценовая база по каждому лоту, а не только агрегаты;</li>
+      <li>поимённый список ЛПУ с объёмами закупок и действующими поставщиками;</li>
+      <li>профили конкурентов — кто, где и по какой цене поставляет;</li>
+      <li>доли производителей со средними ценами по регионам.</li>
+    </ul>
+    <div class="cta-contacts">info@tenderstatt.ru · tenderstatt.ru · <span class="tg">@tenderstatt</span></div>
+  </div>
+
+  <footer>
+    <div class="fsrc">Данные из открытых источников: ЕИС. Оценки носят аналитический характер.</div>
+    <div class="copyright">
+      <div class="csign">©</div>
+      <div class="ctext">Запрещается копирование, распространение (в том числе путём копирования на другие сайты и ресурсы в Интернете) или любое иное использование информации и объектов без предварительного согласия правообладателя.<br>© ТендерСтат, 2026. Все права защищены.</div>
+    </div>
+  </footer>
+
+</div>
+
+<script type="application/json" id="ds">{"meta":{"title":"Рынок систем факоэмульсификации/витрэктомии","period":"2025 год · закупки, попавшие в реестр контрактов ЕИС","n_lots":60,"generated":"2026-09-01"},"regions":["Иркутская Область","Московская Область","Москва Город","Дагестан Республика","Курская Область","Волгоградская Область","Калининградская Область","Калужская Область","Татарстан Республика","Тульская Область","Новосибирская Область","Башкортостан Республика","Алтайский Край","Кировская Область","Ростовская Область","Сахалинская Область","Санкт-Петербург Город","Оренбургская Область","Мордовия Республика","Карелия Республика","Ставропольский Край","Ямало-Ненецкий Автономный округ","Северная Осетия - Алания Республика","Ярославская Область","Пензенская Область","Бурятия Республика","Пермский Край","Челябинская Область","Адыгея Республика","Вологодская Область","Ханты-Мансийский Автономный округ - Югра Автономный округ"],"customers":[{"name":"ОГБУЗ \"УСТЬ-ИЛИМСКАЯ РБ\"","inn":"3804121392","region":0,"lpu":true},{"name":"ГКУ МО \"ДЕЗ\"","inn":"5024068656","region":1,"lpu":false},{"name":"ГБУЗ \"ДГКБ ИМ. З.А. БАШЛЯЕВОЙ ДЗМ\"","inn":"7733024083","region":2,"lpu":true},{"name":"ГБУ РД НКО \"ДЦМГ\"","inn":"0545016922","region":3,"lpu":true},{"name":"ФГАУ \"НМИЦ \"МНТК \"МИКРОХИРУРГИЯ ГЛАЗА\" ИМ. АКАД. С.Н. ФЕДОРОВА\" МИНЗДРАВА РОССИИ","inn":"7713059497","region":0,"lpu":true},{"name":"ОБУЗ \"ОФТАЛЬМОЛОГИЧЕСКАЯ БОЛЬНИЦА\"","inn":"4629009164","region":4,"lpu":true},{"name":"ГБУЗ Г.КАМЫШИНА \"ГОРОДСКАЯ БОЛЬНИЦА №1\"","inn":"3436008860","region":5,"lpu":true},{"name":"ЦГКБ","inn":"3908010986","region":6,"lpu":true},{"name":"ФГБУЗ КБ № 8 ФМБА РОССИИ","inn":"4025002173","region":7,"lpu":true},{"name":"ГАУЗ \"НЦРМБ\"","inn":"1651064944","region":8,"lpu":true},{"name":"ГУЗ ТО \"ТУЛЬСКАЯ ОБЛАСТНАЯ КЛИНИЧЕСКАЯ БОЛЬНИЦА\"","inn":"7105008306","region":9,"lpu":true},{"name":"ГБУЗ НСО \"ГНОКБ\"","inn":"5403106150","region":10,"lpu":true},{"name":"ФГБОУ ВО БГМУ МИНЗДРАВА РОССИИ","inn":"0274023088","region":11,"lpu":true},{"name":"ФГБНУ \"НИИГБ ИМ. М.М. КРАСНОВА\"","inn":"7704084426","region":2,"lpu":true},{"name":"КГБУЗ \"АКОБ\"","inn":"2224007951","region":12,"lpu":true},{"name":"КОГБУЗ \"КИРОВСКАЯ КЛИНИЧЕСКАЯ ОФТАЛЬМОЛОГИЧЕСКАЯ БОЛЬНИЦА\", КОГБУЗ \"ККОБ\"","inn":"4347035511","region":13,"lpu":true},{"name":"ГБУ РО \"ГБСМП\" В Г. ВОЛГОДОНСКЕ","inn":"6143006280","region":14,"lpu":true},{"name":"ГБУЗ \"КДЦ\"","inn":"6501024268","region":15,"lpu":true},{"name":"ФГБУ СЗОНКЦ ИМ. Л.Г. СОКОЛОВА ФМБА РОССИИ","inn":"7802048200","region":16,"lpu":true},{"name":"ГАУЗ \"ООКБ ИМ.В.И.ВОЙНОВА\"","inn":"5612014915","region":17,"lpu":true},{"name":"ГБУЗ РЕСПУБЛИКИ МОРДОВИЯ \"РОБ\"","inn":"1326024898","region":18,"lpu":true},{"name":"ГБУЗ РБ","inn":"1001334128","region":19,"lpu":true},{"name":"ЛОГБУЗ \"ДКБ\"","inn":"7804009373","region":16,"lpu":true},{"name":"ФГБОУ ВО СТГМУ МИНЗДРАВА РОССИИ","inn":"2633003556","region":20,"lpu":true},{"name":"ЧУЗ \"КБ \"РЖД-МЕДИЦИНА\" ИМ.Н.А.СЕМАШКО\"","inn":"7723518340","region":2,"lpu":true},{"name":"ФГБНУ \"ФИЦ ОРИГИНАЛЬНЫХ И ПЕРСПЕКТИВНЫХ БИОМЕДИЦИНСКИХ И ФАРМАЦЕВТИЧЕСКИХ ТЕХНОЛОГИЙ\"","inn":"7712020313","region":2,"lpu":true},{"name":"ГБУЗ ЯНАО \"НЦГБ\"","inn":"8904012710","region":21,"lpu":true},{"name":"СПБ ГБУЗ \"ГОРОДСКАЯ БОЛЬНИЦА № 40 \"","inn":"7821006774","region":16,"lpu":true},{"name":"ГАУЗ РОЦ МЗ РСО-АЛАНИЯ","inn":"1513031126","region":22,"lpu":true},{"name":"ГБУЗ \"ГКБ ИМЕНИ В.М. БУЯНОВА ДЗМ\"","inn":"7724598966","region":2,"lpu":true},{"name":"ГБУЗ ЯО \"ОКБ\"","inn":"7603004103","region":23,"lpu":true},{"name":"ГБУЗ \"ГКБ № 15 ДЗМ\"","inn":"7720001850","region":2,"lpu":true},{"name":"ГБУЗ ПООБ","inn":"5837008558","region":24,"lpu":true},{"name":"ЧУЗ \"КБ \"РЖД-МЕДИЦИНА\" Г. УЛАН-УДЭ\"","inn":"0326021408","region":25,"lpu":true},{"name":"ГАУ ПК \"КЦЗ\"","inn":"5902049807","region":26,"lpu":false},{"name":"МИНЗДРАВ ЧЕЛЯБИНСКОЙ ОБЛАСТИ","inn":"7453135827","region":27,"lpu":false},{"name":"ГБУЗ МОСКОВСКОЙ ОБЛАСТИ \"НФБ\"","inn":"5030097863","region":1,"lpu":true},{"name":"ГБУЗРА АРКБ","inn":"0105025965","region":28,"lpu":true},{"name":"ГКУ АЗ (КС) ДЗМ","inn":"7714338609","region":2,"lpu":false},{"name":"ГУЗ ЯО \"РЫБИНСКАЯ БОЛЬНИЦА № 2 ИМЕНИ Н.И. ПИРОГОВА\"","inn":"7610105511","region":23,"lpu":true},{"name":"ГАУЗ \"БСМП\" Г. НОВОТРОИЦКА","inn":"5607140720","region":17,"lpu":true},{"name":"ГБУЗ РБ БЕЛЕБЕЕВСКАЯ ЦРБ","inn":"0255008126","region":11,"lpu":true},{"name":"БУЗ ВО \"ВОЛОГОДСКАЯ ОБЛАСТНАЯ ОФТАЛЬМОЛОГИЧЕСКАЯ БОЛЬНИЦА\", БУЗ ВО  \"ВООБ\"","inn":"3525025794","region":29,"lpu":true},{"name":"БУ \"НЕФТЕЮГАНСКАЯ ОКРУЖНАЯ КЛИНИЧЕСКАЯ БОЛЬНИЦА ИМЕНИ В.И.ЯЦКИВ\"","inn":"8604013180","region":30,"lpu":true},{"name":"ФГБУ ФНКЦ ФМБА РОССИИ","inn":"7724044189","region":2,"lpu":true}],"suppliers":[{"name":"ИП Мандрыгин А.М.","inn":""},{"name":"ООО \"АКЕСО\"","inn":"7736366871"},{"name":"ООО \"ИНВИВО МЕД\"","inn":"6229087570"},{"name":"ИП МАГОМЕДОВ А. М.","inn":"054305960004"},{"name":"Поставщик не указан","inn":""},{"name":"ООО \"БИСИКЕЙ-ЭМ\"","inn":"7729109714"},{"name":"ООО \"МЕДСИТИ\"","inn":"3460082760"},{"name":"ИП РОЖКОВ Е. Н.","inn":"503702367256"},{"name":"ООО \"СИИ МЕД\"","inn":"1655160230"},{"name":"ООО \"ЦИЛИТА\"","inn":"6234002491"},{"name":"ООО \"ВИСКО\"","inn":"7725521571"},{"name":"ИП СОБЕНИН Б. Н.","inn":"540606838336"},{"name":"ООО \"КУФРАН - РМ\"","inn":"5408242245"},{"name":"ООО \"ТЕХНОМЕД\"","inn":"0276028003"},{"name":"ООО \"ОБЪЕДИНЕННАЯ МЕДИЦИНСКАЯ ГРУППА\"","inn":"7714550130"},{"name":"ООО \"ПОЛИСТ ЛАЙН\"","inn":"5405225315"},{"name":"ИП МИДОВ Ю. С.","inn":"526219832462"},{"name":"ИП РЯБКО Д. Н.","inn":"616706836986"},{"name":"ООО \"АЛЬФА МЕД\"","inn":"6501283294"},{"name":"АО \"ИНТЕЛМЕД\"","inn":"7810185761"},{"name":"ООО \"ОПТИКОМ\"","inn":"5261136608"},{"name":"ООО \"АМ-МЕДИКАЛ\"","inn":"7807360220"},{"name":"ООО \"ИНПРОФИ\"","inn":"4217115685"},{"name":"ООО \"ИНВИВО МЕД\"","inn":""},{"name":"ИП ЕГОРОВ М. Б.","inn":"263212534878"},{"name":"ООО \"СОНОГРАФИ\"","inn":"7404071401"},{"name":"АО \"ЭКО-ДОМ\"","inn":"7810989360"},{"name":"ООО \"ВИТАЛ ЭСТЕТИК РУС\"","inn":"7703726303"},{"name":"ООО \"АЗИМУТ\"","inn":"7734430296"},{"name":"ООО \"ЛИНКС\"","inn":"1655254199"},{"name":"ООО \"КОНСТАНТА\"","inn":""},{"name":"ООО \"АТЛАС\"","inn":"6671404274"},{"name":"ООО \"ГЕЛИОС\"","inn":"7701364129"},{"name":"ООО \"ВИСМЕД\"","inn":"7801667092"},{"name":"ООО \"АЛЬФА МОБИЛИ\"","inn":"7811359153"},{"name":"ИП САВИН А. Ю.","inn":"760707283819"},{"name":"ИП МИРОНОВ Д. С.","inn":"524916813939"},{"name":"ООО \"ФАРМАМЕД\"","inn":"6660063939"},{"name":"ООО \"ВАРТАМАНАИНТЕРНЭШНЛ ТРЕДЕРС\"","inn":""}],"manufacturers":["Производитель не указан","Bausch & Lomb Incorporated","This AG","Alcon Laboratories","OPTIKON","Оптимедсервис","D.O.R.C. Dutch Ophthalmic Research Center","Oertli","APPASAMY ASSOCIATES"],"segments":["Факоэмульсификация","Факоэмульсификация + витрэктомия"],"fields":["regTender","regContract","fz44","region","customer","supplier","manufacturer","segment","isRent","nmck","ck","paid","applications","declinePct","qty","unitPrice","unit","deliveredQty","status","complaint","country","signDate","productName"],"lots":[["32515580779","83804121392260000070000",0,0,0,0,0,0,0,6256713.0,6239602.0,null,1.0,0.27,1.0,6239602.0,"Штука",0.0,"Исполняется",0,"Соединенные Штаты Америки","02.02.2026","Поставка медицинского изделия - Система факоэмульсификации, ввод в эксплуатацию медицинского изделия, обучение правилам эксплуатации специал"],["0348200081025004943","2502406865625003392",1,1,1,1,1,1,0,14600000.0,14600000.0,14600000.0,1.0,0.0,1.0,14600000.0,"Штука",0.0,"Исполнено",0,"Соединенные Штаты Америки","29.12.2025","Система факоэмульсификации/витрэктомии. Товарный знак: Stellaris"],["0373200005825000700","2773302408325000610",1,2,2,2,2,0,0,7478220.0,7366047.0,7366047.0,2.0,1.5,1.0,7366047.0,"Штука",1.0,"Исполнено",1,"Швейцарская Конфедерация","23.12.2025","Система факоэмульсификации/витрэктомии. Товарный знак: отсутствует"],["0103200008425008813","2054501692225000034",1,3,3,3,3,1,0,15604000.0,15604000.0,15604000.0,1.0,0.0,1.0,15604000.0,"Штука",1.0,"Исполняется",0,"Соединенные Штаты Америки","22.12.2025","Система факоэмульсификации/витрэктомии. Товарный знак: Система офтальмологическая хирургическая Constellation Vision System с принадлежностя"],["32515462315","57713059497250032290000",0,0,4,4,1,1,0,10060000.0,9985000.0,null,1.0,0.75,1.0,9985000.0,"Комплект",0.0,"Прекращено",0,"Соединенные Штаты Америки","23.12.2025","офтальмологическая микрохирургическая Стелларис Элит (Stellaris Elite) с принадлежностями, вариант исполнения: Система офтальмологическая ми"],["0144200002425000310","2462900916425000206",1,4,5,5,4,1,0,11987877.0,11000000.0,11000000.0,1.0,0.0,1.0,11000000.0,"Штука",1.0,"Исполнено",1,"Итальянская Республика","16.12.2025","Система факоэмульсификации/витрэктомии. Товарный знак: Отсутствует"],["0329200062225010474","3343600886025000428",1,5,6,6,3,0,0,5985317.0,5850000.0,5850000.0,1.0,2.26,1.0,5850000.0,"Штука",1.0,"Исполнено",1,"Соединенные Штаты Америки","12.12.2025","Система факоэмульсификации. Товарный знак: Legion"],["32515414966","83908010986250000690000",0,6,7,4,1,0,1,5460000.0,5460000.0,null,1.0,0.0,13.0,420000.0,"Месяц",0.0,"Исполняется",0,"","08.12.2025","Оказание услуг по передаче в аренду офтальмологического факоэмульсификатора:  Система офтальмологическая микрохирургическая \"Миллениум\" с пр"],["0337100018825000358","1402500217325000391",1,7,8,7,5,0,0,4990000.0,4990000.0,4990000.0,1.0,0.0,1.0,4990000.0,"Штука",1.0,"Исполнено",0,"Российская Федерация","09.12.2025","Система факоэмульсификации/витрэктомии. Товарный знак: OPTIMED Свидетельство на товарный знак №765045"],["0711200012525000187","2165106494425000238",1,8,9,8,1,1,0,11495000.0,6207300.0,6207300.0,3.0,46.0,1.0,6207300.0,"Штука",1.0,"Исполнено",0,"Соединенные Штаты Америки","02.12.2025","Система факоэмульсификации/витрэктомии. Товарный знак: Stellaris"],["0373200005825000617","2773302408325000560",1,2,2,9,6,1,0,18487740.0,16994300.0,16994300.0,1.0,0.0,1.0,16994300.0,"Штука",1.0,"Исполнено",1,"Королевство Нидерландов","05.12.2025","Система факоэмульсификации/витрэктомии. Товарный знак: отсутствует"],["0366200035625008432","2710500830625000643",1,9,10,10,7,1,0,11488000.0,11488000.0,11488000.0,1.0,0.0,1.0,11488000.0,"Штука",1.0,"Исполнено",1,"Швейцарская Конфедерация","27.12.2025","Система факоэмульсификации/витрэктомии. Товарный знак: Oertli"],["0851200000625007924","2540310615025001519",1,10,11,11,3,1,0,11870000.0,11810650.0,11810650.0,2.0,0.5,1.0,11810650.0,"Штука",1.0,"Исполнено",1,"Соединенные Штаты Америки","24.11.2025","Система факоэмульсификации/витрэктомии. Товарный знак: Alcon"],["0851200000625007603","2540310615025001512",1,10,11,12,3,1,0,9088150.0,8997269.0,8997269.0,2.0,1.0,1.0,8997269.0,"Штука",1.0,"Исполнено",0,"Соединенные Штаты Америки","17.11.2025","Система факоэмульсификации. Товарный знак: Alcon"],["0301100049625001463","1027402308825001364",1,11,12,13,3,1,0,12270000.0,11963250.0,11963250.0,2.0,2.5,1.0,11963250.0,"Штука",1.0,"Исполнено",0,"Соединенные Штаты Америки","12.11.2025","Система факоэмульсификации. Товарный знак: CENTURION VISION SYSTEM"],["0373100016725000183","1770408442625000185",1,2,13,14,3,1,0,14218230.0,14218230.0,14218230.0,1.0,0.0,1.0,14218230.0,"Штука",1.0,"Исполнено",0,"Соединенные Штаты Америки","05.11.2025","Система факоэмульсификации/витрэктомии. Товарный знак: Alcon"],["0817200000325016852","2222400795125000189",1,12,14,15,1,1,0,9605150.0,9605150.0,9605150.0,1.0,0.0,1.0,9605150.0,"Штука",1.0,"Исполнено",0,"Соединенные Штаты Америки","05.11.2025","Система факоэмульсификации/витрэктомии. Товарный знак: STELLARIS ELITE"],["0817200000325016851","2222400795125000188",1,12,14,15,1,0,0,6425150.0,6425150.0,6425150.0,1.0,0.0,1.0,6425150.0,"Штука",1.0,"Исполнено",0,"Соединенные Штаты Америки","05.11.2025","Система факоэмульсификации/витрэктомии. Товарный знак: STELLARIS ELITE"],["0340200003325013034","2434703551125000101",1,13,15,16,1,0,1,4999980.0,4999980.0,166666.0,1.0,0.0,60.0,83333.0,"Месяц",2.0,"Исполняется",0,"","27.10.2025","Оказание услуг по аренде медицинского оборудования (Система офтальмологическая микрохирургическая для переднего отрезка глаза)"],["0358300276625000138","2614300628025000178",1,14,16,17,1,1,0,16425000.0,16425000.0,16425000.0,1.0,0.0,1.0,16425000.0,"Штука",1.0,"Исполнено",1,"Королевство Нидерландов","11.11.2025","Система факоэмульсификации/витрэктомии. Товарный знак: отсутствует"],["0361200015025005193","2650102632125000624",1,15,17,18,3,1,0,16200000.0,16200000.0,16200000.0,1.0,0.0,1.0,16200000.0,"Штука",1.0,"Исполнено",0,"Соединенные Штаты Америки","29.10.2025","Система факоэмульсификации/витрэктомии. Товарный знак: Constellation"],["0372100011725000653","1780204820025000803",1,16,18,19,3,1,0,10295900.0,10089982.0,10089982.0,2.0,2.0,1.0,10089982.0,"Штука",1.0,"Исполнено",1,"Соединенные Штаты Америки","03.10.2025","Система факоэмульсификации/витрэктомии. Товарный знак: номер государственной регистрации 548954, Изображение (воспроизведение) товарного зна"],["32515132434","57713059497250021480000",0,2,4,4,3,1,0,26940000.0,24984000.0,null,1.0,7.26,3.0,8328000.0,"Штука",0.0,"Исполняется",0,"Соединенные Штаты Америки","08.09.2025","Система офтальмологическая хирургическая Centurion Vision System"],["32515118737","55612014915250002480000",0,17,19,4,3,1,0,12280000.0,12280000.0,null,1.0,0.0,1.0,12280000.0,"Штука",0.0,"Исполняется",0,"Соединенные Штаты Америки","02.09.2025","Система факоэмульсификации/ витректомии  Система офтальмологическая хирургическая Centurion  с принадлежностями, в вариантах исполнения: Сис"],["0809500000325002661","2132602489825000046",1,18,20,20,1,0,0,6650000.0,6650000.0,6650000.0,1.0,0.0,1.0,6650000.0,"Штука",1.0,"Исполнено",0,"Соединенные Штаты Америки","27.08.2025","Система факоэмульсификации/витрэктомии. Товарный знак: STELLARIS ELITE (№1603861) BAUSCH+LOMB (№ 1055756)"],["0306500000325000551","2100133412825000599",1,19,21,21,3,0,0,5218509.0,5218509.0,5218509.0,1.0,0.0,1.0,5218509.0,"Штука",1.0,"Исполнено",1,"Соединенные Штаты Америки","29.08.2025","Система факоэмульсификации. Товарный знак: отсутствует"],["0145200000425001233","2780400937325000326",1,16,22,22,3,1,0,15410931.0,15410931.0,15410931.0,1.0,0.0,1.0,15410931.0,"Штука",1.0,"Исполнено",0,"Соединенные Штаты Америки","19.08.2025","Система факоэмульсификации/витрэктомии. Товарный знак: CONSTELLATION"],["32515072178","57713059497250019290000",0,17,4,23,2,1,0,9380000.0,9380000.0,null,1.0,0.0,1.0,9380000.0,"Штука",0.0,"Прекращено",0,"Швейцарская Конфедерация","18.08.2025","Система офтальмологическая хирургическая Sophi для операций на переднем отрезке глаза, в варианте исполнения: Sophi Premium (Артикул 1401-01"],["0321100021525000097","1263300355625000131",1,20,23,24,1,1,0,15347333.0,15347333.0,15347333.0,1.0,0.0,1.0,15347333.0,"Штука",1.0,"Исполнено",0,"Соединенные Штаты Америки","18.08.2025","Система факоэмульсификации/витрэктомии. Товарный знак: STELLARIS"],["297096","",0,2,24,4,0,1,0,12059947.0,12059947.0,null,1,0.0,1.0,12059947.0,"",null,"Не указан",0,"","","Аппарат офтальмологический микрохирургический со встроенным эндолазером"],["32515038634","57713059497250019700000",0,2,4,4,3,1,0,32748000.0,27722250.0,null,3.0,15.35,3.0,9240750.0,"Штука",0.0,"Прекращено",0,"Соединенные Штаты Америки","19.08.2025","Система офтальмологическая хирургическая Constellation Vision System с принадлежностями"],["0373100078825000094","1771202031325000093",1,2,25,25,5,0,0,5400000.0,5400000.0,5400000.0,1.0,0.0,1.0,5400000.0,"Штука",1.0,"Исполнено",0,"Российская Федерация","29.07.2025","Универсальная офтальмологическая хирургическая система . Товарный знак: №765054"],["0190200000325007827","2890401271025000825",1,21,26,10,7,1,0,10700680.0,5831871.0,5831871.0,4.0,45.5,1.0,5831871.0,"Штука",1.0,"Исполнено",0,"Швейцарская Конфедерация","14.07.2025","Система факоэмульсификации/витрэктомии. Товарный знак: Oertli"],["0172200002525000314","2782100677425000792",1,16,27,26,3,1,0,40387080.0,31501922.0,31501922.0,2.0,22.0,2.0,15750961.0,"Штука",2.0,"Исполнено",0,"Соединенные Штаты Америки","08.07.2025","Система факоэмульсификации/витрэктомии. Товарный знак: номер регистрации №859552 (Изображение (воспроизведение) товарного знака приложено от"],["32514922946","51513031126250000170000",0,22,28,24,0,1,0,11191667.0,11000000.0,null,1.0,0.0,1.0,11000000.0,"Штука",0.0,"Прекращено",0,"Соединенные Штаты Америки","30.06.2025","Поставка системы факоэмульсификации"],["0373200052725000460","2772459896625000537",1,2,29,27,3,1,0,15514500.0,15514500.0,15514500.0,1.0,0.0,1.0,15514500.0,"Штука",1.0,"Исполнено",0,"Соединенные Штаты Америки","27.06.2025","Система факоэмульсификации/витрэктомии . Товарный знак: отсутствует"],["0171200001925002108","2760300410325000330",1,23,30,16,1,1,0,12899432.0,12899432.0,12899432.0,1.0,0.0,1.0,12899432.0,"Штука",1.0,"Исполнено",0,"Соединенные Штаты Америки","16.06.2025","Система факоэмульсификации/витрэктомии. Товарный знак: -"],["0373200024425000767","2772000185025000744",1,2,31,28,3,1,0,24203387.0,24203387.0,24203387.0,1.0,0.0,2.0,12101693.0,"Штука",2.0,"Исполнено",0,"Соединенные Штаты Америки","17.06.2025","Система факоэмульсификации/витрэктомии. Товарный знак: отсутствут"],["0155200000925000439","2583700855825000067",1,24,32,29,3,0,0,4803435.0,4803435.0,4803435.0,1.0,0.0,1.0,4803435.0,"Штука",1.0,"Исполнено",0,"Соединенные Штаты Америки","30.05.2025","Система факоэмульсификации/витрэктомии. Товарный знак: отсутствует"],["287354","",0,25,33,4,3,1,0,9747800.0,9747800.0,null,1,0,1.0,9747800.0,"",null,"Не указан",0,"","","Система офтальмологическая хирургическая"],["32514745412","55902049807250000670000",0,26,34,30,0,0,0,46000000.0,25530000.0,null,4.0,44.5,4.0,6382500.0,"Штука",0.0,"Прекращено",0,"Королевство Нидерландов","26.05.2025","Система факоэмульсификации"],["0869200000225003510","2745313582725000939",1,27,35,31,1,0,0,5500000.0,5500000.0,5500000.0,1.0,0.0,1.0,5500000.0,"Штука",1.0,"Исполнено",0,"Соединенные Штаты Америки","06.05.2025","Система факоэмульсификации. Товарный знак: Бауш энд Ломб Инкорпорейтед"],["0348500003025000053","2503009786325000089",1,1,36,27,3,0,0,5999333.0,5549383.0,5549383.0,2.0,7.5,1.0,5549383.0,"Штука",1.0,"Исполнено",0,"Соединенные Штаты Америки","12.05.2025","Система факоэмульсификации/витрэктомии. Товарный знак: Alcon"],["0176200005525000569","2010502596525000162",1,28,37,24,3,0,0,4780000.0,4780000.0,4780000.0,1.0,0.0,1.0,4780000.0,"Штука",1.0,"Исполнено",0,"Соединенные Штаты Америки","21.04.2025","Система факоэмульсификации. Товарный знак: отсутствует"],["0348200081025001235","2502406865625001067",1,1,1,32,1,0,0,6790111.0,6790111.0,6790111.0,1.0,0.0,1.0,6790111.0,"Штука",1.0,"Исполнено",0,"Соединенные Штаты Америки","21.04.2025","Система факоэмульсификации/витрэктомии. Товарный знак: отсутствует"],["0340200003325003437","2434703551125000032",1,13,15,33,3,0,1,4999980.0,4999980.0,749997.0,1.0,0.0,60.0,83333.0,"Месяц",9.0,"Исполняется",0,"","21.04.2025","Оказание услуг по аренде медицинского оборудования (система офтальмологическая хирургическая)"],["0173200001425000308","2771433860925003161",1,2,38,34,3,1,0,63866349.0,54925060.0,54925060.0,2.0,14.0,4.0,13347669.0,"Штука",4.0,"Исполнено",1,"Китайская Народная Республика","14.04.2025","Система факоэмульсификации/витрэктомии . Товарный знак: отсутствует"],["0171200001925000762","2761010551125000175",1,23,39,35,4,1,0,7994559.0,7994559.0,7994559.0,1.0,0.0,1.0,7994559.0,"Штука",1.0,"Исполнено",0,"Итальянская Республика","08.04.2025","Система факоэмульсификации/витрэктомии"],["32514566207","55607140720250000630000",0,17,40,4,1,0,0,5532590.0,5504927.0,null,3.0,0.5,1.0,5504927.0,"Штука",0.0,"Прекращено",0,"Соединенные Штаты Америки","25.03.2025","Система офтальмологическая микрохирургическая Стелларис Элит(Stellaris Elite) с принадлежностями"],["0801500001125000242","2025500812625000080",1,11,41,36,3,0,1,4900000.0,4900000.0,1960000.0,1.0,0.0,20.0,245000.0,"Месяц",8.0,"Прекращено",0,"","18.03.2025","Услуги по аренде и лизингу приборов, аппаратов и прочего оборудования, применяемых в медицинских целях"],["0348200081025000447","2502406865625000544",1,1,1,32,1,0,0,33950556.0,33950556.0,33950556.0,1.0,0.0,5.0,6790111.0,"Штука",5.0,"Исполнено",0,"Федеративная Республика Германия","10.03.2025","Система факоэмульсификации/витрэктомии. Товарный знак: отсутствует"],["0348200081025000439","2502406865625000464",1,1,1,32,3,1,0,29500000.0,29500000.0,29500000.0,1.0,0.0,2.0,14750000.0,"Штука",2.0,"Исполнено",0,"Соединенные Штаты Америки","04.03.2025","Система факоэмульсификации/витрэктомии. Constellation®"],["0348200081025000438","2502406865625000494",1,1,1,32,3,1,0,29500000.0,29500000.0,29500000.0,1.0,0.0,2.0,14750000.0,"Штука",2.0,"Исполнено",0,"Соединенные Штаты Америки","04.03.2025","Система факоэмульсификации/витрэктомии. Constellation®"],["0348200081025000437","2502406865625000471",1,1,1,32,3,1,0,42400000.0,42400000.0,42400000.0,1.0,0.0,4.0,10600000.0,"Штука",4.0,"Исполнено",0,"Соединенные Штаты Америки","04.03.2025","Система факоэмульсификации/витрэктомии. Alcon"],["0830500000225000381","2352502579425000030",1,29,42,21,3,0,0,6424633.0,6023170.0,6023170.0,1.0,6.25,1.0,6023170.0,"Штука",1.0,"Исполнено",0,"Соединенные Штаты Америки","20.02.2025","Система факоэмульсификации (Система офтальмологическая хирургическая с принадлежностями)"],["0387200030525000367","2860401318025000475",1,30,43,37,5,0,1,426000.0,426000.0,142000.0,1.0,0.0,3.0,142000.0,"Месяц",2.0,"Исполняется",0,"","09.12.2025","Аренда факоэмульсификатора - микрохирургическая система для ультразвуковой хирургии катаракты и передней витректомии (1 шт)"],["32515167413","87724044189250001940000",0,2,44,4,3,1,0,15167000.0,15167000.0,null,1.0,0.0,1.0,13093000.0,"Штука",0.0,"Прекращено",0,"Соединенные Штаты Америки","26.09.2025","Система офтальмологическая хирургическая Constellation Vision System с принадлежностями"],["32515038216","57713059497250019750000",0,2,4,4,6,1,0,35400000.0,35400000.0,null,1.0,0.0,3.0,11800000.0,"Штука",0.0,"Прекращено",0,"Королевство Нидерландов","19.08.2025","Система офтальмологическая хирургическая Enchancing Visual Acuity (EVA) для операций на переднем и заднем отрезке глаза с лазерным модулем ("],["32515090382","57713059497250019970000",0,2,4,4,1,0,0,15337000.0,15337000.0,null,1.0,0.0,1.0,5277000.0,"Штука",0.0,"Прекращено",0,"Соединенные Штаты Америки","22.08.2025","Система офтальмологическая микрохирургическая Стелларис Элит (Stellaris Elite) с принадлежностями вариант исполнения: Система офтальмологиче"],["32515074503","57713059497250019580000",0,17,4,38,8,0,0,3400000.0,3400000.0,null,1.0,0.0,1.0,3400000.0,"Штука",0.0,"Прекращено",0,"Республика Индия","19.08.2025","Система офтальмологическая микрохирургическая Стелларис Элит (Stellaris Elite) с принадлежностями вариант исполнения: Система офтальмологиче"]]}</script>
+<script>
+(function(){
+"use strict";
+var DS = JSON.parse(document.getElementById('ds').textContent);
+var F = {}; DS.fields.forEach(function(name,i){ F[name] = i; });
+
+function fmtInt(n){
+  n = Math.round(n||0);
+  return n.toLocaleString('ru-RU');
+}
+function fmtMoney(n){
+  n = n||0;
+  if (Math.abs(n) >= 1e9) return (n/1e9).toFixed(1).replace('.',',') + ' млрд ₽';
+  if (Math.abs(n) >= 1e6) return fmtInt(Math.round(n/1e6)) + ' млн ₽';
+  return fmtInt(n) + ' ₽';
+}
+function fmtMoneyShort(n){
+  n = n||0;
+  if (Math.abs(n) >= 1e6) return fmtInt(Math.round(n/1e6)) + ' млн';
+  if (Math.abs(n) >= 1e3) return fmtInt(Math.round(n/1e3)) + ' тыс.';
+  return fmtInt(n);
+}
+function fmtPrice(n){
+  if (!n) return '—';
+  return fmtInt(Math.round(n/100)*100) + ' ₽';
+}
+function pct(n){ return Math.round(n) + '%'; }
+function esc(s){
+  return String(s==null?'':s).replace(/[&<>"']/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+  });
+}
+
+/* ---------------- logo (renders the branded mark inline, geometry per spec) --------------- */
+(function drawLogo(){
+  var svg = document.getElementById('logoSvg');
+  var ns = 'http://www.w3.org/2000/svg';
+  function line(pts, color){
+    var el = document.createElementNS(ns,'polyline');
+    el.setAttribute('points', pts.map(function(p){return p[0]+','+p[1];}).join(' '));
+    el.setAttribute('fill','none');
+    el.setAttribute('stroke', color);
+    el.setAttribute('stroke-width','9');
+    el.setAttribute('stroke-linecap','round');
+    el.setAttribute('stroke-linejoin','round');
+    svg.appendChild(el);
+  }
+  function dot(x,y,color){
+    var el = document.createElementNS(ns,'circle');
+    el.setAttribute('cx',x); el.setAttribute('cy',y); el.setAttribute('r','4.5');
+    el.setAttribute('fill', color);
+    svg.appendChild(el);
+  }
+  var frame = getComputedStyle(document.documentElement).getPropertyValue('--frame').trim() || '#c3ddd0';
+  var curve = getComputedStyle(document.documentElement).getPropertyValue('--green').trim() || '#5e8571';
+  line([[8,52],[8,8],[132,8],[132,52]], frame);
+  line([[8,88],[8,132],[132,132],[132,88]], frame);
+  [[8,52],[132,52],[8,88],[132,88]].forEach(function(p){ dot(p[0],p[1],frame); });
+  line([[0,82],[26,58],[50,30],[78,96],[108,52],[140,72]], curve);
+  [[0,82],[140,72]].forEach(function(p){ dot(p[0],p[1],curve); });
+})();
+
+/* ---------------- lots helpers --------------- */
+var LOTS = DS.lots;
+function lv(row, name){ return row[F[name]]; }
+
+function appOf(row){ var a = lv(row,'applications'); return (a==null?1:a); }
+
+/* ---------------- KPI ---------------- */
+(function kpi(){
+  var n = LOTS.length;
+  var nmck = 0, ck = 0, paid = 0, declineSum=0, declineN=0, singleBid=0;
+  LOTS.forEach(function(r){
+    nmck += lv(r,'nmck')||0;
+    ck += lv(r,'ck')||0;
+    paid += lv(r,'paid')||0;
+    var d = lv(r,'declinePct');
+    if (d!=null){ declineSum+=d; declineN++; }
+    if (appOf(r)===1) singleBid++;
+  });
+  var items = [
+    {v: n, l:'лотов в реестре', color:'green'},
+    {v: fmtMoney(ck), l:'на них разыграно (ЦК)', color:'green'},
+    {v: pct(declineSum/declineN), l:'среднее снижение цены', color:'sand'},
+    {v: pct(singleBid/n*100), l:'лотов с одной заявкой', color:'red'},
+    {v: pct(paid/ck*100), l:'от ЦК фактически оплачено', color:'mint'},
+  ];
+  var html = items.map(function(it){
+    return '<div class="kpi" style="--kpi-accent:var(--'+it.color+')"><div class="v">'+it.v+'</div><div class="l">'+it.l+'</div></div>';
+  }).join('');
+  document.getElementById('kpiRow').innerHTML = html;
+
+  var manShare = manufacturerShare();
+  document.getElementById('bandText').innerHTML =
+    'Alcon и Bausch &amp; Lomb вместе держат <b>' + pct(manShare) + ' суммы контрактов</b> рынка. ' +
+    'При этом в ' + pct(singleBid/n*100) + ' лотов не было конкуренции вообще — заявку подавал один участник, ' +
+    'и торговаться было не с кем.';
+})();
+
+function manufacturerShare(){
+  var ck = 0, top2 = 0;
+  var byMan = {};
+  LOTS.forEach(function(r){ byMan[lv(r,'manufacturer')] = (byMan[lv(r,'manufacturer')]||0) + (lv(r,'ck')||0); ck += lv(r,'ck')||0; });
+  var sorted = Object.keys(byMan).map(function(k){return byMan[k];}).sort(function(a,b){return b-a;});
+  top2 = (sorted[0]||0) + (sorted[1]||0);
+  return top2/ck*100;
+}
+
+/* ---------------- bars helper ---------------- */
+function renderBars(containerId, rows, opts){
+  opts = opts||{};
+  var max = opts.max || Math.max.apply(null, rows.map(function(r){return r.value;}));
+  var html = rows.map(function(r){
+    var w = Math.max(r.value/max*100, 2);
+    return '<div class="row">' +
+      '<div class="rowtop"><span>'+esc(r.label)+'</span><span class="val" style="--accent-c:var(--'+(r.color||'green')+')">'+esc(r.valueLabel)+'</span></div>' +
+      '<div class="track"><div class="fill" style="width:'+w+'%; --accent-c:var(--'+(r.color||'green')+')"></div></div>' +
+      (r.note? '<div class="note">'+esc(r.note)+'</div>' : '') +
+      '</div>';
+  }).join('');
+  document.getElementById(containerId).innerHTML = html;
+}
+
+/* ---------- competition bars ---------- */
+(function(){
+  var n = LOTS.length;
+  var buckets = {1:0,2:0,'3+':0};
+  LOTS.forEach(function(r){
+    var a = appOf(r);
+    if (a<=1) buckets['1']++; else if (a===2) buckets['2']++; else buckets['3+']++;
+  });
+  renderBars('competitionBars', [
+    {label:'1 заявка — конкуренции нет', value:buckets['1'], valueLabel: pct(buckets['1']/n*100), note: buckets['1']+' лотов из '+n, color:'red'},
+    {label:'2 заявки', value:buckets['2'], valueLabel: pct(buckets['2']/n*100), note: buckets['2']+' лотов', color:'sand'},
+    {label:'3 заявки и больше', value:buckets['3+'], valueLabel: pct(buckets['3+']/n*100), note: buckets['3+']+' лотов', color:'green'},
+  ], {max:n});
+})();
+
+/* ---------- manufacturer bars (top 5) ---------- */
+(function(){
+  var byMan = {};
+  LOTS.forEach(function(r){
+    var m = DS.manufacturers[lv(r,'manufacturer')];
+    byMan[m] = byMan[m] || {sum:0,n:0};
+    byMan[m].sum += lv(r,'ck')||0; byMan[m].n++;
+  });
+  var totalCk = LOTS.reduce(function(a,r){return a+(lv(r,'ck')||0);},0);
+  var arr = Object.keys(byMan).map(function(k){return {name:k, sum:byMan[k].sum, n:byMan[k].n};});
+  arr.sort(function(a,b){return b.sum-a.sum;});
+  var top = arr.slice(0,5);
+  var colors=['green','sand','mint','red','green'];
+  renderBars('manufacturerBars', top.map(function(m,i){
+    return {label: m.name+' — '+fmtMoney(m.sum), value: m.sum, valueLabel: pct(m.sum/totalCk*100), note: m.n+' лот'+(m.n===1?'':(m.n<5?'а':'ов')), color: colors[i%colors.length]};
+  }), {max: top[0].sum});
+})();
+
+/* ---------- segment bars ---------- */
+(function(){
+  var bySeg = {0:{sum:0,n:0},1:{sum:0,n:0}};
+  LOTS.forEach(function(r){ var s=lv(r,'segment'); bySeg[s].sum += lv(r,'ck')||0; bySeg[s].n++; });
+  var total = bySeg[0].sum+bySeg[1].sum;
+  renderBars('segmentBars', [
+    {label: DS.segments[1], value: bySeg[1].sum, valueLabel: pct(bySeg[1].sum/total*100), note: bySeg[1].n+' лотов · '+fmtMoney(bySeg[1].sum), color:'green'},
+    {label: DS.segments[0], value: bySeg[0].sum, valueLabel: pct(bySeg[0].sum/total*100), note: bySeg[0].n+' лотов · '+fmtMoney(bySeg[0].sum), color:'mint'},
+  ], {max: total});
+})();
+
+/* ---------- rent bars + status details ---------- */
+(function(){
+  var buy = {sum:0,n:0}, rent = {sum:0,n:0};
+  LOTS.forEach(function(r){ var t = lv(r,'isRent')? rent: buy; t.sum += lv(r,'ck')||0; t.n++; });
+  var total = buy.sum+rent.sum;
+  renderBars('rentBars', [
+    {label:'Покупка', value:buy.sum, valueLabel: buy.n+' лотов', note: fmtMoney(buy.sum), color:'green'},
+    {label:'Аренда', value:rent.sum, valueLabel: rent.n+' лотов', note: fmtMoney(rent.sum)+' — в среднем '+fmtMoney(rent.sum/rent.n)+' за контракт', color:'sand'},
+  ], {max: total});
+
+  var byStatus = {};
+  LOTS.forEach(function(r){ var s = lv(r,'status'); byStatus[s] = byStatus[s]||{n:0,sum:0}; byStatus[s].n++; byStatus[s].sum += lv(r,'ck')||0; });
+  var order = ['Исполнено','Исполняется','Прекращено','Не указан'];
+  var rows = order.filter(function(s){return byStatus[s];}).map(function(s){
+    return '<tr><td>'+s+'</td><td class="num">'+byStatus[s].n+'</td><td class="num">'+fmtMoney(byStatus[s].sum)+'</td></tr>';
+  }).join('');
+  document.getElementById('statusDetails').innerHTML =
+    '<table class="simple"><thead><tr><th>Статус контракта</th><th class="num">Лотов</th><th class="num">ЦК</th></tr></thead><tbody>'+rows+'</tbody></table>' +
+    '<div class="note" style="margin-top:10px">«Прекращено» — контракт в реестре помечен как не исполненный до конца; это не всегда означает срыв по вине поставщика, но по факту система в клинику не доехала.</div>';
+})();
+
+/* ---------- findings grid (customer-level) ---------- */
+(function(){
+  var byCustomer = {};
+  LOTS.forEach(function(r, i){
+    var c = lv(r,'customer');
+    byCustomer[c] = byCustomer[c]||{n:0, sum:0, terminated:0, terminatedSum:0, delivered0:0};
+    byCustomer[c].n++;
+    byCustomer[c].sum += lv(r,'ck')||0;
+    if (lv(r,'status')==='Прекращено'){ byCustomer[c].terminated++; byCustomer[c].terminatedSum += lv(r,'ck')||0; }
+  });
+  var worst = Object.keys(byCustomer).map(function(k){ return {name:DS.customers[k].name, inn:DS.customers[k].inn, region:DS.regions[DS.customers[k].region], data:byCustomer[k]}; })
+    .filter(function(x){return x.data.terminated>0;})
+    .sort(function(a,b){return b.data.terminatedSum-a.data.terminatedSum;});
+  var top = worst[0];
+
+  var complLots = LOTS.filter(function(r){return lv(r,'complaint');});
+  var complSum = complLots.reduce(function(a,r){return a+(lv(r,'ck')||0);},0);
+
+  var moscowLots = LOTS.filter(function(r){ var reg = DS.regions[lv(r,'region')]; return reg==='Москва Город'||reg==='Московская Область'; });
+  var moscowSum = moscowLots.reduce(function(a,r){return a+(lv(r,'ck')||0);},0);
+  var totalCk = LOTS.reduce(function(a,r){return a+(lv(r,'ck')||0);},0);
+
+  var priceBySeg = {0:[],1:[]};
+  LOTS.forEach(function(r){
+    if ((lv(r,'unit')==='Штука'||lv(r,'unit')==='Комплект') && lv(r,'unitPrice')) priceBySeg[lv(r,'segment')].push(lv(r,'unitPrice'));
+  });
+  function median(a){ a=a.slice().sort(function(x,y){return x-y;}); var m=Math.floor(a.length/2); return a.length%2? a[m] : (a[m-1]+a[m])/2; }
+
+  var findings = [
+    {
+      tag: 'Крупнейший заказчик с проблемой',
+      h: top? (top.name.length>46? top.name.slice(0,46)+'…' : top.name) : '',
+      d: top? ('Из '+top.data.n+' лотов этого заказчика '+top.data.terminated+' помечены статусом «исполнение прекращено» на общую сумму '+fmtMoney(top.data.terminatedSum)+'. В большинстве случаев в реестре указано 0 поставленных единиц.') : ''
+    },
+    {
+      tag: 'Жалобы в ФАС',
+      h: complLots.length+' лотов из '+LOTS.length+' — с жалобой',
+      d: 'Суммарно это '+fmtMoney(complSum)+' контрактов, которые прошли через оспаривание в антимонопольной службе, при том что рынок в целом почти не торгуется.'
+    },
+    {
+      tag: 'География денег',
+      h: 'Москва и область — '+pct(moscowSum/totalCk*100)+'% суммы рынка',
+      d: moscowLots.length+' лотов из '+LOTS.length+' приходится на Москву и Московскую область; остальные 29 регионов делят между собой оставшуюся часть.'
+    },
+    {
+      tag: 'Разброс цены системы',
+      h: 'Комплекс с витрэктомией стоит вдвое дороже',
+      d: 'Медианная цена системы только для факоэмульсификации — '+fmtMoney(median(priceBySeg[0]))+', а для комбинированной системы фако+витрэктомия — '+fmtMoney(median(priceBySeg[1]))+'.'
+    },
+  ];
+  document.getElementById('findingsGrid').innerHTML = findings.map(function(f){
+    return '<div class="finding-card"><div class="tag">'+esc(f.tag)+'</div><h4>'+esc(f.h)+'</h4><p>'+esc(f.d)+'</p></div>';
+  }).join('');
+})();
+
+/* ================= DIRECTORY ================= */
+var METRICS = {
+  total: {label:'Общая', hint:'Общая — все лоты рынка: и аренда, и покупка.', filter:null},
+  rent: {label:'Аренда', hint:'Аренда — только лоты, где систему брали в аренду, а не покупали.', filter:function(r){ return lv(r,'isRent')===1; }},
+  buy: {label:'Покупка', hint:'Покупка — только лоты, где система куплена в собственность заказчика.', filter:function(r){ return lv(r,'isRent')===0; }}
+};
+var currentMetric = 'total';
+var currentTab = 'region';
+var currentSort = {key:'sum', dir:-1};
+var searchQuery = '';
+var openCards = []; // {type, idx}
+
+var TABS = [
+  {key:'region', label:'Регионы'},
+  {key:'customer', label:'ЛПУ / Заказчики'},
+  {key:'supplier', label:'Поставщики'},
+  {key:'manufacturer', label:'Производители'},
+];
+
+function buildIndex(lotsArr){
+  // returns map: type -> array of aggregated entity records, computed over lotsArr only
+  var idx = {region:{}, customer:{}, supplier:{}, manufacturer:{}};
+  function bucket(type, key){
+    if (!idx[type][key]) idx[type][key] = {
+      lots:[], n:0, nmck:0, ckSum:0, paidSum:0, qtySum:0, deliveredQtySum:0,
+      declineSum:0, declineN:0, appsSum:0,
+      customers:{}, suppliers:{}, manufacturers:{}, regions:{}
+    };
+    return idx[type][key];
+  }
+  lotsArr.forEach(function(r){
+    var region = lv(r,'region'), customer = lv(r,'customer'), supplier = lv(r,'supplier'), manufacturer = lv(r,'manufacturer');
+    [['region',region],['customer',customer],['supplier',supplier],['manufacturer',manufacturer]].forEach(function(pair){
+      var type=pair[0], key=pair[1];
+      var b = bucket(type,key);
+      b.lots.push(r);
+      b.n++;
+      b.nmck += lv(r,'nmck')||0;
+      b.ckSum += lv(r,'ck')||0;
+      b.paidSum += lv(r,'paid')||0;
+      b.qtySum += lv(r,'qty')||0;
+      b.deliveredQtySum += lv(r,'deliveredQty')||0;
+      var d = lv(r,'declinePct'); if (d!=null){ b.declineSum+=d; b.declineN++; }
+      b.appsSum += appOf(r);
+      b.customers[customer]=1; b.suppliers[supplier]=1; b.manufacturers[manufacturer]=1; b.regions[region]=1;
+    });
+  });
+  return idx;
+}
+var INDEX;
+function computeIndex(){
+  var mf = METRICS[currentMetric].filter;
+  var arr = mf ? LOTS.filter(mf) : LOTS;
+  INDEX = buildIndex(arr);
+}
+computeIndex();
+
+function entityName(type, key){
+  if (type==='region') return DS.regions[key];
+  if (type==='customer') return DS.customers[key].name;
+  if (type==='supplier') return DS.suppliers[key].name;
+  if (type==='manufacturer') return DS.manufacturers[key];
+}
+function entityInn(type,key){
+  if (type==='customer') return DS.customers[key].inn;
+  if (type==='supplier') return DS.suppliers[key].inn;
+  return '';
+}
+
+function metricRow(b){
+  var qty = b.qtySum;
+  var sum = b.ckSum;
+  var avgPrice = qty>0 ? sum/qty : null;
+  return {
+    n: b.n, nmck: b.nmck, ck: b.ckSum, qty: qty, sum: sum, avgPrice: avgPrice,
+    avgDecline: b.declineN? b.declineSum/b.declineN : 0,
+    avgApps: b.n? b.appsSum/b.n : 0,
+    nCustomers: Object.keys(b.customers).length,
+    nSuppliers: Object.keys(b.suppliers).length,
+    nManufacturers: Object.keys(b.manufacturers).length,
+    nRegions: Object.keys(b.regions).length,
+  };
+}
+
+var COLUMNS = {
+  region: [
+    {key:'name', label:'Регион'},
+    {key:'n', label:'Лоты', num:true},
+    {key:'nmck', label:'НМЦК', num:true, money:true},
+    {key:'sum', label:'ЦК', num:true, money:true},
+    {key:'avgDecline', label:'Ср. снижение', num:true, pctv:true},
+    {key:'avgApps', label:'Ср. заявок', num:true, dec:true},
+    {key:'nCustomers', label:'ЛПУ', num:true},
+    {key:'nSuppliers', label:'Поставщиков', num:true},
+  ],
+  customer: [
+    {key:'name', label:'Заказчик'},
+    {key:'inn', label:'ИНН'},
+    {key:'region_name', label:'Регион'},
+    {key:'n', label:'Лоты', num:true},
+    {key:'nmck', label:'НМЦК', num:true, money:true},
+    {key:'sum', label:'ЦК', num:true, money:true},
+    {key:'avgDecline', label:'Ср. снижение', num:true, pctv:true},
+    {key:'avgApps', label:'Ср. заявок', num:true, dec:true},
+    {key:'nSuppliers', label:'Поставщиков', num:true},
+  ],
+  supplier: [
+    {key:'name', label:'Поставщик'},
+    {key:'inn', label:'ИНН'},
+    {key:'n', label:'Лоты', num:true},
+    {key:'sum', label:'ЦК', num:true, money:true},
+    {key:'avgPrice', label:'Ср. цена', num:true, money:true},
+    {key:'avgDecline', label:'Ср. снижение', num:true, pctv:true},
+    {key:'nCustomers', label:'ЛПУ', num:true},
+    {key:'nRegions', label:'Регионов', num:true},
+    {key:'nManufacturers', label:'Марок', num:true},
+  ],
+  manufacturer: [
+    {key:'name', label:'Производитель'},
+    {key:'n', label:'Лоты', num:true},
+    {key:'sum', label:'ЦК', num:true, money:true},
+    {key:'avgPrice', label:'Ср. цена системы', num:true, money:true},
+    {key:'avgDecline', label:'Ср. снижение', num:true, pctv:true},
+    {key:'nCustomers', label:'ЛПУ', num:true},
+    {key:'nSuppliers', label:'Поставщиков', num:true},
+    {key:'nRegions', label:'Регионов', num:true},
+  ],
+};
+
+function getRows(type){
+  var idx = INDEX[type];
+  var rows = Object.keys(idx).map(function(key){
+    var b = idx[key];
+    var m = metricRow(b);
+    var row = Object.assign({key:key, type:type, name: entityName(type,key), inn: entityInn(type,key)}, m);
+    if (type==='customer') row.region_name = DS.regions[DS.customers[key].region];
+    return row;
+  });
+  if (searchQuery){
+    var q = searchQuery.toLowerCase();
+    rows = rows.filter(function(r){
+      return (r.name||'').toLowerCase().indexOf(q)>=0 ||
+             (r.inn||'').toLowerCase().indexOf(q)>=0 ||
+             (r.region_name||'').toLowerCase().indexOf(q)>=0;
+    });
+  }
+  rows.sort(function(a,b){
+    var k = currentSort.key;
+    var av = a[k], bv = b[k];
+    if (typeof av === 'string' || typeof bv === 'string'){
+      av = (av||''); bv = (bv||'');
+      return currentSort.dir * av.localeCompare(bv, 'ru');
+    }
+    av = (av==null)?-Infinity:av; bv = (bv==null)?-Infinity:bv;
+    if (av<bv) return -1*currentSort.dir;
+    if (av>bv) return 1*currentSort.dir;
+    return 0;
+  });
+  return rows;
+}
+
+function renderTabs(){
+  document.getElementById('dirTabs').innerHTML = TABS.map(function(t){
+    return '<button class="dir-tab'+(t.key===currentTab?' active':'')+'" data-tab="'+t.key+'">'+t.label+'</button>';
+  }).join('');
+}
+function renderMetricSwitch(){
+  document.getElementById('metricSwitch').innerHTML = Object.keys(METRICS).map(function(k){
+    return '<button data-metric="'+k+'" class="'+(k===currentMetric?'active':'')+'">'+METRICS[k].label+'</button>';
+  }).join('');
+  document.getElementById('metricHint').textContent = METRICS[currentMetric].hint;
+}
+
+function renderTable(){
+  var cols = COLUMNS[currentTab];
+  var rows = getRows(currentTab);
+  document.getElementById('dirCount').textContent = 'Показано '+rows.length+' из '+Object.keys(INDEX[currentTab]).length;
+  document.getElementById('dirHead').innerHTML = cols.map(function(c){
+    var arrow = '';
+    if (currentSort.key===c.key) arrow = '<span class="arrow">'+(currentSort.dir===1?'↑':'↓')+'</span>';
+    else if (c.key==='sum' && !cols.some(function(cc){return cc.key===currentSort.key;})) arrow='';
+    return '<th data-key="'+c.key+'">'+c.label+arrow+'</th>';
+  }).join('');
+  document.getElementById('dirBody').innerHTML = rows.map(function(r){
+    var isOpen = openCards.some(function(o){return o.type===r.type && o.key===r.key;});
+    return '<tr class="'+(isOpen?'open-row':'')+'" data-type="'+r.type+'" data-key="'+esc(r.key)+'">' + cols.map(function(c){
+      var v = r[c.key];
+      var display;
+      if (c.key==='name') display = '<span class="name-cell">'+esc(v)+'</span>';
+      else if (c.key==='inn') display = '<span class="inn-cell">'+esc(v||'—')+'</span>';
+      else if (c.money) display = fmtMoney(v);
+      else if (c.pctv) display = pct(v);
+      else if (c.dec) display = (v||0).toFixed(2).replace('.',',');
+      else if (c.num) display = fmtInt(v);
+      else display = esc(v||'—');
+      return '<td class="'+(c.num?'num':'')+'">'+display+'</td>';
+    }).join('') + '</tr>';
+  }).join('');
+}
+
+function renderDirectory(){
+  renderTabs(); renderMetricSwitch(); renderTable();
+}
+
+document.getElementById('dirTabs').addEventListener('click', function(e){
+  var b = e.target.closest('[data-tab]'); if(!b) return;
+  currentTab = b.getAttribute('data-tab');
+  var cols = COLUMNS[currentTab];
+  if (!cols.some(function(c){return c.key===currentSort.key;})) currentSort = {key:'sum', dir:-1};
+  searchQuery = '';
+  document.getElementById('dirSearch').value = '';
+  renderDirectory();
+});
+document.getElementById('metricSwitch').addEventListener('click', function(e){
+  var b = e.target.closest('[data-metric]'); if(!b) return;
+  currentMetric = b.getAttribute('data-metric');
+  computeIndex();
+  renderDirectory();
+  openCards.forEach(renderOneCard);
+});
+document.getElementById('dirSearch').addEventListener('input', function(e){
+  searchQuery = e.target.value.trim();
+  renderTable();
+});
+document.getElementById('dirHead').addEventListener('click', function(e){
+  var th = e.target.closest('[data-key]'); if(!th) return;
+  var k = th.getAttribute('data-key');
+  if (currentSort.key===k) currentSort.dir *= -1;
+  else currentSort = {key:k, dir: (k==='name'||k==='inn'||k==='region_name')?1:-1};
+  renderTable();
+});
+document.getElementById('dirBody').addEventListener('click', function(e){
+  var tr = e.target.closest('tr'); if(!tr) return;
+  openCard(tr.getAttribute('data-type'), tr.getAttribute('data-key'));
+});
+
+/* -------- cards -------- */
+var cardCols = 2;
+document.getElementById('colsSwitch').addEventListener('click', function(e){
+  var b = e.target.closest('button'); if(!b) return;
+  cardCols = parseInt(b.getAttribute('data-cols'),10);
+  Array.from(document.querySelectorAll('#colsSwitch button')).forEach(function(x){x.classList.remove('active');});
+  b.classList.add('active');
+  document.getElementById('cardArea').style.setProperty('--cols', cardCols);
+  document.getElementById('cardArea').style.gridTemplateColumns = 'repeat('+cardCols+',1fr)';
+});
+document.getElementById('closeAllBtn').addEventListener('click', function(){
+  openCards = [];
+  document.getElementById('cardArea').innerHTML = '';
+  renderTable();
+});
+
+function openCard(type, key){
+  var existing = openCards.findIndex(function(o){return o.type===type && o.key===key;});
+  if (existing>=0){
+    var el = document.getElementById('card-'+type+'-'+key);
+    if (el){ el.scrollIntoView({behavior:'smooth', block:'nearest'}); el.classList.add('highlight'); setTimeout(function(){el.classList.remove('highlight');},900); }
+    return;
+  }
+  openCards.push({type:type, key:key});
+  var area = document.getElementById('cardArea');
+  var div = document.createElement('div');
+  div.className = 'pcard';
+  div.id = 'card-'+type+'-'+key;
+  area.appendChild(div);
+  renderOneCard({type:type, key:key});
+  renderTable();
+}
+function closeCard(type, key){
+  openCards = openCards.filter(function(o){ return !(o.type===type && o.key===key); });
+  var el = document.getElementById('card-'+type+'-'+key);
+  if (el) el.remove();
+  renderTable();
+}
+
+var TYPE_LABEL = {region:'Регион', customer:'ЛПУ / Заказчик', supplier:'Поставщик', manufacturer:'Производитель'};
+
+function subTable(title, rows, cols, onLink){
+  if (!rows.length) return '';
+  var LIMIT = 30;
+  var shown = rows.slice(0, LIMIT);
+  var html = '<div class="pc-sub-table"><div class="stt">'+esc(title)+(rows.length>LIMIT? ' — показаны '+LIMIT+' крупнейших из '+rows.length : '')+'</div>';
+  html += '<table class="simple"><thead><tr>'+cols.map(function(c){return '<th'+(c.num?' class="num"':'')+'>'+c.label+'</th>';}).join('')+'</tr></thead><tbody>';
+  html += shown.map(function(r){
+    return '<tr>'+cols.map(function(c){
+      var v = c.render? c.render(r) : r[c.key];
+      return '<td'+(c.num?' class="num"':'')+'>'+v+'</td>';
+    }).join('')+'</tr>';
+  }).join('');
+  html += '</tbody></table></div>';
+  return html;
+}
+
+function linkSpan(type,key,label){
+  return '<span class="pc-link" data-link-type="'+type+'" data-link-key="'+esc(key)+'">'+esc(label)+'</span>';
+}
+
+function renderOneCard(o){
+  var type=o.type, key=o.key;
+  var el = document.getElementById('card-'+type+'-'+key);
+  if (!el) return;
+  var name = entityName(type,key);
+  var inn = entityInn(type,key);
+  var b = INDEX[type][key];
+  if (!b){
+    el.innerHTML =
+      '<div class="pc-head"><div><div class="pc-type">'+TYPE_LABEL[type]+'</div><h4>'+esc(name)+'</h4>'+
+      '<div class="pc-sub">'+(inn? 'ИНН '+esc(inn) : '')+'</div></div>'+
+      '<button class="pc-close" data-close="1">×</button></div>' +
+      '<div class="pc-empty">По фильтру «'+esc(METRICS[currentMetric].label)+'» у этого участника лотов нет.</div>';
+    el.querySelector('[data-close]').addEventListener('click', function(){ closeCard(type,key); });
+    return;
+  }
+  var m = metricRow(b);
+
+  var statHtml = '<div class="pc-stats">' + [
+    ['Лоты', fmtInt(m.n)],
+    ['НМЦК', fmtMoney(m.nmck)],
+    ['ЦК', fmtMoney(m.ck)],
+    ['Кол-во', fmtInt(m.qty)],
+    ['Ср. цена', m.avgPrice? fmtMoney(m.avgPrice) : '—'],
+    ['Ср. снижение', pct(m.avgDecline)],
+    ['Ср. заявок', m.avgApps.toFixed(2).replace('.',',')],
+  ].map(function(p){ return '<div class="pc-stat"><div class="v">'+p[1]+'</div><div class="l">'+p[0]+'</div></div>'; }).join('') + '</div>';
+
+  var noteHtml = '';
+  if (currentMetric !== 'total'){
+    noteHtml = '<div class="pc-note">Фильтр «'+esc(METRICS[currentMetric].label)+'»: показаны только '+(currentMetric==='rent'?'арендные':'закупленные в собственность')+' лоты этого участника.</div>';
+  }
+
+  var subHtml = '';
+  if (type==='region'){
+    var custRows = Object.keys(b.customers).map(function(ck2){ return {key:ck2, name:DS.customers[ck2].name, sum: LOTS.filter(function(r){return lv(r,'customer')==ck2 && lv(r,'region')==key;}).reduce(function(a,r){return a+(lv(r,'ck')||0);},0)}; }).sort(function(a,bx){return bx.sum-a.sum;});
+    var suppRows = Object.keys(b.suppliers).map(function(sk){ return {key:sk, name:DS.suppliers[sk].name}; });
+    subHtml += subTable('ЛПУ в регионе', custRows, [
+      {label:'Заказчик', render:function(r){return linkSpan('customer',r.key,r.name);}},
+      {label:'ЦК', num:true, render:function(r){return fmtMoney(r.sum);}},
+    ]);
+    subHtml += subTable('Поставщики, работавшие в регионе', suppRows, [
+      {label:'Поставщик', render:function(r){return linkSpan('supplier',r.key,r.name);}},
+    ]);
+  } else if (type==='customer'){
+    var sup2 = {};
+    b.lots.forEach(function(r){ var sk=lv(r,'supplier'); sup2[sk]=(sup2[sk]||0)+(lv(r,'ck')||0); });
+    var supRows = Object.keys(sup2).map(function(sk){return {key:sk,name:DS.suppliers[sk].name, sum:sup2[sk]};}).sort(function(a,bx){return bx.sum-a.sum;});
+    var man2 = {};
+    b.lots.forEach(function(r){ var mk=lv(r,'manufacturer'); man2[mk]=(man2[mk]||0)+(lv(r,'ck')||0); });
+    var manRows = Object.keys(man2).map(function(mk){return {key:mk,name:DS.manufacturers[mk], sum:man2[mk]};}).sort(function(a,bx){return bx.sum-a.sum;});
+    subHtml += subTable('Поставщики', supRows, [
+      {label:'Поставщик', render:function(r){return linkSpan('supplier',r.key,r.name);}},
+      {label:'ЦК', num:true, render:function(r){return fmtMoney(r.sum);}},
+    ]);
+    subHtml += subTable('Производители', manRows, [
+      {label:'Производитель', render:function(r){return linkSpan('manufacturer',r.key,r.name);}},
+      {label:'ЦК', num:true, render:function(r){return fmtMoney(r.sum);}},
+    ]);
+    subHtml += subTable('Лоты заказчика', b.lots.map(function(r){return {reg:lv(r,'regTender'), status:lv(r,'status'), sum:lv(r,'ck')};}), [
+      {label:'№ извещения', render:function(r){return esc(r.reg);}},
+      {label:'Статус', render:function(r){return esc(r.status);}},
+      {label:'ЦК', num:true, render:function(r){return fmtMoney(r.sum);}},
+    ]);
+  } else if (type==='supplier'){
+    var cust2 = {};
+    b.lots.forEach(function(r){ var ck2=lv(r,'customer'); cust2[ck2]=(cust2[ck2]||0)+(lv(r,'ck')||0); });
+    var custRows2 = Object.keys(cust2).map(function(ck2){return {key:ck2,name:DS.customers[ck2].name, sum:cust2[ck2]};}).sort(function(a,bx){return bx.sum-a.sum;});
+    var man3 = {};
+    b.lots.forEach(function(r){ var mk=lv(r,'manufacturer'); man3[mk]=(man3[mk]||0)+(lv(r,'ck')||0); });
+    var manRows3 = Object.keys(man3).map(function(mk){return {key:mk,name:DS.manufacturers[mk], sum:man3[mk]};}).sort(function(a,bx){return bx.sum-a.sum;});
+    subHtml += subTable('ЛПУ-клиенты', custRows2, [
+      {label:'Заказчик', render:function(r){return linkSpan('customer',r.key,r.name);}},
+      {label:'ЦК', num:true, render:function(r){return fmtMoney(r.sum);}},
+    ]);
+    subHtml += subTable('Марки, которые поставлял', manRows3, [
+      {label:'Производитель', render:function(r){return linkSpan('manufacturer',r.key,r.name);}},
+      {label:'ЦК', num:true, render:function(r){return fmtMoney(r.sum);}},
+    ]);
+  } else if (type==='manufacturer'){
+    var sup3 = {};
+    b.lots.forEach(function(r){ var sk=lv(r,'supplier'); sup3[sk]=(sup3[sk]||0)+(lv(r,'ck')||0); });
+    var supRows3 = Object.keys(sup3).map(function(sk){return {key:sk,name:DS.suppliers[sk].name, sum:sup3[sk]};}).sort(function(a,bx){return bx.sum-a.sum;});
+    var cust3 = {};
+    b.lots.forEach(function(r){ var ck2=lv(r,'customer'); cust3[ck2]=(cust3[ck2]||0)+(lv(r,'ck')||0); });
+    var custRows3 = Object.keys(cust3).map(function(ck2){return {key:ck2,name:DS.customers[ck2].name, sum:cust3[ck2]};}).sort(function(a,bx){return bx.sum-a.sum;});
+    subHtml += subTable('Поставщики', supRows3, [
+      {label:'Поставщик', render:function(r){return linkSpan('supplier',r.key,r.name);}},
+      {label:'ЦК', num:true, render:function(r){return fmtMoney(r.sum);}},
+    ]);
+    subHtml += subTable('ЛПУ, где стоит эта система', custRows3, [
+      {label:'Заказчик', render:function(r){return linkSpan('customer',r.key,r.name);}},
+      {label:'ЦК', num:true, render:function(r){return fmtMoney(r.sum);}},
+    ]);
+  }
+
+  el.innerHTML =
+    '<div class="pc-head"><div><div class="pc-type">'+TYPE_LABEL[type]+'</div><h4>'+esc(name)+'</h4>'+
+    '<div class="pc-sub">'+(inn? 'ИНН '+esc(inn) : '')+'</div></div>'+
+    '<button class="pc-close" data-close="1">×</button></div>' +
+    statHtml + noteHtml + subHtml;
+
+  el.querySelector('[data-close]').addEventListener('click', function(){ closeCard(type,key); });
+  Array.from(el.querySelectorAll('[data-link-type]')).forEach(function(s){
+    s.addEventListener('click', function(){ openCard(s.getAttribute('data-link-type'), s.getAttribute('data-link-key')); });
+  });
+}
+
+/* ---------------- conclusions ---------------- */
+(function(){
+  var items = [
+    {k:'Дуополия — не аномалия, а правило игры', d:'Alcon и Bausch & Lomb вместе закрывают почти 80% суммы рынка. Если вы поставщик другого бренда, конкурировать нужно не ценой, а тем, чего нет у крупных игроков: сроками, сервисом, локальным присутствием.'},
+    {k:'79% лотов без конкуренции — это возможность, а не приговор', d:'Единственная заявка чаще объясняется узкими техническими требованиями или тем, что заказчик заранее определился с поставщиком через демонстрацию оборудования и переговоры — обычная предпродажная работа, а не нарушение.'},
+    {k:'Срывы поставок концентрируются у отдельных заказчиков', d:'Прежде чем участвовать в закупке конкретного ЛПУ, стоит посмотреть его историю исполнения контрактов в реестре — у части заказчиков доля прекращённых контрактов кратно выше средней.'},
+    {k:'Аренда — рабочий инструмент для клиник без капекса', d:'5-летняя аренда обходится примерно в ту же сумму, что и покупка, но не требует единовременного платежа — это ниша для поставщиков, готовых предложить финансовую схему, а не только оборудование.'},
+    {k:'Комбинированная система — уже не премиум, а норма', d:'60% денег рынка уходит на системы факоэмульсификации с витрэктомией: заказчики закладывают в бюджет универсальное решение, а не экономят на моно-функции.'},
+    {k:'Деньги рынка сосредоточены в Москве', d:'53% суммы контрактов — это Москва и область. Для регионального поставщика это одновременно и сигнал, где меньше конкуренции за оставшуюся половину рынка.'},
+  ];
+  document.getElementById('conclGrid').innerHTML = items.map(function(it){
+    return '<div class="concl-card"><div class="k">'+esc(it.k)+'</div><div class="d">'+esc(it.d)+'</div></div>';
+  }).join('');
+})();
+
+/* ---------------- init ---------------- */
+document.getElementById('cardArea').style.gridTemplateColumns = 'repeat(2,1fr)';
+Array.from(document.querySelectorAll('#colsSwitch button')).forEach(function(b){ if(b.getAttribute('data-cols')==='2') b.classList.add('active'); });
+renderDirectory();
+
+})();
+
+</script>
+
+</body></html>

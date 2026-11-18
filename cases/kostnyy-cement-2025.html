@@ -1,0 +1,950 @@
+<!doctype html><html><head><!-- frame-runtime --><base href="/_f/1788177885-11c3/"><script>window.__FRAME_PREAMBLE={"v":1,"capabilities":{"artifact":"artifact.D_F1mx8d.js","assets":"assets.8Gk803W0.js","comments":"comments.GLuHR3zP.js","db":"db.h-3sndFg.js","downloads":"downloads.C3GSvEDP.js","embed":"embed.CxGAyc-v.js","mcp":"mcp.Bvma3qD7.js","network":"network.B5UA9Su4.js","notifications":"notifications.ssU4jy7G.js","permissions":"permissions.BNySkLV5.js","room":"room.BMMoe2BY.js","sample":"sample.BW2Uysoh.js","self":"artifact.D_F1mx8d.js","user":"user.BpKav-Rf.js"},"transforms":"_transforms.DSB5x63f.js","comments":"_comments.BoakUwmM.js","translate":"_translate.5HCW4BJh.js"}</script><script>(function(){"use strict";var te=["light","dark","system"],re=/^[A-Za-z0-9_-]{1,64}$/,$=/^[a-zA-Z_:][a-zA-Z0-9_:.-]{0,127}$/,ne=new Set(["class","hidden","value","checked","style","title","alt","placeholder","lang","dir","role","tabindex","disabled","readonly","contenteditable","open","colspan","rowspan"]);function oe(e){const t=e.toLowerCase();return t.startsWith("data-")||t.startsWith("aria-")||ne.has(t)}var Be="http://www.w3.org/1999/xhtml",se="http://www.w3.org/2000/svg",ae=new Set(["script","style","iframe","noscript","noframes","noembed","xmp","plaintext","template","title","textarea","object","embed"]),ie=new Set(["script","style"]);function ce(e){const t=e.localName.toLowerCase();return e.namespaceURI==="http://www.w3.org/1999/xhtml"?!ae.has(t):e.namespaceURI===se?!ie.has(t):!1}function M(e,t){return e===t||(e===160||e===32)&&(t===160||t===32)}function le(e,t){const r=e.length,n=t.length;let s=0;for(;s<r&&s<n&&M(e.charCodeAt(s),t.charCodeAt(s));)s++;let o=0;for(;o<r-s&&o<n-s&&M(e.charCodeAt(r-1-o),t.charCodeAt(n-1-o));)o++;return{p:s,s:o}}function ue(e,t){const r=e.firstChild;if(e.childNodes.length!==1||r===null||r.nodeType!==Node.TEXT_NODE){e.textContent=t;return}const n=r.data,s=n.length,o=t.length,{p:i,s:c}=le(n,t);i===s&&c===0&&s===o||r.replaceData(i,s-i-c,t.slice(i,o-c));const h=r.data,p=e.ownerDocument.getSelection?.()??null,w=p!==null&&p.rangeCount>0&&(p.anchorNode===r||p.focusNode===r)?{anchor:p.anchorNode,anchorOffset:p.anchorOffset,focus:p.focusNode,focusOffset:p.focusOffset}:null;let m=-1,g=-1;for(let f=0;f<h.length&&f<t.length;f++){const v=h.charCodeAt(f),b=t.charCodeAt(f);v!==b&&M(v,b)&&(m<0&&(m=f),g=f)}const a=m>=0;if(a&&r.replaceData(m,g-m+1,t.slice(m,g+1)),a&&w!==null&&w.anchor!==null&&w.focus!==null)try{p.setBaseAndExtent(w.anchor,w.anchorOffset,w.focus,w.focusOffset)}catch{}}var fe=new Set(["html","head","body","frameset"]);function de(e){return e.namespaceURI==="http://www.w3.org/1999/xhtml"&&fe.has(e.localName)}function pe(e){if(e===null||typeof e!="object")return!1;const t=e;if(typeof t.target!="string"||!re.test(t.target)||t.text!==void 0&&typeof t.text!="string")return!1;if(t.attrsSet!==void 0){if(t.attrsSet===null||typeof t.attrsSet!="object")return!1;for(const[r,n]of Object.entries(t.attrsSet))if(!$.test(r)||typeof n!="string")return!1}if(t.attrsRemoved!==void 0){if(!Array.isArray(t.attrsRemoved))return!1;for(const r of t.attrsRemoved)if(typeof r!="string"||!$.test(r))return!1}return!0}function me(e,t){if(e===null||typeof e!="object")return!1;const{seq:r,elements:n}=e;if(typeof r!="number"||!Number.isSafeInteger(r)||!Array.isArray(n)||n.length===0||n.length>64)return!1;for(let s=0;s<n.length;s++)if(!t(n[s]))return!1;return!0}function he(e){return e===null||typeof e!="object"?!1:me(e.__frame_patch,pe)}function _e(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_init;return t!==null&&typeof t=="object"}function ve(e){return e!==null&&typeof e=="object"&&e.__frame_size_poke===!0}function ye(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_theme;if(t===null||typeof t!="object")return!1;const r=t.theme;return typeof r=="string"&&te.includes(r)}var A=/^[\w.-]+\.js$/;function we(e,t,r){return r?"inert":typeof t=="string"&&A.test(t)?e?[t]:"inert":e?"inert":"framed"}function ge(){return{post(e,t){parent.postMessage(e,t)},on(e){const t=r=>{r.source===parent&&e(r.data,r.origin,r.isTrusted)};return addEventListener("message",t),()=>removeEventListener("message",t)}}}function be(){return{post:()=>{},on:()=>()=>{}}}var j="__frame_scroll",Ee=150,Ae=310,Se=160,Te=3e4;function ke(){let e=0,t=!1,r=!1,n=!1,s=0,o=null;const i=l=>{try{sessionStorage.setItem(j,JSON.stringify({y:l}))}catch{}},c=()=>{if(clearTimeout(e),o===null)return;const l=o;o=null,i(l)},h=()=>{if(t){t=!1;return}r=!0,o=scrollY,clearTimeout(e),e=setTimeout(c,Ee)};try{addEventListener("scroll",h,{passive:!0}),addEventListener("pagehide",c)}catch{}const p=()=>{let l;try{l=sessionStorage.getItem(j)}catch{return null}if(l===null)return null;let _;try{_=JSON.parse(l)}catch{_=null}const d=_?.y;if(!(typeof d=="number"&&Number.isFinite(d)&&d>=0)){try{sessionStorage.removeItem(j)}catch{}return null}return d};let w=!1;const m=l=>{try{const _=scrollY;scrollTo({top:l,left:0,behavior:"instant"}),s=l,n=!0,clearTimeout(e),o=null,i(l);const d=scrollY;d!==_&&(t=!0),d!==l&&!w&&(w=!0,addEventListener("load",()=>{try{if(scrollY===d){const T=p();m(T!==null?T:s)}}catch{}},{once:!0}))}catch{}},g=()=>{try{return!!location.hash}catch{return!0}};let a=!1;const f=()=>{try{if(a||innerWidth>Ae||innerHeight>Se)return;a=!0;const l=Date.now(),_=()=>{try{removeEventListener("resize",_)}catch{}if(Date.now()-l>Te||r||g())return;const d=p();m(d!==null?d:s)};addEventListener("resize",_)}catch{}};let v=!1,b=!1;return{restore(){if(v||(v=!0,g()))return;const l=p();l!==null&&(m(l),f())},promoted(){if(b||(b=!0,g()))return;const l=p();l!==null?(m(l),f()):n&&m(s)}}}function Re(e,t,r,n){let s=null;try{s=window.trustedTypes?.createPolicy("frame-runtime",{createScriptURL:h=>h})??null}catch{}const o=window.Worker,i=o?.prototype,c=Object.freeze({Worker:o,workerOn:i?.addEventListener,workerPost:i?.postMessage,workerTerminate:i?.terminate,fetch:window.fetch.bind(window),preventDefault:Event.prototype.preventDefault,policy:s,origins:t});r(e).then(h=>h?.bootTopLevel?h.bootTopLevel(c,n):n.settle()).catch(()=>n.settle())}var De="modulepreload",Ie=function(e){return"/"+e},Ue={},Le=function(t,r,n){let s=Promise.resolve();function o(i){const c=new Event("vite:preloadError",{cancelable:!0});if(c.payload=i,window.dispatchEvent(c),!c.defaultPrevented)throw i}return s.then(i=>{for(const c of i||[])c.status==="rejected"&&o(c.reason);return t().catch(o)})},Oe=window===top,q=Object.getOwnPropertyDescriptor(window,"claude"),k=we(Oe,window.__FRAME_PREAMBLE?.topLevel,q?.writable===!1),N=typeof k=="object"&&k[0],y=N?be():ge();(function(){const e=Object.defineProperty,t=globalThis,r=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let n=0;for(let s=0;s<r.length;s++){const o=r[s];try{e(t,o,{value:void 0,writable:!1,configurable:!1})}catch{try{delete t[o]}catch{}try{e(t,o,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof t[o]=="function"&&n++}if(n&&k==="framed")try{y.post({__frame_rtc_lockdown_failed:n},"*")}catch{}})();var Pe=1e4,Y=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function X(e){for(const t of Y)if(t.endsWith(":*"))try{const r=new URL(e);if(`${r.protocol}//${r.hostname}:*`===t)return!0}catch{}else if(e===t)return!0;return!1}var R=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),B=window.__FRAME_PREAMBLE?.transforms,D=window.__FRAME_PREAMBLE?.comments,I=window.__FRAME_PREAMBLE?.translate;function S(e){return Le(()=>import("/_runtime/"+e),void 0)}function G(e,t){return{contract:e.contract,changes:new Set(e.changes??[]),flags:new Set(e.flags??[]),capabilities:e.capabilities??{},capBudgets:e.capBudgets??{},transforms:new Map,shellOrigin:t,mount:x,hooks:O,pipe:()=>({wrap:(r,n)=>(...s)=>{try{return n(...s)}catch(o){return Promise.reject(o)}}})}}var L=null,E=null;function V(e,t,r){try{Object.defineProperty(e,t,{value:r,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(e,t,{value:r,writable:!1,configurable:!0,enumerable:!0})}catch{}}}var U=!1,O={editBefore:null,edit:null};function Ce(e,t,r=!1){const n=[];let s;if(r)try{O.editBefore?.(e)}catch{}for(const o of e.elements){const i=document.querySelector(`[data-id="${o.target}"]`);if(!i){s=o.target;break}if([...Object.keys(o.attrsSet??{}),...o.attrsRemoved??[]].some(c=>!oe(c))){s=o.target;break}if(o.text!==void 0&&(!ce(i)||de(i))){s=o.target;break}for(const[c,h]of Object.entries(o.attrsSet??{}))if(!J(i,c)){try{i.setAttribute(c,h)}catch{}Z(i,c,h)}for(const c of o.attrsRemoved??[])J(i,c)||(i.removeAttribute(c),Z(i,c,null));typeof o.text=="string"&&ue(i,o.text),n.push(o.target)}if(r)try{O.edit?.(e.seq,n,s)}catch{}if(s!==void 0){y.post({__frame_patch_miss:{seq:e.seq}},t);return}try{document.dispatchEvent(new CustomEvent("claude:edit",{detail:{seq:e.seq,targets:n}}))}catch{}}function Z(e,t,r){if(!(e instanceof HTMLInputElement))return;const n=t.toLowerCase();n==="checked"?e.checked=r!==null:n==="value"&&e.type!=="file"&&(e.value=r??"")}function J(e,t){const r=t.toLowerCase(),n=e;return r==="data-id"||(r==="value"||r==="checked")&&(n.__artifactSecret===!0||/^(password|hidden|file)$/.test(n.type??"")||/(^|\s)(cc-|one-time-code|current-password|new-password)/i.test(`${e.getAttribute("autocomplete")??""} ${n.autocomplete??""}`))}function Q(e){const t=document.documentElement;e==="light"||e==="dark"?(t.dataset.theme=e,t.style.colorScheme=e,U=!0):U&&(delete t.dataset.theme,t.style.colorScheme="",U=!1)}var P=new Map;function Me(){let e;const t={u:new Promise(r=>{e=r}),r:r=>{t.done=!0,e(r)},done:!1,nulled:!1};return t}function F(){for(const e of P.values())e.done||(e.nulled=!0,e.r(null))}var je=Object.freeze(Object.assign(Object.create(null),{call:Function.prototype.call,apply:Function.prototype.apply,bind:Function.prototype.bind})),x=(e,t)=>{const r=P.get(e);if(!r||r.done){r?.nulled&&E&&y.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:e}},E);return}const n=typeof t=="function"?Object.setPrototypeOf(t,je):Object.assign(Object.create(null),t);typeof n.then=="function"&&delete n.then,r.r(Object.freeze(n))};function ee(){const e=q?.value??{};V(window,"claude",e);for(const t of Object.keys(R)){if(e[t]!==void 0){V(e,t,e[t]);continue}P.set(t,Me())}if(e.use===void 0){const t=r=>{if(typeof r!="string"||!Object.hasOwn(R,r))return Promise.resolve(null);const n=P.get(r);return n?n.u:Promise.resolve(e[r]??null)};try{Object.defineProperty(e,"use",{value:t,writable:!0,configurable:!0,enumerable:!1})}catch{}}}if(k==="framed"){const e=B&&A.test(B)?S(B).catch(()=>{}):Promise.resolve(void 0),t=a=>{if(a.type==="auxclick"&&a.button!==1)return;const f=a.target,v=f&&f.closest?f.closest("a[href],area[href]"):null;if(!v)return;const b=v.getAttribute("href");if(!b)return;let l;try{l=new URL(b,document.baseURI)}catch{return}if((l.protocol==="http:"||l.protocol==="https:")&&l.origin!==location.origin){a.preventDefault();const _=(v.getAttribute("target")??"").toLowerCase(),d=a.type==="auxclick"||a.metaKey||a.ctrlKey||a.shiftKey||a.altKey||!["","_self","_top","_parent"].includes(_);y.post({__frame_nav:!0,url:l.href,newTab:d},"*")}};addEventListener("click",t,!0),addEventListener("auxclick",t,!0);const r={},n=a=>{a.isTrusted&&(r.pointer=!0)},s=a=>{a.isTrusted&&(r.click=!0)};addEventListener("pointermove",n,{capture:!0,passive:!0}),addEventListener("click",s,{capture:!0,passive:!0}),e.then(a=>{a?.wireNav&&(a.wireNav(),removeEventListener("click",t,!0),removeEventListener("auxclick",t,!0),removeEventListener("pointermove",n,!0),removeEventListener("click",s,!0),a.wireEngagement?.(r))});let o=null;try{o=ke()}catch{}ee();let i=null,c=null,h=0;const p=y.on((a,f)=>{X(f)&&_e(a)&&(i=a.__frame_init,E=f,p(),clearTimeout(h),c?.())});y.post({__frame_connect:!0},"*");const w=new Promise(a=>{c=a,h=setTimeout(()=>{p(),a()},Pe)}),m=document.readyState==="loading"?new Promise(a=>document.addEventListener("DOMContentLoaded",()=>a(),{once:!0})):Promise.resolve();m.then(()=>{try{o?.restore()}catch{}});const g={cb:null};y.on((a,f)=>{if(X(f)&&ve(a)){try{o?.promoted()}catch{}g.cb?.()}}),w.then(async()=>{if(!i||!E){F();return}Q(i.theme);const a=E;let f=!1,v=!1;y.on((u,z,C)=>{if(z!==a)return;ye(u)&&Q(u.__frame_theme.theme),he(u)&&Ce(u.__frame_patch,a,C);const H=u?.__fc_mode;H&&typeof H=="object"&&!f&&D&&A.test(D)&&(f=!0,S(D).then(K=>K.install?.(a,H.on===!0)).catch(()=>{}));const W=u?.__ft_cmd;W&&typeof W=="object"&&!v&&I&&A.test(I)&&(v=!0,S(I).then(K=>K.install?.(a,W)).catch(()=>{}))});const b=Object.keys(i.capabilities??{}).filter(u=>Object.hasOwn(R,u)).map(u=>[u,R[u]]).filter(u=>typeof u[1]=="string"&&A.test(u[1])),l=await Promise.allSettled(b.map(([,u])=>S(u))),_=await e,d=E;if(_?.buildBoot||y.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},d),_?.buildBoot)try{L=_.buildBoot(i,_.TRANSFORMS??{},{shellOrigin:d,mount:x,hooks:O},u=>y.post({__frame_cap_telemetry:u},d))}catch{y.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},d),L=G(i,d)}else L=G(i,d);const T=u=>y.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:u}},d),Ne=L;l.forEach((u,z)=>{const C=b[z][0];if(u.status!=="fulfilled"){T(C);return}try{u.value?.install?.(Ne)}catch{T(C)}}),F(),await m,y.post({__frame_ready:!0},E),e.then(u=>u?.installSizeReporter?.(d,g))})}else N&&(ee(),Re(N,Y,S,{settle:F,mount:x}))})();</script><!-- /frame-runtime --><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
+<title>Костный цемент 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;600;700&family=Golos+Text:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#eef1ee; --surface:#ffffff; --surface-2:#f7f9f7;
+  --ink:#14231e; --ink-2:#3d514a; --muted:#61736c; --line:#dbe3de;
+  --brand:#1f5a48; --brand-deep:#132a24; --mint:#9ec9b8;
+  --c1:#0d7d5c; --c2:#c17a12; --c3:#b12f20; --c4:#1f6fb5;
+  --track:#e6ebe8; --shadow:0 1px 2px rgba(19,42,36,.06),0 8px 24px rgba(19,42,36,.05);
+  --focus:#0d7d5c;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0d1411; --surface:#151f1b; --surface-2:#1a2622;
+    --ink:#e9efeb; --ink-2:#c2d0ca; --muted:#8fa199; --line:#25332d;
+    --brand:#5fa389; --brand-deep:#0a110e; --mint:#9ec9b8;
+    --c1:#2ea281; --c2:#d69a35; --c3:#d9584a; --c4:#4c94d6;
+    --track:#22302a; --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px rgba(0,0,0,.28);
+    --focus:#2ea281;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0d1411; --surface:#151f1b; --surface-2:#1a2622;
+  --ink:#e9efeb; --ink-2:#c2d0ca; --muted:#8fa199; --line:#25332d;
+  --brand:#5fa389; --brand-deep:#0a110e; --mint:#9ec9b8;
+  --c1:#2ea281; --c2:#d69a35; --c3:#d9584a; --c4:#4c94d6;
+  --track:#22302a; --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px rgba(0,0,0,.28);
+  --focus:#2ea281;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Golos Text","Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.55;
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Bitter,Georgia,serif;text-wrap:balance;margin:0}
+.num{font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:4px}
+
+.topbar{background:var(--brand-deep);color:#eaf2ee}
+.topbar-in{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.mark{width:44px;height:44px;flex:none}
+.bname{font-family:Bitter,Georgia,serif;font-weight:700;font-size:20px;line-height:1.1}
+.btag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9ec9b8}
+.tcontacts{margin-left:auto;display:flex;gap:18px;align-items:center;font-size:14px;flex-wrap:wrap}
+.tcontacts a{color:#cfe3d9;text-decoration:none;border-bottom:1px solid rgba(158,201,184,.35)}
+.tcontacts a:hover{color:#fff;border-bottom-color:#fff}
+.tg{font-weight:600;color:#9ec9b8}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px 72px}
+section{margin-top:52px}
+.eyebrow{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:10px}
+h2{font-size:26px;font-weight:600;letter-spacing:-.01em;margin-bottom:6px}
+h3{font-size:18px;font-weight:600;margin-bottom:4px}
+.lead{color:var(--ink-2);max-width:68ch;margin:8px 0 0}
+.small{font-size:14px;color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px 24px;box-shadow:var(--shadow)}
+.grid{display:grid;gap:16px}
+@media(min-width:760px){.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}}
+
+.hero{padding:44px 0 0}
+.hero h1{font-size:clamp(32px,5.2vw,50px);font-weight:700;letter-spacing:-.02em;line-height:1.08}
+.hero .sub{margin-top:12px;font-size:18px;color:var(--ink-2);max-width:60ch}
+.srcline{margin-top:18px;font-size:13px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chip{border:1px solid var(--line);border-radius:999px;padding:3px 11px;background:var(--surface);font-size:12.5px;color:var(--ink-2)}
+
+.kpis{display:grid;gap:12px;grid-template-columns:repeat(2,1fr);margin-top:28px}
+@media(min-width:700px){.kpis{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1000px){.kpis{grid-template-columns:repeat(6,1fr)}}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 16px 14px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.kpi::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--c1)}
+.kpi.amber::before{background:var(--c2)} .kpi.clay::before{background:var(--c3)} .kpi.blue::before{background:var(--c4)}
+.kpi .v{font-family:Bitter,Georgia,serif;font-size:27px;font-weight:700;line-height:1.1;letter-spacing:-.01em}
+.kpi .l{font-size:13px;color:var(--muted);margin-top:5px}
+
+.band{background:var(--brand-deep);color:#f0f6f3;border-radius:10px;padding:26px 28px;margin-top:34px}
+.band .k{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:#9ec9b8;font-weight:600}
+.band p{margin:10px 0 0;font-family:Bitter,Georgia,serif;font-size:21px;line-height:1.4;font-weight:500;max-width:56ch}
+.band .foot{margin-top:14px;font-size:14px;color:#a9c4b8;font-family:"Golos Text",sans-serif}
+
+.bars{margin-top:6px}
+.row{padding:11px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.rtop{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.rlab{font-weight:500;font-size:15.5px}
+.rval{font-weight:600;font-size:15.5px;white-space:nowrap}
+.track{height:9px;background:var(--track);border-radius:5px;margin-top:8px;overflow:hidden}
+.fill{height:100%;border-radius:5px;background:var(--c1)}
+.f2{background:var(--c2)} .f3{background:var(--c3)} .f4{background:var(--c4)} .fq{background:var(--mint)}
+.rnote{font-size:13px;color:var(--muted);margin-top:6px}
+
+.tblwrap{overflow-x:auto;margin-top:14px}
+table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:520px}
+th,td{text-align:right;padding:9px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child{text-align:left;white-space:normal}
+thead th{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600}
+tbody tr:hover{background:var(--surface-2)}
+td.num,th.num{font-variant-numeric:tabular-nums}
+details{margin-top:12px}
+summary{cursor:pointer;font-size:14px;color:var(--brand);font-weight:500}
+
+.months{display:grid;grid-template-columns:repeat(12,1fr);gap:6px;align-items:end;height:170px;margin-top:18px}
+.mo{display:flex;flex-direction:column;justify-content:flex-end;height:100%;gap:6px}
+.mo .b{background:var(--c1);border-radius:4px 4px 0 0;min-height:3px}
+.mo.hi .b{background:var(--c3)}
+.mo .m{font-size:11px;color:var(--muted);text-align:center}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:13.5px;color:var(--ink-2)}
+.sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+
+.finds{display:grid;gap:14px;margin-top:8px}
+.find{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--c1);border-radius:8px;padding:18px 22px;box-shadow:var(--shadow)}
+.find h3{font-size:17.5px}
+.find p{margin:6px 0 0;color:var(--ink-2);font-size:15.5px}
+.find.a{border-left-color:var(--c2)} .find.c{border-left-color:var(--c3)} .find.b{border-left-color:var(--c4)}
+.risks{padding-left:20px}
+.risks li{margin-bottom:9px;color:var(--ink-2)}
+
+/* ---------- profiles explorer ---------- */
+.explorer{background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);margin-top:18px;overflow:visible}
+.exbar{position:sticky;top:0;z-index:6;display:flex;gap:18px;align-items:center;flex-wrap:wrap;
+  padding:12px 24px;background:var(--brand-deep);color:#eaf2ee;border-radius:10px 10px 0 0}
+.fgroup{display:flex;align-items:center;gap:8px}
+.flab{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#9ec9b8;font-weight:600}
+.segs{display:flex;border:1px solid rgba(158,201,184,.35);border-radius:8px;overflow:hidden}
+.segs button{font:inherit;font-size:14px;padding:6px 13px;background:transparent;color:#cfe3d9;border:0;cursor:pointer}
+.segs button+button{border-left:1px solid rgba(158,201,184,.25)}
+.segs button[aria-pressed="true"]{background:#9ec9b8;color:#0d1411;font-weight:600}
+.mhint{font-size:12.5px;color:#a9c4b8;flex:1;min-width:220px;line-height:1.35}
+.ghost{font:inherit;font-size:13.5px;padding:6px 12px;border:1px solid rgba(158,201,184,.35);
+  border-radius:8px;background:transparent;color:#cfe3d9;cursor:pointer}
+.ghost:hover{background:rgba(158,201,184,.14)}
+.exhead{padding:18px 24px;border-bottom:1px solid var(--line);background:var(--surface-2)}
+.searchrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+#q{flex:1;min-width:240px;font:inherit;font-size:15px;padding:11px 14px;border:1px solid var(--line);
+  border-radius:8px;background:var(--surface);color:var(--ink)}
+#q::placeholder{color:var(--muted)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{font:inherit;font-size:14px;padding:9px 14px;border:1px solid var(--line);background:var(--surface);
+  color:var(--ink-2);border-radius:8px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--brand-deep);border-color:var(--brand-deep);color:#eaf2ee;font-weight:500}
+.hint{font-size:13px;color:var(--muted);margin-top:10px}
+.dirwrap{max-height:460px;overflow:auto;border-bottom:1px solid var(--line)}
+table.dir{width:100%;min-width:1040px;border-collapse:separate;border-spacing:0;font-size:13.5px}
+table.dir thead th{position:sticky;top:0;background:var(--surface-2);z-index:2;padding:0;border-bottom:1px solid var(--line)}
+.sortb{font:inherit;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);
+  font-weight:600;background:none;border:0;padding:10px 12px;cursor:pointer;width:100%;text-align:right;white-space:nowrap}
+table.dir thead th:first-child .sortb{text-align:left}
+.sortb:hover{color:var(--ink-2)}
+.sortb.on{color:var(--ink)}
+.arw{display:inline-block;width:12px;text-align:left}
+table.dir td{padding:8px 12px;border-bottom:1px solid var(--line);white-space:nowrap;text-align:right;
+  font-variant-numeric:tabular-nums}
+table.dir td:first-child{text-align:left;white-space:normal;min-width:210px;font-weight:500}
+.drow{cursor:pointer}
+.drow:hover td{background:var(--surface-2)}
+.empty{padding:24px;color:var(--muted);font-size:15px}
+
+.panels{display:grid;grid-template-columns:repeat(var(--cols,2),minmax(0,1fr));gap:16px;padding:16px 24px 24px}
+@media(max-width:820px){.panels{grid-template-columns:1fr}}
+.panel{border:1px solid var(--line);border-radius:10px;background:var(--surface-2);
+  display:flex;flex-direction:column;min-width:0;height:620px;min-height:220px;overflow:hidden;resize:both}
+.panel.flash{box-shadow:0 0 0 3px var(--c1)}
+.phead{display:flex;gap:12px;align-items:flex-start;padding:14px 18px;border-bottom:1px solid var(--line);
+  background:var(--surface);border-radius:10px 10px 0 0;position:sticky;top:0;z-index:2}
+.phead h3{font-size:17px;font-family:Bitter,Georgia,serif;line-height:1.25}
+.phead .kind{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.phead .meta{font-size:12.5px;color:var(--muted);margin-top:3px;font-variant-numeric:tabular-nums}
+.phead .x{margin-left:auto;font:inherit;font-size:20px;line-height:1;background:none;border:0;color:var(--muted);
+  cursor:pointer;padding:2px 6px;border-radius:6px}
+.phead .x:hover{background:var(--track);color:var(--ink)}
+.pbody{padding:14px 18px 20px;overflow:auto;flex:1}
+.stats{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(128px,1fr))}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.stat .v{font-family:Bitter,Georgia,serif;font-size:18px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.2}
+.stat .l{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.3}
+.pnote{margin-top:10px}
+.psec{margin-top:20px}
+.psec h4{margin:0 0 2px;font-size:14.5px;font-weight:600}
+.psec .ph{font-size:12.5px;color:var(--muted);margin-bottom:2px}
+.psec table{font-size:13.5px;min-width:440px}
+.psec th,.psec td{padding:7px 10px}
+.psec td:first-child{min-width:158px}
+.lnk{background:none;border:0;padding:0;font:inherit;color:var(--brand);cursor:pointer;text-align:left;
+  border-bottom:1px solid var(--line)}
+.lnk:hover{color:var(--c1);border-bottom-color:var(--c1)}
+.pill{display:inline-block;font-size:11px;padding:1px 7px;border-radius:999px;border:1px solid var(--line);
+  color:var(--muted);margin-left:6px;font-variant-numeric:tabular-nums}
+.approx{color:var(--muted);font-size:12px}
+
+.cta{background:var(--brand-deep);color:#eaf2ee;border-radius:10px;padding:30px 32px;margin-top:52px}
+.cta h2{color:#fff;font-size:23px}
+.cta p{color:#bcd4c8;max-width:62ch}
+.cta ul{color:#bcd4c8;padding-left:20px;margin:12px 0}
+.cta li{margin-bottom:5px}
+.cta a{color:#9ec9b8;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(158,201,184,.4)}
+.cta a:hover{color:#fff}
+footer{margin-top:26px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.frow{display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between}
+.copyright{margin:14px 0 0;font-size:12.5px;line-height:1.5;max-width:96ch;color:var(--muted)}
+.copysign{margin:8px 0 0;font-size:13px;color:var(--ink-2);font-weight:500;display:flex;align-items:center;gap:7px}
+.cmark{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;
+  border:1px solid var(--line);font-size:12px;color:var(--brand);font-weight:600}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <svg class="mark" viewBox="0 0 140 140" role="img" aria-label="ТендерСтат">
+      <g fill="none" stroke="#c3ddd0" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 52 L8 8 L132 8 L132 52"></path>
+        <path d="M8 88 L8 132 L132 132 L132 88"></path>
+      </g>
+      <path d="M0 82 L26 58 L50 30 L78 96 L108 52 L140 72" fill="none" stroke="#5e8571" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <div>
+      <div class="bname">ТендерСтат</div>
+      <div class="btag">Аналитика госзакупок</div>
+    </div>
+    <div class="tcontacts">
+      <a href="https://tenderstat.ru">tenderstat.ru</a>
+      <a href="mailto:info@tenderstat.ru">info@tenderstat.ru</a>
+      <span class="tg">@tendrstatt</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<div class="hero">
+  <h1>Костный цемент в госзакупках: разбор рынка за 2025 год</h1>
+  <p class="sub">365 разыгранных лотов на 1 млрд рублей. Рынок, где торг идёт меньше чем в каждом четвёртом рубле, а две марки держат почти три пятых законтрактованного объёма.</p>
+  <div class="srcline">
+    <span class="chip">44-ФЗ и 223-ФЗ</span>
+    <span class="chip">НМЦК больше 1 млн руб.</span>
+    <span class="chip">январь — декабрь 2025</span>
+    <span class="chip">источник: ЕИС</span>
+  </div>
+</div>
+
+<div class="kpis">
+  <div class="kpi"><div class="v num">365</div><div class="l">лотов отыграно</div></div>
+  <div class="kpi"><div class="v num">1 млрд ₽</div><div class="l">суммарная НМЦК</div></div>
+  <div class="kpi blue"><div class="v num">1 млрд ₽</div><div class="l">цена контрактов</div></div>
+  <div class="kpi amber"><div class="v num">7%</div><div class="l">среднее снижение</div></div>
+  <div class="kpi amber"><div class="v num">1,6</div><div class="l">заявки на лот</div></div>
+  <div class="kpi clay"><div class="v num">92%</div><div class="l">лотов с преференцией организациям инвалидов</div></div>
+</div>
+
+<div class="band">
+  <div class="k">главное</div>
+  <p>Три четверти денег сегмента разыгрываются в лотах, куда пришёл ровно один участник. Цена там не решает почти ничего: среднее снижение по таким лотам — 1%.</p>
+  <div class="foot">270 лотов из 365 · 757 млн руб. цены контрактов</div>
+</div>
+
+<section>
+  <div class="eyebrow">Конкуренция</div>
+  <h2>Торг идёт в четверти рынка</h2>
+  <p class="lead">Если разложить годовой объём по числу пришедших участников, картина простая: где конкурент есть, там снижение доходит до 26%; где его нет, цена остаётся начальной. Лоты, по которым в реестре нет данных о заявках, отнесены к однозаявочным.</p>
+  <div class="card" style="margin-top:18px">
+    <div class="bars">
+      <div class="row">
+        <div class="rtop"><span class="rlab">Лоты с единственной заявкой</span><span class="rval num">76%</span></div>
+        <div class="track"><div class="fill fq" style="width:76%"></div></div>
+        <div class="rnote">270 лотов · 757 млн руб. · среднее снижение 1% · цена определяется до объявления закупки</div>
+      </div>
+      <div class="row">
+        <div class="rtop"><span class="rlab">Лоты с двумя и более заявками</span><span class="rval num">24%</span></div>
+        <div class="track"><div class="fill f3" style="width:24%"></div></div>
+        <div class="rnote">95 лотов · 245 млн руб. · 3,5 заявки на лот · среднее снижение 26%</div>
+      </div>
+    </div>
+    <details>
+      <summary>Распределение лотов по числу заявок</summary>
+      <div class="tblwrap"><table>
+        <thead><tr><th>Заявок на лот</th><th class="num">Лотов</th><th class="num">Доля лотов</th></tr></thead>
+        <tbody>
+          <tr><td>1 заявка</td><td class="num">270</td><td class="num">74%</td></tr>
+          <tr><td>2 заявки</td><td class="num">35</td><td class="num">10%</td></tr>
+          <tr><td>3 заявки</td><td class="num">16</td><td class="num">4%</td></tr>
+          <tr><td>4 заявки</td><td class="num">22</td><td class="num">6%</td></tr>
+          <tr><td>5 заявок</td><td class="num">13</td><td class="num">4%</td></tr>
+          <tr><td>6 и больше</td><td class="num">9</td><td class="num">2%</td></tr>
+        </tbody>
+      </table></div>
+    </details>
+  </div>
+
+  <div class="grid g2" style="margin-top:16px">
+    <div class="card">
+      <h3>Состав лота решает, будет ли торг</h3>
+      <p class="small">Моно-лот — в закупке только цемент. Смешанный — цемент вместе с наборами для замешивания и введения, системами промывания, гемостатиками.</p>
+      <div class="bars" style="margin-top:12px">
+        <div class="row">
+          <div class="rtop"><span class="rlab">Моно-лоты</span><span class="rval num">80% денег</span></div>
+          <div class="track"><div class="fill" style="width:80%"></div></div>
+          <div class="rnote">257 лотов · НМЦК 838 млн · снижение 10% · 1,9 заявки</div>
+        </div>
+        <div class="row">
+          <div class="rtop"><span class="rlab">Смешанные лоты</span><span class="rval num">20% денег</span></div>
+          <div class="track"><div class="fill f2" style="width:20%"></div></div>
+          <div class="rnote">108 лотов · НМЦК 204 млн · снижение 1% · 1,1 заявки</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Закупка под единицу — торга почти нет</h3>
+      <p class="small">В 41% денег объём не зафиксирован: заказчик покупает «под потребность», по цене за единицу.</p>
+      <div class="bars" style="margin-top:12px">
+        <div class="row">
+          <div class="rtop"><span class="rlab">С объёмом</span><span class="rval num">59% денег</span></div>
+          <div class="track"><div class="fill" style="width:59%"></div></div>
+          <div class="rnote">235 лотов · снижение 10% · 1,8 заявки</div>
+        </div>
+        <div class="row">
+          <div class="rtop"><span class="rlab">Без объёма, под единицу</span><span class="rval num">41% денег</span></div>
+          <div class="track"><div class="fill f2" style="width:41%"></div></div>
+          <div class="rnote">130 лотов · снижение 3% · 1,3 заявки</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Преференции</div>
+  <h2>Преимущество организациям инвалидов стоит почти в каждом лоте</h2>
+  <p class="lead">Заказчики устанавливают его по умолчанию — 335 лотов из 365 на 938 млн руб. Но воспользоваться им может только участник со статусом организации инвалидов, и на весь рынок такой участник один.</p>
+  <div class="grid g3" style="margin-top:18px">
+    <div class="card">
+      <h3>92% лотов — с преференцией</h3>
+      <p class="small">335 закупок на 938 млн руб. Это 94% всех денег сегмента: преференция стала стандартным пунктом документации, а не осознанным решением по конкретной закупке.</p>
+    </div>
+    <div class="card">
+      <h3>Реально её использует одна компания</h3>
+      <p class="small">ООО «НОВОТЕХ-РЕСУРС» — 35 лотов на 66 млн руб., 7% рынка. В остальных 300 лотах с преференцией побеждал обычный поставщик: заявок от организаций инвалидов там просто не было.</p>
+    </div>
+    <div class="card">
+      <h3>Преференция не убирает торг</h3>
+      <p class="small">В лотах, которые забрал «НОВОТЕХ-РЕСУРС», среднее число заявок 4,5, а снижение — 36%, вчетверо выше рынка. Преимущество даёт 15% к оценке заявки, а не отсутствие конкурентов.</p>
+    </div>
+  </div>
+  <p class="small" style="margin-top:14px">Отдельно от этого в 157 лотах установлено преимущество для СМП и СОНКО по ч. 3 ст. 30 Закона № 44-ФЗ — на состав участников оно в этом сегменте почти не влияет.</p>
+</section>
+
+
+
+<section>
+  <div class="eyebrow">Цены</div>
+  <h2>Одна и та же упаковка стоит по-разному — и это объяснимо</h2>
+  <p class="lead">Цена за единицу у одного производителя гуляет по трём осям: состав лота, наличие антибиотика и граммовка. Ниже — медианы по позициям контрактов за год.</p>
+  <div class="card" style="margin-top:18px">
+    <div class="tblwrap"><table>
+      <thead><tr><th>Производитель, упаковка</th><th class="num">Без антибиотика</th><th class="num">С антибиотиком</th><th class="num">Разница</th></tr></thead>
+      <tbody>
+        <tr><td>Synimed, 40 г</td><td class="num">2 700 ₽</td><td class="num">3 900 ₽</td><td class="num">+44%</td></tr>
+        <tr><td>Synimed, 60 г</td><td class="num">4 300 ₽</td><td class="num">3 800 ₽</td><td class="num">−12%</td></tr>
+        <tr><td>DePuy, 20 г</td><td class="num">5 100 ₽</td><td class="num">5 200 ₽</td><td class="num">+2%</td></tr>
+        <tr><td>DePuy, 40 г</td><td class="num">5 600 ₽</td><td class="num">6 100 ₽</td><td class="num">+8%</td></tr>
+        <tr><td>Tecres, 40 г</td><td class="num">4 000 ₽</td><td class="num">5 000 ₽</td><td class="num">+25%</td></tr>
+        <tr><td>Howmedica Osteonics (Stryker)</td><td class="num">5 100 ₽</td><td class="num">—</td><td class="num">—</td></tr>
+        <tr><td>Stryker</td><td class="num">17 600 ₽</td><td class="num">—</td><td class="num">—</td></tr>
+        <tr><td>Heraeus Medical</td><td class="num">27 000 ₽</td><td class="num">—</td><td class="num">—</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small" style="margin-top:14px">Если сравнивать только пары внутри одного лота, одного производителя и одной граммовки — 41 такая пара за год, — цемент с антибиотиком дороже в среднем на 17%. Разброс большой: у DePuy надбавка около 16%, у отдельных позиций доходит до половины цены.</p>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>Тот же товар в смешанном лоте дороже</h3>
+    <p class="small">Когда цемент идёт в лоте вместе с инструментами и расходкой, цена за упаковку выше — сравнивать её не с чем, и заказчик сравнивать не будет.</p>
+    <div class="bars" style="margin-top:12px">
+      <div class="row"><div class="rtop"><span class="rlab">Synimed — в моно-лоте</span><span class="rval num">3 800 ₽</span></div>
+        <div class="track"><div class="fill" style="width:57%"></div></div></div>
+      <div class="row"><div class="rtop"><span class="rlab">Synimed — в смешанном лоте</span><span class="rval num">5 000 ₽</span></div>
+        <div class="track"><div class="fill f3" style="width:76%"></div></div>
+        <div class="rnote">+31% за ту же упаковку</div></div>
+      <div class="row"><div class="rtop"><span class="rlab">DePuy — в моно-лоте</span><span class="rval num">5 700 ₽</span></div>
+        <div class="track"><div class="fill" style="width:86%"></div></div></div>
+      <div class="row"><div class="rtop"><span class="rlab">DePuy — в смешанном лоте</span><span class="rval num">6 600 ₽</span></div>
+        <div class="track"><div class="fill f3" style="width:100%"></div></div>
+        <div class="rnote">+17% за ту же упаковку</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="profiles">
+  <div class="eyebrow">Справочник рынка</div>
+  <h2>Регионы, ЛПУ, поставщики и марки в одной таблице</h2>
+  <p class="lead">Полные списки со всеми показателями: количество лотов, НМЦК, цена контрактов, снижение, число заявок, объём цемента, суммы и средняя цена за единицу. Любой столбец сортируется кликом по заголовку, названия — от А до Я. Клик по строке открывает карточку участника, из карточки можно перейти к его контрагентам — карточки встают рядом друг с другом.</p>
+
+  <div class="explorer">
+    <div class="exbar">
+      <div class="fgroup">
+        <span class="flab">Метрика</span>
+        <div class="segs" id="metric">
+          <button type="button" data-m="t" aria-pressed="true">Общая</button>
+          <button type="button" data-m="c" aria-pressed="false">Контракт</button>
+          <button type="button" data-m="d" aria-pressed="false">Поставка</button>
+        </div>
+      </div>
+      <div class="fgroup">
+        <span class="flab">Колонок</span>
+        <div class="segs" id="cols">
+          <button type="button" data-c="1" aria-pressed="false">1</button>
+          <button type="button" data-c="2" aria-pressed="true">2</button>
+          <button type="button" data-c="3" aria-pressed="false">3</button>
+        </div>
+      </div>
+      <span class="mhint" id="mhint"></span>
+      <button type="button" class="ghost" id="closeall" hidden>Закрыть все карточки</button>
+    </div>
+
+    <div class="exhead">
+      <div class="searchrow">
+        <input id="q" type="search" placeholder="ИНН, название или регион — например 7813045441, «Вредена», Башкортостан" autocomplete="off" aria-label="Поиск по ИНН, названию или региону">
+        <div class="tabs" role="tablist">
+          <button class="tab" type="button" role="tab" data-kind="r" aria-selected="true">Регионы</button>
+          <button class="tab" type="button" role="tab" data-kind="c" aria-selected="false">ЛПУ</button>
+          <button class="tab" type="button" role="tab" data-kind="s" aria-selected="false">Поставщики</button>
+          <button class="tab" type="button" role="tab" data-kind="m" aria-selected="false">Производители</button>
+        </div>
+      </div>
+      <div class="hint" id="hint"></div>
+    </div>
+
+    <div class="dirwrap" id="dir"></div>
+    <div class="panels" id="panels" style="--cols:2"></div>
+  </div>
+
+  <div class="grid g2" style="margin-top:16px">
+    <div class="card">
+      <h3>Что видно по маркам</h3>
+      <p class="small">Synimed — 36% законтрактованных сумм и 173 лота, DePuy — 22% и 67 лотов, Tecres — 10%. Вместе Synimed и DePuy держат 58% рынка: обе марки дешёвые и покрывают линейку по весу. Stryker вместе с Howmedica Osteonics — 10%, Heraeus — 2% при медиане 27 000 ₽ за упаковку. Доли считаются по суммам позиций контрактов, 539 млн руб.; лоты без объёма в этот расчёт не попадают.</p>
+    </div>
+    <div class="card">
+      <h3>Что видно по географии</h3>
+      <p class="small">62 региона, половина объёма — в восьми. Москва: 19% рынка, 2,1 заявки, снижение 13% — единственный крупный регион с настоящим торгом. Петербург: 11% при 1,1 заявки и снижении 2%, из них 61 млн у одного поставщика. Башкортостан: 8%, снижения нет, 53 млн — одна совместная закупка на девять заказчиков.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>Импорт — 97% законтрактованного объёма</h3>
+    <p class="small">Российское производство — 16 млн руб., 3% суммы: Icon Lab, ТехноМедЛаб и Эндокарбон. Крупнейшие страны происхождения: Франция 196 млн (35%), Великобритания 103 млн (18%), Ирландия 71 млн (13%), Италия 57 млн (10%), Швейцария 37 млн (7%), США 34 млн (6%), Турция 27 млн (5%).</p>
+  </div>
+</section>
+
+
+
+<section>
+  <div class="eyebrow">Поставщики</div>
+  <h2>120 компаний, но половину рынка делают десять</h2>
+  <p class="lead">Топ-3 поставщика забирают 18% рынка, топ-10 — 43%, топ-20 — 63%. Дальше — длинный хвост из компаний с одним-двумя лотами в своём регионе. У большинства крупных вся выручка собрана в одном-двух регионах, а среднее число заявок в их лотах равно единице. Исключение — «НОВОТЕХ-РЕСУРС» и «УРОМТ»: они играют по всей стране и там, где есть с кем торговаться.</p>
+  <div class="grid g3" style="margin-top:18px">
+    <div class="card">
+      <h3>ООО «НОВОТЕХ-РЕСУРС»</h3>
+      <p class="small">35 лотов на 66 млн руб., 7% рынка. Организация инвалидов, работает в 8 регионах, 4,5 заявки на лот и снижение 36% — единственный крупный игрок, который выигрывает в открытом торге. Весь объём — Synimed.</p>
+    </div>
+    <div class="card">
+      <h3>ООО «НЕВА-МЕДИКА»</h3>
+      <p class="small">4 лота на 61 млн руб., 6% рынка, весь объём — Петербург. Снижения нет, заявка в лотах одна. Классический региональный поставщик: работает с несколькими крупными центрами и не выходит за пределы своей области.</p>
+    </div>
+    <div class="card">
+      <h3>ООО «УРОМТ»</h3>
+      <p class="small">22 лота на 55 млн руб., 6% рынка. 2,3 заявки на лот и снижение 22% — вторая компания, которая идёт в конкурентные закупки, а не только к «своим» заказчикам.</p>
+    </div>
+  </div>
+  <p class="small" style="margin-top:14px">Полный список всех 124 поставщиков с суммами, снижением и средними ценами — в справочнике рынка выше, вкладка «Поставщики».</p>
+</section>
+
+<section>
+  <div class="eyebrow">Календарь</div>
+  <h2>Год кончается декабрём</h2>
+  <p class="lead">На декабрь приходится 77 лотов и 193 млн руб. — почти пятая часть годовых денег в одном месяце. Для поставщика это значит, что половина работы с заказчиком должна быть сделана к октябрю.</p>
+  <div class="card" style="margin-top:18px">
+    <div class="months" role="img" aria-label="Цена контрактов по месяцам 2025 года, млн рублей">
+      <div class="mo"><div class="b" style="height:11%" title="Январь — 22 млн ₽, 12 лотов"></div><div class="m">я</div></div>
+      <div class="mo"><div class="b" style="height:57%" title="Февраль — 110 млн ₽, 30 лотов"></div><div class="m">ф</div></div>
+      <div class="mo"><div class="b" style="height:49%" title="Март — 94 млн ₽, 34 лота"></div><div class="m">м</div></div>
+      <div class="mo"><div class="b" style="height:31%" title="Апрель — 61 млн ₽, 32 лота"></div><div class="m">а</div></div>
+      <div class="mo"><div class="b" style="height:36%" title="Май — 69 млн ₽, 31 лот"></div><div class="m">м</div></div>
+      <div class="mo"><div class="b" style="height:35%" title="Июнь — 68 млн ₽, 27 лотов"></div><div class="m">и</div></div>
+      <div class="mo"><div class="b" style="height:25%" title="Июль — 49 млн ₽, 19 лотов"></div><div class="m">и</div></div>
+      <div class="mo"><div class="b" style="height:21%" title="Август — 40 млн ₽, 18 лотов"></div><div class="m">а</div></div>
+      <div class="mo"><div class="b" style="height:27%" title="Сентябрь — 53 млн ₽, 17 лотов"></div><div class="m">с</div></div>
+      <div class="mo"><div class="b" style="height:41%" title="Октябрь — 80 млн ₽, 30 лотов"></div><div class="m">о</div></div>
+      <div class="mo"><div class="b" style="height:56%" title="Ноябрь — 109 млн ₽, 36 лотов"></div><div class="m">н</div></div>
+      <div class="mo hi"><div class="b" style="height:100%" title="Декабрь — 193 млн ₽, 77 лотов"></div><div class="m">д</div></div>
+    </div>
+    <div class="legend"><span><span class="sw" style="background:var(--c1)"></span>цена контрактов по месяцу публикации</span><span><span class="sw" style="background:var(--c3)"></span>декабрь — 19% годового объёма</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Регуляторный контур</div>
+  <h2>Ограничения включены редко, жалоб почти нет</h2>
+  <div class="grid g3" style="margin-top:18px">
+    <div class="card">
+      <h3>Ограничение национального режима — 6% лотов</h3>
+      <p class="small">32 закупки на 63 млн руб. Снижение в них — 2%, среднее число заявок 1,4. Чаще всего это Крым, Москва и Омская область.</p>
+    </div>
+    <div class="card">
+      <h3>Централизация — 9% денег</h3>
+      <p class="small">8 совместных закупок на 89 млн руб., все — моно-лоты: Башкортостан, Татарстан, Белгородская область. Снижение около нуля.</p>
+    </div>
+    <div class="card">
+      <h3>2 позиции КТРУ на весь рынок</h3>
+      <p class="small">Цемент с лекарственными средствами и без них, обе — без характеристик. Техзадание заказчик пишет сам, и именно там решается, кто пройдёт.</p>
+    </div>
+  </div>
+  <p class="small" style="margin-top:14px">Жалоб в ФАС за год — три, все признаны необоснованными. 78 контрактов на 187 млн руб. расторгнуты — это 19% разыгранной суммы.</p>
+</section>
+
+<section>
+  <div class="eyebrow">Выводы</div>
+  <h2>Что из этого следует поставщику</h2>
+  <div class="finds">
+    <div class="find">
+      <h3>Рынок выигрывается до объявления закупки</h3>
+      <p>76% денег уходит по лотам с одной заявкой и нулевым снижением. Причины у единственной заявки обычные: узкие требования техзадания, отсутствие у остальных зарегистрированного аналога, небольшой объём, неудобные сроки. Вывод для работы простой — заходить надо раньше: анализ потребности ЛПУ, коммерческое предложение, демонстрация изделия до того, как техзадание написано.</p>
+    </div>
+    <div class="find a">
+      <h3>Ценовая борьба живёт в четверти рынка</h3>
+      <p>95 лотов на 245 млн руб., 3,5 заявки и снижение 26%. Если стратегия строится на цене — считать маржу нужно именно по этой части, а не по среднему снижению 7% по рынку.</p>
+    </div>
+    <div class="find b">
+      <h3>Состав лота стоит денег</h3>
+      <p>Та же упаковка Synimed в смешанном лоте дороже на 31%, у DePuy — на 17%. Смешанный лот убивает сравнимость: конкурент не может сопоставить цену за единицу, и торг в таких лотах падает до 1%.</p>
+    </div>
+    <div class="find c">
+      <h3>Дешёвый и универсальный товар собирает объём</h3>
+      <p>Synimed и DePuy — 58% законтрактованных сумм. Обе марки покрывают линейку по весу — 20, 40, 60 граммов, — и обе стоят в разы дешевле премиальных Heraeus и Stryker. Именно по ним чаще идут многолотовые закупки с большим числом позиций.</p>
+    </div>
+    <div class="find a">
+      <h3>Антибиотик в составе — плюс к цене</h3>
+      <p>По сопоставимым парам цемент с антибиотиком дороже на 17%, у отдельных производителей разница доходит до 25% и выше. При формировании КП это самый быстрый рычаг: та же марка, другой артикул.</p>
+    </div>
+    <div class="find">
+      <h3>Москва — единственный вход для нового поставщика</h3>
+      <p>19% рынка, 2,1 заявки на лот, снижение 13%. В Петербурге, Башкортостане, Кировской и Саратовской областях объём распределён между местными компаниями при одной заявке — заходить туда с ценой бессмысленно, заходить надо к заказчику.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Ограничения разбора</div>
+  <h2>Что мы бы проверили до решения</h2>
+  <ul class="risks">
+    <li>Цены за единицу по позициям Medos International и Synthes GmbH — это системы с инструментами, а не упаковка цемента. Сравнивать их с ценой упаковки нельзя.</li>
+    <li>19% контрактов расторгнуто — перед выходом в регион имеет смысл смотреть не только выигранные лоты, но и историю исполнения по конкретному заказчику.</li>
+    <li>В 19 лотах производитель в реестре не раскрыт — они идут отдельной строкой и слегка занижают доли всех марок.</li>
+    <li>Связи между компаниями-поставщиками мы здесь не утверждаем: для этого нужны выписки из ЕГРЮЛ, а не данные реестра контрактов.</li>
+  </ul>
+</section>
+
+<div class="cta">
+  <h2>Такой разбор мы делаем по любому сегменту</h2>
+  <p>Костный цемент здесь — пример. Считаем ёмкость рынка, профили заказчиков и конкурентов, цены и доли производителей по тому товару, которым вы торгуете.</p>
+  <ul>
+    <li>ценовая база по всем лотам сегмента — цена за единицу по каждому артикулу и производителю;</li>
+    <li>поимённый список ЛПУ с объёмами закупок и текущими поставщиками;</li>
+    <li>профили конкурентов: где играют, с кем, с каким снижением;</li>
+    <li>доли производителей со средними ценами и динамикой.</li>
+  </ul>
+  <p style="margin-top:16px">Написать: <a href="mailto:info@tenderstat.ru">info@tenderstat.ru</a> · <a href="https://tenderstat.ru">tenderstat.ru</a> · телеграм <a href="https://t.me/tendrstatt">@tendrstatt</a></p>
+</div>
+
+<footer>
+  <div class="frow">
+    <span>Данные из открытых источников: ЕИС. Оценки носят аналитический характер.</span>
+    <span>ТендерСтат · разбор рынка костного цемента, 2025 год</span>
+  </div>
+  <p class="copyright">Запрещается копирование, распространение (в том числе путем копирования на другие сайты и ресурсы в Интернете) или любое иное использование информации и объектов без предварительного согласия правообладателя.</p>
+  <p class="copysign"><span class="cmark">©</span> ТендерСтат, 2026. Все права защищены.</p>
+</footer>
+
+</div>
+
+<script type="application/json" id="ds">{"regs":["Адыгея Республика","Алтайский Край","Архангельская Область","Башкортостан Республика","Белгородская Область","Брянская Область","Бурятия Республика","Владимирская Область","Волгоградская Область","Запорожская Область","Ивановская Область","Ингушетия Республика","Иркутская Область","Калининградская Область","Калужская Область","Карелия Республика","Кемеровская область - Кузбасс Область","Кировская Область","Коми Республика","Краснодарский Край","Красноярский Край","Крым Республика","Курганская Область","Курская Область","Ленинградская Область","Липецкая Область","Магаданская Область","Мордовия Республика","Москва Город","Московская Область","Мурманская Область","Нижегородская Область","Новосибирская Область","Омская Область","Оренбургская Область","Орловская Область","Пензенская Область","Пермский Край","Псковская Область","Ростовская Область","Рязанская Область","Самарская Область","Санкт-Петербург Город","Саратовская Область","Саха (Якутия) Республика","Сахалинская Область","Свердловская Область","Северная Осетия - Алания Республика","Смоленская Область","Ставропольский Край","Тамбовская Область","Татарстан Республика","Тверская Область","Томская Область","Тульская Область","Тюменская Область","Ульяновская Область","Хакасия Республика","Ханты-Мансийский Автономный округ - Югра Автономный округ","Челябинская Область","Чувашская Республика - Чувашия","Ярославская Область"],"cust":[["ГБУЗРА АРКБ","0105025965",0],["ГБУЗ РБ ГБ Г. КУМЕРТАУ","0262011585",3],["ФГБОУ ВО БГМУ МИНЗДРАВА РОССИИ","0274023088",3],["ГБУЗ РКГВВ","0274052018",3],["ГБУЗ РБ ГКБ № 21 Г. УФЫ ИМ. В.Г. САХАУТДИНОВА","0276006472",3],["ГБУЗ РБ ГКБ № 18 Г. УФЫ","0277013465",3],["ГАУЗ \"РКБ ИМ. Н.А. СЕМАШКО\"","0323054162",6],["ГБУ \"ИРКБ ИМЕНИ А.О. АХУШКОВА\"","0602025161",11],["ГБУЗ \"РБ СЭМП\"","1001117532",15],["ГБУЗ РБ","1001334128",15],["ГБУЗ РК \"КРКБ\"","1101487135",18],["ГБУЗ РК \"ГБЭР\"","1121012274",18],["ГБУЗ РЕСПУБЛИКИ МОРДОВИЯ \"МРЦКБ\"","1327033084",27],["ГБУ РС(Я) \"РБ № 2 - ЦЭМП\"","1435111251",44],["ФГБОУ ВО СОГМА МИНЗДРАВА РОССИИ","1501003195",47],["ФГБУ \"СК ММЦ\" МИНЗДРАВА РОССИИ (Г. БЕСЛАН)","1511017599",47],["ГАУЗ РТ \"БСМП ИМ.Р.С.АКЧУРИНА\"","1650201838",51],["Совм.закупка - 3 заказчика (Татарстан)","1658012247",51],["ГАУЗ \"ГКБ №16\"","1658019154",51],["ГАУЗ \"РКБ МЗ РТ\"","1659013660",51],["ГАУЗ \"МКДЦ\"","1659034290",51],["ГБУЗ РХ \"РКБ ИМЕНИ Г.Я. РЕМИШЕВСКОЙ\"","1901005310",57],["ФГБУ \"ФЦТОЭ\" МИНЗДРАВА РОССИИ (Г. ЧЕБОКСАРЫ)","2130037189",60],["КГБУЗ КРАЕВАЯ КЛИНИЧЕСКАЯ БОЛЬНИЦА","2225021067",1],["ФГБУ \"ФЦТОЭ\" МИНЗДРАВА РОССИИ (Г. БАРНАУЛ)","2225130700",1],["ГБУЗ \"НИИ - ККБ № 1\"","2311040088",19],["ГБУЗ ВЫСЕЛКОВСКАЯ ЦРБ","2328005589",19],["КГБУЗ \"КМКБСМП ИМ. Н.С. КАРПОВИЧА\"","2463005419",20],["КГБУЗ ККБ","2465030876",20],["ФГБУ СКФНКЦ ФМБА РОССИИ","2626003731",49],["ГБУЗ СК \"ГКБ\" Г. ПЯТИГОРСКА","2632064595",49],["ГБУЗ СК \"СККБ\"","2633001171",49],["ГБУЗ СК \"ГКБ № 2\" Г. СТАВРОПОЛЯ","2633001686",49],["ГБУЗ АО \"АОКБ\"","2901030477",2],["ГБУЗ АРХАНГЕЛЬСКОЙ ОБЛАСТИ \"ПЕРВАЯ ГКБ ИМ. Е.Е. ВОЛОСЕВИЧ\"","2901041574",2],["ГАУЗ \"БРЯНСКАЯ ОБЛАСТНАЯ БОЛЬНИЦА № 1\"","3234012053",5],["ГБУЗВО \"ОКБ\"","3302008570",7],["ГУЗ КБ № 12","3442037482",8],["ГБУЗ \"ВОКБ № 1\"","3443901306",8],["ФГБУЗ ВМКЦ ФМБА РОССИИ","3447005798",8],["ОГВВ","3729011408",10],["ГБУЗ ООД","3809016338",12],["ИНЦХТ","3812014683",12],["ЦГКБ","3908010986",13],["ФГБУ \"ФЦВМТ\" МИНЗДРАВА РОССИИ (Г. КАЛИНИНГРАД)","3917513457",13],["ФГБУЗ КБ № 8 ФМБА РОССИИ","4025002173",14],["БСМП","4027001785",14],["ЧУЗ \"КБ \"РЖД-МЕДИЦИНА\" Г. КАЛУГА\"","4029030735",14],["ГАУЗ ККБСМП","4207031429",16],["ГБУЗ ККЦОЗШ","4212007870",16],["ФГБУ ННПЦ МСЭ И РИ МИНТРУДА РОССИИ","4218006431",16],["КОГКБУЗ \"ЦЕНТР ТРАВМАТОЛОГИИ, ОРТОПЕДИИ И НЕЙРОХИРУРГИИ\"","4347024816",17],["ФГБУ \"НМИЦ ТО ИМЕНИ АКАДЕМИКА Г.А. ИЛИЗАРОВА\" МИНЗДРАВА РОССИИ","4501022210",22],["ГБУ \"КУРГАНСКАЯ БСМП\"","4501027272",22],["ОБУЗ \"КОМКБ\"","4632286337",23],["ГБУЗ ЛОКБ","4700001254",24],["ГБУЗ ЛО \"ГАТЧИНСКАЯ КМБ\"","4705013260",24],["ГУЗ \"ЛОКБ\"","4825005110",25],["ГБУЗ \"МОБ\"","4909007233",26],["ГБУЗ МОСКОВСКОЙ ОБЛАСТИ \"ДМИТРОВСКАЯ БОЛЬНИЦА\"","5007109990",29],["ГБУЗ МОСКОВСКОЙ ОБЛАСТИ \"ЖУКОВСКАЯ ОКБ\"","5013006048",29],["ГБУЗ \"МГОБ № 62 ДЗМ\"","5024001482",29],["ГБУЗ МОСКОВСКОЙ ОБЛАСТИ \"ЛЮБЕРЕЦКАЯ ОКБ\"","5027278612",29],["ГБУЗ МОСКОВСКОЙ ОБЛАСТИ \"МЫТИЩИНСКАЯ ОКБ\"","5029037362",29],["ФГБУ ЯММЦ ФМБА РОССИИ","5043025577",21],["ГОБУЗ МОКМЦ","5190080385",30],["ГОБУЗ \"МОКБ ИМ. П.А. БАЯНДИНА\"","5190800114",30],["ФГБОУ ВО \"ПИМУ\"МИНЗДРАВА РОССИИ","5260037940",31],["ФБУЗ ПОМЦ ФМБА РОССИИ","5260101352",31],["ГП НО \"НОФ\"","5260136299",31],["ГБУЗ НСО \"ГНОКБ\"","5403106150",32],["ФГБУ \"ФЦН\" МИНЗДРАВА РОССИИ (Г. НОВОСИБИРСК)","5403338271",32],["ФГБУ \"ННИИТО ИМ. Я.Л. ЦИВЬЯНА\" МИНЗДРАВА РОССИИ","5406011563",32],["НАУЧНО-ИССЛЕДОВАТЕЛЬСКИЙ ИНСТИТУТ КЛИНИЧЕСКОЙ И ЭКСПЕРИМЕНТАЛЬНОЙ ЛИМФОЛОГИИ - ФИЛИАЛ ФЕДЕРАЛЬНОГО ГОСУДАРСТВЕННОГО БЮДЖЕТНОГО НАУЧНОГО УЧРЕЖДЕНИЯ \"ФЕДЕРАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ ЦЕНТР ИНСТИТУТ ЦИТОЛОГИИ И ГЕНЕТИКИ СИБИРСКОГО ОТДЕЛЕНИЯ РОССИЙСКОЙ АКАДЕМИИ НАУК\"","5408100138",32],["ФГБУЗ ЗСМЦ ФМБА РОССИИ","5502018378",33],["БУЗОО \"КМСЧ № 9\"","5506020868",33],["ГАУЗ \"ООКЦХТ\"","5612011431",34],["ГАУЗ \"ООКБ ИМ.В.И.ВОЙНОВА\"","5612014915",34],["БУЗ ОРЛОВСКОЙ ОБЛАСТИ \"ООКБ\"","5753003306",35],["ГБУЗ \"КЛИНИЧЕСКАЯ БОЛЬНИЦА № 6 ИМЕНИ Г.А. ЗАХАРЬИНА\"","5835065247",36],["ГБУЗ ПК \"ГКБ ИМ. М.А. ТВЕРЬЕ\"","5905059183",37],["ГБУЗ ПК \"КБ ИМ. ВАГНЕРА Е.А.\" Г. БЕРЕЗНИКИ","5911081003",37],["ГБУЗ ПО \"ПОКБ\"","6027024000",38],["ФГБУЗ НКЦ ФМБА РОССИИ","6143047417",19],["ГБУ РО \"ГБСМП\" В Г. РОСТОВЕ-НА-ДОНУ","6161011389",39],["ФГБОУ ВО РОСТГМУ МИНЗДРАВА РОССИИ","6163032850",39],["ЧУЗ \"КБ \"РЖД-МЕДИЦИНА\" Г. РОСТОВ-НА-ДОНУ\"","6164224554",39],["ГБУ РО \"ЦГБ ИМ. Н.А. СЕМАШКО\" В Г. РОСТОВЕ-НА-ДОНУ","6165025382",39],["ГБУ РО \"ОКБ № 2\"","6166043874",39],["ФГБУЗ ЮОМЦ ФМБА РОССИИ","6167063344",39],["ГБУ РО \"РОКБ\"","6168001358",39],["ГБУ РО \"ОКБ\"","6229018400",40],["СОКБ","6312023131",41],["ГБУЗ СГКБ № 1 ИМ. Н.И. ПИРОГОВА","6316019432",41],["ФГБОУ ВО САМГМУ МИНЗДРАВА РОССИИ","6317002858",41],["ГБУЗ СО \"СГКБ №2 ИМЕНИ Н.А.СЕМАШКО\"","6319028890",41],["ГБУЗ СО \"ТГКБ № 5\"","6320005520",41],["ФГБОУ ВО САРАТОВСКИЙ ГМУ ИМ.В.И.РАЗУМОВСКОГО МИНЗДРАВА РОССИИ","6452006471",43],["ГБУЗ \"САХОБЛКЛИНБОЛЬНИЦА\"","6501025568",45],["ГАУЗ СО \"ДЕМИДОВСКАЯ ГБ\"","6623097055",46],["ГАУЗ СО \"СОКП ГОСПИТАЛЬ ДЛЯ ВЕТЕРАНОВ ВОЙН\"","6658010873",46],["ГАУЗ СО \"ЦСВМП \"УИТО ИМ. В.Д. ЧАКЛИНА\"","6661002061",46],["ФГБУ \"НМИЦ ФПИ\" МИНЗДРАВА РОССИИ","6663025890",28],["ФГБУ \"ФЦТОЭ\" МИНЗДРАВА РОССИИ (Г. СМОЛЕНСК)","6732033809",48],["ГБУЗ \"ТОКБ ИМ. В.Д. БАБЕНКО\"","6832008411",50],["ФГБОУ ВО ТВЕРСКОЙ ГМУ МИНЗДРАВА РОССИИ","6905010888",52],["ОГАУЗ \"ТОКБ\"","7020016160",53],["ОГАУЗ \"БСМП\"","7021024742",53],["ГУЗ ТО \"ТУЛЬСКАЯ ОБЛАСТНАЯ КЛИНИЧЕСКАЯ БОЛЬНИЦА\"","7105008306",54],["ГУЗ \"НГКБ\"","7116001060",54],["ФГБУ \"ФЦН\" МИНЗДРАВА РОССИИ (Г.ТЮМЕНЬ)","7204152364",55],["ГБУЗ ТО \"ОБЛАСТНАЯ БОЛЬНИЦА № 3\"(Г. ТОБОЛЬСК)","7223008503",55],["ГУЗ \"УОКЦСВМП\"","7325101759",56],["ГАУЗ\"ОКБ № 3\"","7447041747",59],["ГАУЗ ОТКЗ \"ГКБ № 1 Г. ЧЕЛЯБИНСК\"","7453014519",59],["ГБУЗ ЯО \"ОКБ\"","7603004103",61],["ЧУЗ \"КБ \"РЖД-МЕДИЦИНА\" Г. ЯРОСЛАВЛЬ\"","7604068188",61],["ГАУЗ ЯО \"КЛИНИЧЕСКАЯ БОЛЬНИЦА СКОРОЙ МЕДИЦИНСКОЙ ПОМОЩИ ИМЕНИ Н.В. СОЛОВЬЕВА\"","7606011613",61],["ГБУЗ \"НИИ СП ИМ. Н.В. СКЛИФОСОВСКОГО ДЗМ\"","7702036321",28],["ГБУЗ МО МОНИКИ ИМ. М.Ф.ВЛАДИМИРСКОГО","7702066157",28],["ФГБУ ФНКЦ ФХМ ИМ. Ю.М. ЛОПУХИНА ФМБА РОССИИ","7704014010",28],["ФГБНУ \"РНЦХ ИМ. АКАД. Б.В. ПЕТРОВСКОГО\"","7704030124",28],["ГКБ № 1 ИМ. Н.И.ПИРОГОВА","7706055854",28],["ФГБОУ ВО \"РОССИЙСКИЙ УНИВЕРСИТЕТ МЕДИЦИНЫ\" МИНЗДРАВА РОССИИ","7707082145",28],["ФГАУ \"НМИЦ НЕЙРОХИРУРГИИ ИМ. АК. Н.Н. БУРДЕНКО\" МИНЗДРАВА РОССИИ","7710103758",28],["ФГБУ \"НМИЦ ТО ИМ. Н.Н. ПРИОРОВА\" МИНЗДРАВА РОССИИ","7713003222",28],["ГБУЗ \"ГКБ ИМ. В.В. ВЕРЕСАЕВА ДЗМ\"","7713034164",28],["МОСКОВСКИЙ НАУЧНО-ИССЛЕДОВАТЕЛЬСКИЙ ОНКОЛОГИЧЕСКИЙ ИНСТИТУТ ИМЕНИ П.А. ГЕРЦЕНА - ФИЛИАЛ ФЕДЕРАЛЬНОГО ГОСУДАРСТВЕННОГО БЮДЖЕТНОГО УЧРЕЖДЕНИЯ \"НАЦИОНАЛЬНЫЙ МЕДИЦИНСКИЙ ИССЛЕДОВАТЕЛЬСКИЙ ЦЕНТР РАДИОЛОГИИ\" МИНИСТЕРСТВА ЗДРАВООХРАНЕНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ","7714042070",28],["ГБУЗ ММНКЦ ИМ. С.П. БОТКИНА ДЗМ","7714082636",28],["ГБУЗ \"ГКБ ИМ. А.К. ЕРАМИШАНЦЕВА ДЗМ\"","7716035705",28],["ГБУЗ \"ММКЦ \"КОММУНАРКА\" ДЗМ\"","7716099554",28],["ГБУЗ \"ГКБ ИМ. Ф.И. ИНОЗЕМЦЕВА ДЗМ\"","7719046800",28],["ГБУЗ \"ГКБ № 15 ДЗМ\"","7720001850",28],["ГБУЗ МКНЦ ИМЕНИ А.С. ЛОГИНОВА ДЗМ","7720093523",28],["ГБУЗ \"ГВВ № 2 ДЗМ\"","7721062870",28],["ГБУЗ \"ГКБ № 29 ИМ. Н.Э. БАУМАНА ДЗМ\"","7722086539",28],["ГБУЗ \"ГКБ ИМ. В.П. ДЕМИХОВА ДЗМ\"","7723084936",28],["ФГБУЗ КБ № 85 ФМБА РОССИИ","7724010662",28],["ФГБУ ФНКЦ ФМБА РОССИИ","7724044189",28],["ГБУЗ \"ГКБ ИМ. С.С. ЮДИНА ДЗМ\"","7724070870",28],["ФГБУ \"НМИЦ ОНКОЛОГИИ ИМ. Н.Н. БЛОХИНА\" МИНЗДРАВА РОССИИ","7724075162",28],["ФГБНУ НИИР ИМ. В.А. НАСОНОВОЙ","7724085040",28],["ФГБУ \"РНЦРР\" МИНЗДРАВА РОССИИ","7728065856",28],["МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ М.В.ЛОМОНОСОВА, МГУ ИМЕНИ М.В.ЛОМОНОСОВА, МОСКОВСКИЙ УНИВЕРСИТЕТ ИЛИ МГУ","7729082090",28],["ГБУЗ \"ГКБ № 31 ИМ. АКАДЕМИКА Г.М. САВЕЛЬЕВОЙ ДЗМ\"","7729123204",28],["ГБУЗ \"ГКБ ИМ. М.Е.ЖАДКЕВИЧА ДЗМ\"","7731038690",28],["ФГБНУ РЦНН","7733012151",28],["ФГБУ \"НМХЦ ИМ. Н.И. ПИРОГОВА\" МИНЗДРАВА РОССИИ","7733108569",28],["ФГАУ \"НМИЦ ЛРЦ\" МИНЗДРАВА РОССИИ","7733574898",28],["ГБУЗ \"ГКБ № 67 ИМ. Л. А. ВОРОХОБОВА ДЗМ\"","7734091519",28],["ГБУЗ \"ГКБ ИМ. М.П. КОНЧАЛОВСКОГО ДЗМ\"","7735069192",28],["ФГБУ ФБ МСЭ МИНТРУДА РОССИИ","7743085670",28],["САНКТ-ПЕТЕРБУРГСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ, САНКТ-ПЕТЕРБУРГСКИЙ УНИВЕРСИТЕТ ИЛИ СПБГУ","7801002274",42],["ФГБУ \"НМИЦ ИМ. В.А. АЛМАЗОВА\" МИНЗДРАВА РОССИИ","7802030429",42],["ФГБУ СЗОНКЦ ИМ. Л.Г. СОКОЛОВА ФМБА РОССИИ","7802048200",42],["СПБ БОЛЬНИЦА РАН","7802067651",42],["СПБ ГБУЗ \"ЕЛИЗАВЕТИНСКАЯ БОЛЬНИЦА\"","7804041070",42],["СПБГБУЗ \"ГОРОДСКАЯ БОЛЬНИЦА №15\"","7807015216",42],["СПБ ГБУЗ \"ГОРОДСКАЯ МАРИИНСКАЯ БОЛЬНИЦА\"","7808046224",42],["СПБ ГБУЗ \"ГОРОДСКАЯ БОЛЬНИЦА № 26\"","7810248531",42],["СПБ ГБУЗ \"АЛЕКСАНДРОВСКАЯ БОЛЬНИЦА\"","7811018700",42],["СПБ ГБУЗ \"ГВВ\"","7811070851",42],["ФГБУ \"НМИЦ ТО ИМ. Р.Р. ВРЕДЕНА\" МИНЗДРАВА РОССИИ","7813045441",42],["ФГБОУ ВО ПСПБГМУ ИМ. И.П. ПАВЛОВА МИНЗДРАВА РОССИИ","7813047463",42],["ФГБУ \"СПБ НИИФ\" МИНЗДРАВА РОССИИ","7815022288",42],["СПБ ГБУЗ \"ГОРОДСКАЯ БОЛЬНИЦА № 38 ИМ.Н.А.СЕМАШКО\"","7820013553",42],["СПБ ГБУЗ \"ГОРОДСКАЯ БОЛЬНИЦА № 40 \"","7821006774",42],["ФГБОУ ВО СЗГМУ ИМ. И.И. МЕЧНИКОВА МИНЗДРАВА РОССИИ","7842461679",42],["БУ \"ОКРУЖНАЯ КЛИНИЧЕСКАЯ БОЛЬНИЦА\"","8601004445",58],["БУ \"СУРГУТСКАЯ КЛИНИЧЕСКАЯ ТРАВМАТОЛОГИЧЕСКАЯ БОЛЬНИЦА\"","8602015224",58],["Совм.закупка - 2 заказчика (Запорожская область)","9002008298",9],["ГБУЗ РК \"СИМФЕРОПОЛЬСКАЯ КБ СМП №6\"","9102063951",21],["ГБУЗРК \"КЕРЧЕНСКАЯ БОЛЬНИЦА №1 ИМ. Н.И.ПИРОГОВА\"","9111008629",21],["Совм.закупка - 3 заказчика (Татарстан)","",51],["Совм.закупка - 4 заказчика (Белгородская область)","",4],["Совм.закупка - 4 заказчика (Татарстан)","",51],["Совм.закупка - 5 заказчика (Татарстан)","",51],["Совм.закупка - 9 заказчика (Башкортостан)","",3],["Совм.закупка 2 заказчика (Татарстан)","",3]],"supp":[["ООО \"ДЕЛЬТА ГРУПП\"","0275914560"],["ООО \"ФЕНИКС\"","0275923821"],["ИП ХУСАИНОВА Д. М.","027710100118"],["ООО \"ПРОМЕД\"","0278960525"],["ООО \"ВОСТОК ТРЕЙД\"","0278977945"],["ИП ХАМХОЕВ С. М.","151208051868"],["ООО \"НПП \"СЕТАЛ\"","1655217655"],["ООО \"ТОРГМЕД\"","1658196026"],["ИП АДЕЛЬШИНА З. Р.","165917976435"],["ООО \"МЕДФРЕГАТ\"","1659211541"],["ООО \"НМК\"","1841075630"],["ИП ЗОТИН К. М.","212885651028"],["ИП ВЕРДИЕВА Т. Г.","220909906841"],["ООО \"ЦЕРЕБРИКА\"","2221244094"],["ИП МОВСЕСЯН Г. К.","231007593437"],["ИП ПОБАТАЕВА М. А.","243601298677"],["ИП МИЩЕНКО П. В.","245731752260"],["ООО \"МЕДИАЛЬ\"","2463103215"],["ООО \"МДК ЕНИСЕЙ ОРТО\"","2465220637"],["ИП ФЕДОСЕЕВ И. Н.","272112728666"],["ИП РЫМАРЕВ А. М.","324101202876"],["ИП БЛОХИН Д. А.","325001288208"],["ООО \"ВМС\"","3443126470"],["ООО \"БАЗИС\"","3444275161"],["ООО \"УНИКА\"","3662159133"],["ООО \"НОВОТЕХ-РЕСУРС\"","3662286090"],["ООО \"ТМ\"","3663148102"],["ООО \"ВЕКТОР-М\"","3811471479"],["ИП КУЗНЕЦОВА А. С.","402313312066"],["ИП СУПРУНОВА А. В.","421712804529"],["ИП АРАКЧЕЕВ К. А.","421814634097"],["ООО \"МЕДИКАЛТЕХНОТРЕЙД\"","4253052261"],["ООО \"ОСТЕОСИНТЕЗ-ВЯТКА\"","4345366596"],["ИП КОНСТАНТИНОВА О. Н.","450143679418"],["ООО \"ПРОМЕТЕЙ\"","4719016624"],["ООО \"ОРТО-СЕРВИС\"","4720029508"],["ООО \"ИМПУЛЬС\"","5009108093"],["ООО \"ПОДВИЖНЫЕ СОЕДИНЕНИЯ\"","5038144071"],["ИП ВАСИЛЬЕВ Д. Е.","504413287035"],["ООО \"НОРДМЕДСЕРВИС\"","5190081276"],["ООО \"КОМСЕРВИС\"","5260289873"],["ООО \"БАЗИС-НН\"","5262113219"],["ООО \"ИННМЕДИКАЛ\"","5404034357"],["ООО \"АКАДЕМПРОЕКТ\"","5405250022"],["ООО \"ОСТЕОВИТА\"","5405362512"],["ООО \"МТ СИБИРЬ\"","5406832778"],["ООО \"ПРОФЕССИОНАЛЬНАЯ ОРТОПЕДИЯ\"","5433956187"],["ООО \"ПРОФОРТОПЕДИЯ\"","5433974027"],["ООО \"АРТРОМЕД ПРОФИ\"","5501254291"],["ИП ДЕНИСОВА О. О.","550310339134"],["ООО \"ТРИОМЕД\"","5905030280"],["ООО \"УРАЛИМПЛАНТ\"","5908068820"],["ИП ДАХНО И. М.","616507032331"],["ИП ЮСЕФ В. Д.","616521467895"],["ООО \"МЕДКБ\"","6165222060"],["ИП СКОРОХОДОВА М.К.","616620191302"],["ИП БЕЛАШЕВ Д. Р.","623400605848"],["ООО \"АВК ТРЕЙД\"","6234080203"],["ООО \"МК ПОВОЛЖЬЕ\"","6317131363"],["ООО \"ДИВИТА\"","6317159048"],["ИП БЕЛОГАЕВА Л. Ю.","645107542335"],["ООО \"МЕДИАТОМА\"","6455055188"],["ООО \"САХМЕДКОМ\"","6501258114"],["ООО \"ТРИОПРОМТРЕЙД\"","6658155614"],["ООО \"СИНТЕЗА\"","6671092138"],["ООО \"РМК\"","6671443114"],["ИП ДОВЖЕНКО Е. И.","667470693167"],["ООО \"СЕНТРИ\"","6679096053"],["ООО \"ДВТ\"","6685218905"],["ООО \"ЛУЧШИЕ ПОСТАВКИ\"","7000018297"],["ООО \"ЗЕМНИКС\"","7107508449"],["ИП ГРЕК Р. И.","744706952966"],["ИП БЕЛОВ А. П.","760304440554"],["ИП ИЩЕНКО М. А.","770372014624"],["ООО \"АОРТАМЕДИЦИНА\"","7707438507"],["ООО \"УРОМТ\"","7707449548"],["ООО \"ОРТОБИОМ\"","7715940693"],["ООО \"НЬЮОРТО\"","7716931451"],["ООО \"ОРТО-М\"","7719694311"],["ИП ЧЕРЕМИСОВ В. Ю.","772316553866"],["ООО \"БРЭЙН СЕДЖЕН\"","7724373970"],["ООО \"МЕДИКАЛ АП\"","7725280936"],["ООО \"СПАЙНМЕДИКС\"","7727344487"],["ООО \"РУСМЕДТЕХ\"","7727406870"],["ООО \"ОМК\"","7727660210"],["ИП КЛОКОВ А. А.","772791210478"],["ООО \"МЕДЦЕНТР\"","7728430957"],["ООО \"МК \"ВЫСОКИЕ ТЕХНОЛОГИИ\"","7730683112"],["ИП ПЕЛЕЦКИС О. В.","773270090163"],["ИП ЛОБЗОВА Р. Х.","773471303005"],["ООО \"АРТРОПЛАСТИКА\"","7743201736"],["ООО \"БАРХАТ\"","7743402175"],["ООО \"ПЕТРО МЕДИКЛ\"","7801578702"],["ООО \"ИМПЛАНТ СОЮЗ\"","7802302496"],["ООО \"ТЕХНОМЕДПРОЕКТ\"","7802607723"],["ООО \"ФАЙН МЕДИКЛ\"","7802736207"],["ООО \"ОРТОМЕТ\"","7804569368"],["ООО \"ПОЛИОРТО\"","7804679561"],["ООО \"НЕВА-МЕДИКА\"","7813176490"],["ООО \"АЛЬТЕРМЕДИКА\"","7813314863"],["ООО\"НЕВАИМПЛАНТ\"","7814348142"],["ООО \"МЕДИМПУЛЬС\"","7814420790"],["ООО \"КАРУМ\"","7814707835"],["ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ИЗБА\"","7814831173"],["ИП ЛУЩИК С. В.","781605397843"],["ИП ЧИЛИКОВ М. Г.","781901174124"],["ИП БУЙНОВСКИЙ Д. Б.","781909684134"],["ИП МИХАЙЛЕЦ Д. С.","782605778008"],["ИП НИКУЛИН А. А.","890603365561"],["ООО \"МИП\"","9701060100"],["ООО \"МАСК\"","9703216786"],["ООО \"МЕДТЕХСНАБ\"","9705139551"],["ООО \"МЕДИГАРД\"","9728094160"],["ООО \"ПРАЙММЕДИКАЛ\"","9731083626"],["ООО \"ФЕРОТЕХ\"","9731135320"],["ИП ГУМИНСКАЯ Н. Б.",""],["ИП ИСМАИЛОВ А. Н.",""],["Неизвестно (223-ФЗ)",""],["Неизвестно (ЗМО)",""],["ООО \"ДВТ\"",""],["ООО \"ТЕНДЕРМЕД\"",""],["ООО \"ТМ\"",""],["ООО \"ТОРГМЕД\"",""],["ООО \"ФЕНИКС\"",""]],"mans":["Айкон Лаб ГмбХ","Биомет Франс","Гуанчжоу Клин Медикал","ДеПью","Зиммер","КЕЙ АРТ МЕДИКАЛ","Медос Интернешнл","Не указан","ООО \"ТехноМедЛаб\"","СИНИМЕД с.а.р.л.","Синтез ГмбХ","Страйкер","ТЕКРЕС спа.","Хераус Медикал","Хоумедика Остеоникс (Страйкер)","Эндокарбон"],"lots":[[1,1,3,2900000,2900000,0.0,1,1,1,"13.01.2025","0301300068225000001"],[43,117,13,2080000,1396000,32.9,3,1,1,"15.01.2025","32514416187"],[129,23,28,2875000,1692000,41.1,6,1,1,"17.01.2025","0373200152825000008"],[116,118,61,1405000,1405000,0.0,1,1,1,"21.01.2025","275330"],[118,107,28,2999429,2999429,1.0,1,1,0,"21.01.2025","0373200067025000020"],[95,59,41,1054500,1054500,0.0,1,1,1,"21.01.2025","0142200001325000068"],[21,37,57,1355701,1355701,0.0,1,1,1,"22.01.2025","0380200000125000053"],[54,26,23,1968812,1703850,13.5,2,1,1,"30.01.2025","0744200000225000266"],[70,45,32,1014258,1014258,0.0,1,1,1,"31.01.2025","0351200000725000084"],[155,98,42,1100000,1100000,0.0,1,1,0,"03.02.2025","0372100001025000002"],[9,104,15,1129693,1129693,0.0,1,1,0,"04.02.2025","0306500000325000044"],[9,104,15,1895000,1895000,0.0,1,1,0,"04.02.2025","0306500000325000045"],[88,53,39,2711006,2711006,0.0,1,1,1,"04.02.2025","0358200041325000043"],[133,84,28,1495000,1495000,5.0,1,1,0,"04.02.2025","0373200022225000183"],[58,75,26,1292668,697200,46.1,3,1,1,"06.02.2025","0847500000925000182"],[19,9,51,3100000,3100000,0.0,1,1,1,"06.02.2025","0711200011025000040"],[92,108,41,1588750,1588750,0.0,1,1,1,"07.02.2025","0142200001325001989"],[10,105,18,1000000,1000000,0.0,1,1,0,"10.02.2025","0307200022425000039"],[26,100,19,1499000,1499000,0.0,1,1,0,"12.02.2025","0818500000825000609"],[91,75,40,1980450,2518350,0.0,1,1,1,"14.02.2025","0859200001125000957"],[164,80,42,3493665,3493665,0.0,1,1,0,"17.02.2025","0372100033825000032"],[97,60,43,20425425,20425425,0.0,1,1,0,"18.02.2025","0360100030525000061"],[68,25,31,3510000,2744820,21.8,4,1,1,"19.02.2025","0332100021325000012"],[45,100,14,1499086,1499086,0.0,1,1,1,"19.02.2025","0337100018825000036"],[79,25,36,1486945,1077286,37.0,5,1,1,"19.02.2025","0855200000525000264"],[64,25,21,2976750,1649234,51.8,8,1,1,"19.02.2025","0348100015525000044"],[71,44,32,14360500,14360500,0.0,1,1,1,"20.02.2025","0351100033225000059"],[62,20,29,2778800,2778800,0.0,1,1,1,"24.02.2025","0348500002225000035"],[139,20,28,1020667,1020667,0.0,1,1,1,"24.02.2025","0373200027425000471"],[99,117,46,1035000,1035000,0.0,1,1,1,"25.02.2025","32514549686"],[164,80,42,1687500,1687500,0.0,1,1,0,"25.02.2025","0372100033825000107"],[150,28,28,1833267,2054947,0.0,1,1,1,"27.02.2025","0373200063125000184"],[149,20,28,4853497,4853497,0.0,1,1,1,"03.03.2025","0373200011425000295"],[171,10,21,1200000,1200000,0.5,2,1,0,"03.03.2025","0375200002225000006"],[59,19,29,1132001,1132001,28.5,3,1,0,"03.03.2025","0348500003225000060"],[124,109,28,3063334,2160000,29.5,1,1,1,"04.03.2025","32514579808"],[136,11,28,2987000,2852585,4.5,2,1,1,"05.03.2025","0373200100125000204"],[78,75,35,1086342,1086342,0.0,1,1,1,"06.03.2025","0154200000725000180"],[93,58,41,2146500,1366268,36.4,2,1,1,"07.03.2025","0142200001325005590"],[71,44,32,2854560,2854560,0.0,1,1,1,"10.03.2025","0351100033225000088"],[123,25,28,1128521,986327,24.0,4,1,1,"10.03.2025","0373100045925000069"],[123,25,28,1134132,945580,27.5,4,1,1,"12.03.2025","0373100045925000076"],[66,39,30,3474750,3474750,0.0,1,1,0,"13.03.2025","0149200002325001217"],[52,82,22,10485790,7654605,27.0,2,1,1,"14.03.2025","0343100000725000303"],[52,25,22,1175000,912094,32.5,4,1,1,"14.03.2025","0343100000725000304"],[42,65,12,2869998,3627000,2.8,2,1,1,"17.03.2025","0334100027125000023"],[129,38,28,2999286,2864318,4.5,2,1,1,"17.03.2025","0373200152825000206"],[162,98,42,20000000,20000000,0.0,1,1,0,"18.03.2025","0372100030625000165"],[131,43,28,1990833,1990833,0.0,1,1,0,"19.03.2025","0373200052325000200"],[75,16,33,1668730,1668730,0.0,1,1,1,"20.03.2025","0352300030725000069"],[145,43,28,1137501,1137501,0.0,1,1,0,"24.03.2025","0373200013825000207"],[80,50,37,1499999,1499999,0.0,1,1,0,"27.03.2025","0356500003325000139"],[174,99,4,9890600,9890600,38.5,4,1,0,"27.03.2025","0826500000925001238"],[172,64,21,1569773,1569773,0.0,1,1,1,"27.03.2025","0375200037425000062"],[1,1,3,2900000,2900000,0.0,1,1,1,"28.03.2025","0301300068225000138"],[40,77,10,1020724,971250,4.8,1,1,1,"31.03.2025","0333200009725000106"],[40,77,10,1020724,971250,4.8,1,1,1,"31.03.2025","0333200009725000107"],[36,73,7,1058400,1058400,0.0,1,1,1,"31.03.2025","0128200000125001498"],[56,104,24,1500000,1500000,0.0,1,1,0,"01.04.2025","0145300006425000085"],[44,35,13,3800000,4940000,0.0,1,1,1,"02.04.2025","0335100015625000126"],[103,100,48,1474000,1914550,0.0,1,1,1,"02.04.2025","0363100015125000146"],[175,9,51,4085675,5003240,0.0,1,1,1,"02.04.2025","0311300098125000154"],[17,9,51,1270118,1256404,6.5,2,1,1,"02.04.2025","0311300098125000155"],[102,84,28,1000011,1187891,0.0,1,1,1,"03.04.2025","0362100034225000118"],[103,100,48,3593260,4665980,0.0,1,1,1,"03.04.2025","0363100015125000147"],[154,95,42,1100000,1100000,0.0,1,1,0,"03.04.2025","0372100011725000199"],[24,12,1,1472100,1354332,8.0,2,1,1,"04.04.2025","0317100032925000071"],[154,95,42,1100000,1100000,0.0,1,1,0,"08.04.2025","0372100011725000237"],[94,63,41,1450000,1419000,2.1,1,1,1,"09.04.2025","0342100011825000252"],[111,50,55,1206000,1206000,0.0,1,1,1,"11.04.2025","0167200003425002659"],[54,75,23,1195040,1080000,9.6,1,1,1,"15.04.2025","0744200000225003218"],[148,24,28,8340000,4906700,41.2,5,1,1,"16.04.2025","32514747338"],[106,117,53,1769520,1793760,0.0,1,1,1,"17.04.2025","32514755673"],[144,49,28,1070000,867100,37.7,5,1,1,"17.04.2025","0373200025625000317"],[144,28,28,1246000,1593800,1.6,1,1,1,"17.04.2025","0373200025625000318"],[67,41,31,1728000,2246400,0.0,1,1,1,"18.04.2025","0332100022725000334"],[112,25,56,2304000,1745792,34.1,5,1,1,"18.04.2025","0168500000625001635"],[130,75,28,1226529,1226529,9.8,1,1,0,"21.04.2025","0373200087825000925"],[123,57,28,1462469,1462469,0.0,1,1,0,"21.04.2025","0373100045925000186"],[63,79,29,1019208,1019208,0.0,1,1,1,"24.04.2025","0348300053625000174"],[61,73,29,2342667,2342667,0.0,1,1,1,"28.04.2025","0373200006525000298"],[38,22,8,1388977,1388977,0.0,1,1,1,"29.04.2025","0329200062225003898"],[51,32,17,1864500,1864500,0.0,1,1,1,"30.04.2025","0340200003325005902"],[39,65,8,6810763,6708420,1.5,2,1,1,"06.05.2025","0329100020525000011"],[132,46,28,2994891,2994891,0.0,1,1,0,"07.05.2025","0373200024425000666"],[126,89,28,1759862,1720000,2.3,1,1,1,"13.05.2025","0373200001325000479"],[115,25,61,3722240,3428597,19.9,4,1,1,"13.05.2025","0171200001925001832"],[19,9,51,4255000,4255000,0.0,1,1,0,"15.05.2025","0711200011025000357"],[51,32,17,1864500,1864500,0.0,1,1,1,"15.05.2025","0340200003325006711"],[107,117,53,2545113,2494965,null,1,1,1,"19.05.2025","32514848614"],[107,118,53,2545113,2545113,0.0,1,1,1,"19.05.2025","2323-2503482739"],[51,32,17,1864500,1864500,0.0,1,1,1,"19.05.2025","0340200003325006871"],[75,16,33,1668730,1668730,0.0,1,1,1,"20.05.2025","0352300030725000144"],[86,118,39,1084000,1084000,0.0,1,1,1,"21.05.2025","290802"],[86,118,39,1689900,1689900,0.0,1,1,1,"21.05.2025","290806"],[22,65,60,6800000,6800000,0.0,1,1,1,"21.05.2025","0315100000525000198"],[136,82,28,2995200,2995200,5.0,3,1,0,"22.05.2025","0373200100125000538"],[144,75,28,6420000,2503800,61.0,5,1,1,"27.05.2025","0373200025625000402"],[144,25,28,4984000,3438960,40.0,3,1,1,"27.05.2025","0373200025625000403"],[1,1,3,1450000,1450000,0.0,1,1,1,"28.05.2025","0301300068225000218"],[77,118,34,1375000,1345000,0.0,1,1,1,"30.05.2025","32514898071"],[37,25,8,1214996,1270152,30.1,4,1,1,"04.06.2025","0329200062225005078"],[143,11,28,1065000,1065000,2.1,1,1,0,"05.06.2025","0373100040125000437"],[151,25,28,1468135,1032399,39.5,4,1,1,"06.06.2025","0373100068725000154"],[22,78,60,16625400,16625400,0.0,1,1,1,"09.06.2025","0315100000525000223"],[22,78,60,2576750,2576750,0.0,1,1,1,"11.06.2025","0315100000525000234"],[169,50,58,6470498,6470498,0.0,1,1,0,"17.06.2025","0387200009125003051"],[11,25,18,1310268,683186,54.7,8,1,1,"17.06.2025","0307200030625001480"],[36,72,7,1334308,1334308,0.0,1,1,1,"18.06.2025","0128200000125003774"],[161,99,42,1850000,860250,53.5,4,1,1,"20.06.2025","0372200133125000408"],[178,3,3,3356400,3356400,0.0,1,1,0,"24.06.2025","0801500001125001102"],[69,75,31,5000000,5000000,0.0,1,1,0,"24.06.2025","0432200000825001176"],[69,75,31,5000000,5000000,0.0,1,1,0,"24.06.2025","0432200000825001177"],[101,121,46,1500000,1500000,53.7,4,1,0,"27.06.2025","32514988321"],[51,32,17,1864500,1864500,0.0,1,1,1,"30.06.2025","0340200003325009056"],[80,50,37,1499999,1499999,0.0,1,1,0,"30.06.2025","0356500003325000272"],[54,25,23,1030020,968804,18.2,3,1,1,"01.07.2025","0744200000225005609"],[174,75,4,9532233,9532233,46.5,3,1,0,"01.07.2025","0826500000925002700"],[77,117,34,1375000,1375000,0.0,1,1,1,"02.07.2025","32515004979"],[24,25,1,1710000,1543703,21.5,4,1,1,"03.07.2025","0317100032925000228"],[150,28,28,1200767,1560997,0.0,1,1,1,"04.07.2025","0373200063125000734"],[53,68,22,1208880,1208880,0.0,1,1,1,"09.07.2025","0343300002625000202"],[75,16,33,1668730,1668730,0.0,1,1,1,"09.07.2025","0352300030725000201"],[51,32,17,1864500,1864500,0.0,1,1,1,"09.07.2025","0340200003325009473"],[22,99,60,2800000,1636508,41.5,4,1,1,"10.07.2025","0315100000525000266"],[24,24,1,17307000,12634110,27.0,4,1,1,"14.07.2025","0317100032925000251"],[171,10,21,1100000,1100000,5.0,2,1,0,"15.07.2025","0375200002225000077"],[35,120,5,1569170,1167610,25.6,2,1,1,"16.07.2025","32515045029"],[113,121,59,1086999,594300,45.3,4,1,1,"21.07.2025","32515054445"],[51,32,17,1864500,1864500,0.0,1,1,1,"21.07.2025","0340200003325009956"],[177,4,3,52998000,52998000,0.0,1,1,0,"45867","0801500001125001287"],[160,103,42,1120000,1120000,0.0,1,1,1,"04.08.2025","0372200263425000853"],[170,75,9,1575829,1575829,24.0,3,1,0,"04.08.2025","0870500037225000195"],[100,42,46,1500000,1500000,0.0,1,1,0,"07.08.2025","0162200011825003020"],[103,106,48,2018500,2563000,0.0,1,1,1,"11.08.2025","0363100015125000340"],[103,106,48,6216760,8076530,0.0,1,1,1,"11.08.2025","0363100015125000341"],[73,25,32,1032669,843174,29.0,6,1,1,"12.08.2025","0351400001325000293"],[81,50,37,2999999,2999999,0.0,1,1,0,"14.08.2025","0356500005625000192"],[125,25,28,3483000,2783788,30.5,4,1,1,"14.08.2025","0373100068325000495"],[125,25,28,7380000,5753565,32.2,3,1,1,"15.08.2025","0373100068325000497"],[98,62,45,1024401,1024401,0.0,1,1,1,"21.08.2025","0361200015025004343"],[141,84,28,1500000,1500000,0.0,1,1,0,"22.08.2025","0373100023825000221"],[135,75,28,1280334,1277104,58.0,5,1,1,"25.08.2025","0373200215525000768"],[104,25,50,1674943,1357959,29.5,6,1,1,"28.08.2025","0164200001925002956"],[101,121,46,1500000,1500000,55.8,3,1,0,"28.08.2025","32515166581"],[18,9,51,1383300,1369500,1.0,1,1,1,"29.08.2025","0311300268225000080"],[75,16,33,1668730,1668730,0.0,1,1,1,"02.09.2025","0352300030725000267"],[27,18,20,3062100,3062100,0.0,1,1,1,"03.09.2025","0119200000125016499"],[162,98,42,20000000,20000000,0.0,1,1,0,"04.09.2025","0372100030625001047"],[136,86,28,4353600,4353600,0.0,1,1,0,"04.09.2025","0373200100125001023"],[27,18,20,2041400,2041400,0.0,1,1,1,"09.09.2025","0119200000125016888"],[119,29,28,4364335,4364335,0.0,1,1,1,"10.09.2025","0348200027025000702"],[48,122,16,2354045,1934342,28.5,4,1,1,"12.09.2025","32515209219"],[119,75,28,1146506,569007,50.4,4,1,1,"15.09.2025","0348200027025000714"],[80,50,37,1499000,1499000,0.0,1,1,0,"17.09.2025","0356500003325000357"],[74,48,33,2070000,2070000,0.0,2,1,1,"18.09.2025","0352100002025000308"],[147,81,28,1000000,1000000,0.0,1,1,0,"19.09.2025","0373100047425000905"],[6,117,6,1718108,942140,0.0,5,1,1,"24.09.2025","32515238836"],[52,25,22,2995940,2122610,38.4,5,1,1,"24.09.2025","0343100000725001163"],[28,36,20,3158900,3158900,0.0,1,1,0,"24.09.2025","0119200000125018003"],[92,108,41,1141188,1141188,0.0,1,1,1,"25.09.2025","0142200001325021894"],[72,7,32,7000000,7000000,24.8,6,1,0,"01.10.2025","0351100021325000539"],[135,75,28,1280334,1267517,17.5,2,1,1,"02.10.2025","0373200215525000849"],[103,100,48,3715690,3715690,0.0,1,1,1,"03.10.2025","0363100015125000420"],[72,41,32,9436680,9436680,0.0,1,1,0,"07.10.2025","0351100021325000568"],[131,74,28,1043334,700000,32.9,2,1,1,"08.10.2025","0373200052325000942"],[1,1,3,1037000,1037000,0.0,1,1,1,"09.10.2025","0301300068225000355"],[56,104,24,1350000,1350000,0.0,1,1,0,"15.10.2025","0145300006425000358"],[36,25,7,1046640,499506,58.5,5,1,1,"15.10.2025","0128200000125006003"],[88,53,39,1589876,1589876,0.0,1,1,1,"15.10.2025","0358200041325000738"],[26,100,19,4500000,4500000,0.0,1,1,0,"21.10.2025","0818500000825007768"],[51,32,17,1864500,1864500,0.0,1,1,1,"21.10.2025","0340200003325013681"],[67,96,31,8319000,8319000,0.0,1,1,1,"24.10.2025","0332100022725000986"],[51,32,17,1864500,1864500,0.0,1,1,1,"24.10.2025","0340200003325013893"],[167,75,42,1177000,888635,24.5,3,1,1,"27.10.2025","0372100052925000819"],[150,87,28,1457784,1457784,0.0,1,1,1,"29.10.2025","0373200063125001144"],[164,96,42,2082400,2082400,0.0,1,1,1,"30.10.2025","0372100033825000796"],[96,25,41,1500000,1500000,41.9,5,1,0,"31.10.2025","0142200001325024960"],[67,25,31,5700000,3244725,50.5,4,1,1,"07.11.2025","0332100022725001018"],[52,71,22,1058000,1050000,0.8,1,1,1,"10.11.2025","0343100000725001400"],[171,10,21,4900000,4900000,5.0,2,1,0,"10.11.2025","0375200002225000191"],[5,1,3,2999200,2999200,0.0,1,1,1,"10.11.2025","0301300025025000356"],[162,98,42,20000000,20000000,0.0,1,1,0,"10.11.2025","0372100030625001376"],[46,75,14,5158500,2321325,55.0,6,1,1,"12.11.2025","0137200001225007558"],[44,35,13,1748000,1748000,0.0,1,1,1,"14.11.2025","0335100015625000541"],[118,20,28,4775800,4775800,0.0,1,1,0,"17.11.2025","0373200067025001085"],[75,69,33,1668730,1660000,0.5,1,1,1,"18.11.2025","0352300030725000362"],[133,84,28,1200000,1200000,0.0,1,1,0,"19.11.2025","0373200022225002234"],[51,32,17,1864500,1864500,0.0,1,1,1,"19.11.2025","0340200003325015165"],[154,95,42,1500000,1500000,0.0,1,1,0,"19.11.2025","0372100011725000942"],[64,66,21,4372500,3694450,15.5,2,1,1,"20.11.2025","0348100015525000620"],[100,117,46,2840000,2840000,0.0,1,1,1,"20.11.2025","32515425725"],[82,102,38,1500000,1500000,0.0,1,1,0,"20.11.2025","0157200000325001479"],[122,29,28,4097800,4097800,0.0,1,1,1,"21.11.2025","0373200074825000927"],[106,117,53,1393800,1405920,0.0,1,1,1,"24.11.2025","32515437889"],[139,20,28,11009862,11009862,0.0,1,1,0,"24.11.2025","0373200027425003006"],[134,91,28,1134320,1134320,0.0,1,1,0,"25.11.2025","0373200015025000688"],[129,33,28,2496480,2259314,9.5,2,1,1,"25.11.2025","0373200152825001152"],[69,75,31,7000000,7000000,0.0,1,1,0,"25.11.2025","0432200000825003062"],[13,25,44,1687412,841297,56.6,4,1,1,"26.11.2025","0816500000625017855"],[69,75,31,5000000,5000000,0.0,1,1,0,"26.11.2025","0432200000825003071"],[51,32,17,1864500,1864500,0.0,1,1,1,"27.11.2025","0340200003325015682"],[65,92,30,1000000,1000000,0.0,1,1,0,"27.11.2025","0149200002325006968"],[52,15,22,2153875,2153875,0.0,1,1,1,"28.11.2025","0343100000725001492"],[109,25,54,1447600,690867,58.5,4,1,1,"28.11.2025","0366200035625009205"],[80,50,37,1499000,1499000,0.0,1,1,0,"03.12.2025","0356500003325000476"],[39,65,8,1459151,1414350,3.1,2,1,1,"04.12.2025","0329100020525000036"],[40,75,10,1291169,787613,39.0,3,1,1,"08.12.2025","0333200009725000376"],[40,75,10,1298004,791782,39.0,2,1,1,"08.12.2025","0333200009725000375"],[138,25,28,1469160,1469160,42.0,5,1,0,"08.12.2025","0373100037225001106"],[138,25,28,1197900,874766,36.5,6,1,1,"08.12.2025","0373100037225001108"],[2,2,3,5630000,5630000,0.0,1,1,1,"08.12.2025","0301100049625001875"],[92,25,41,2247500,2247500,0.5,2,1,1,"09.12.2025","0142200001325029356"],[9,80,15,7256026,7256026,0.0,1,1,1,"09.12.2025","0306500000325001049"],[51,32,17,1864500,1864500,0.0,1,1,1,"09.12.2025","0340200003325016370"],[108,25,54,1542170,1542170,12.5,3,1,1,"10.12.2025","0366200035625009538"],[158,100,42,1490400,1490400,0.0,1,1,1,"10.12.2025","0372200000125001164"],[52,82,22,8624840,6300000,27.0,1,1,1,"11.12.2025","0343100000725001670"],[52,82,22,1115788,641250,42.5,1,1,1,"11.12.2025","0343100000725001673"],[103,78,48,4409460,5547583,0.5,2,1,1,"11.12.2025","0363100015125000675"],[19,9,51,2930000,2930000,0.0,1,1,0,"11.12.2025","0711200011025000950"],[25,41,19,2508918,2508918,0.0,1,1,1,"12.12.2025","0818500000825010630"],[144,25,28,5318180,3638960,40.5,3,1,1,"15.12.2025","0373200025625000939"],[144,25,28,9900000,4497060,60.5,5,1,1,"15.12.2025","0373200025625000940"],[42,65,12,1817665,2297100,2.8,2,1,1,"15.12.2025","0334100027125000143"],[127,114,28,2077273,2077273,0.0,1,1,1,"15.12.2025","0373400010925001161"],[152,101,42,1000000,1000000,0.0,1,1,0,"15.12.2025","0372100003425001845"],[51,32,17,1864500,1864500,0.0,1,1,1,"15.12.2025","0340200003325016726"],[118,61,28,1463333,1463333,0.0,1,1,1,"15.12.2025","0373200067025001198"],[137,85,28,1656300,1656300,0.0,1,1,1,"16.12.2025","0373100087125000457"],[51,32,17,1864500,1864500,0.0,1,1,1,"16.12.2025","0340200003325016905"],[25,14,19,12480000,12480000,0.0,1,1,1,"17.12.2025","0818500000825010899"],[25,14,19,2120000,2120000,0.0,1,1,1,"17.12.2025","0818500000825010900"],[60,110,29,3663335,3645018,0.5,2,1,1,"17.12.2025","0348300016025000414"],[16,25,51,1635000,1184558,37.0,3,1,1,"18.12.2025","0711200024125000378"],[86,55,39,1068525,1055525,1.0,1,1,1,"18.12.2025","313684"],[120,88,28,1696000,1517920,10.5,2,1,1,"18.12.2025","0373100013425000601"],[121,57,28,2607581,2607581,0.0,1,1,1,"19.12.2025","0373100072125001760"],[12,78,27,1122000,1122000,0.0,1,1,1,"19.12.2025","0809500000325004705"],[89,25,39,5737820,5080834,23.0,4,1,1,"19.12.2025","0358100006225000714"],[28,17,20,1059240,1008000,4.8,1,1,1,"22.12.2025","0119200000125026495"],[114,117,59,2119833,2060000,0.0,1,1,1,"22.12.2025","32515560036"],[151,25,28,1518000,995049,43.0,6,1,1,"23.12.2025","0373100068725000377"],[85,25,39,2400000,1145400,58.5,5,1,1,"23.12.2025","0358100022825000696"],[105,25,52,1110400,1072646,16.0,4,1,1,"23.12.2025","0336100017025000450"],[128,20,28,18172800,18172800,0.0,1,1,0,"23.12.2025","0373200045225002213"],[75,69,33,1660000,1660000,0.0,1,1,1,"24.12.2025","0352300030725000437"],[144,28,28,1000000,1000000,0.0,1,1,0,"24.12.2025","32515571432"],[176,9,51,5331920,5482565,0.0,1,1,1,"25.12.2025","0311300098125000607"],[173,9,51,2185797,2282179,0.0,1,1,1,"25.12.2025","0311300098125000609"],[36,73,7,1593334,1593334,0.0,1,1,1,"25.12.2025","0128200000125009169"],[162,96,42,1000000,1000000,0.0,1,1,0,"26.12.2025","0372100030625001880"],[1,3,3,1450000,1450000,0.0,1,1,1,"26.12.2025","0301300068225000550"],[3,0,3,1518000,1518000,0.0,1,1,0,"29.12.2025","0301300019425000399"],[155,100,42,1500000,1500000,0.0,1,1,0,"29.12.2025","0372100001025000576"],[10,105,18,1000000,1000000,0.0,1,1,0,"30.12.2025","0307200022425000957"],[97,60,43,10081138,10081138,0.0,1,1,0,"30.12.2025","0360100030525001727"],[146,112,28,3399152,3399152,0.0,1,0,1,"16.01.2025","0373100078725000010"],[4,108,3,1902600,1902600,0.0,1,0,1,"22.01.2025","0301300051525000009"],[50,31,16,1138020,1138020,0.5,3,0,0,"27.01.2025","0339100001525000006"],[161,99,42,1297000,1297000,0.0,1,0,0,"05.02.2025","0372200133125000022"],[60,84,29,1493857,1413481,5.4,1,0,1,"09.02.2025","0348300016025000036"],[140,109,28,23321650,30166552,0.1,2,0,1,"18.02.2025","0373100094325000048"],[103,57,48,1186405,1186405,0.0,1,0,1,"19.02.2025","0363100015125000046"],[108,70,54,1079583,1079583,0.0,1,0,1,"24.02.2025","0366200035625000915"],[19,6,51,1120320,1120320,0.0,1,0,0,"24.02.2025","0711200011025000120"],[84,52,39,1495200,1495200,0.0,1,0,0,"25.02.2025","0358300079425000161"],[10,51,18,1000000,1000000,0.0,1,0,0,"04.03.2025","0307200022425000106"],[91,56,40,1290340,1055000,0.0,1,0,1,"11.03.2025","0859200001125002180"],[15,43,47,3167700,3365700,0.0,1,0,1,"20.03.2025","0310100005925000081"],[142,111,28,1379850,1379850,0.0,1,0,1,"23.03.2025","0373100032625000099"],[142,111,28,1436900,1436900,0.0,1,0,1,"24.03.2025","0373100032625000098"],[0,76,0,1500000,1500000,0.0,1,0,0,"24.03.2025","0176200005525000533"],[31,83,49,1496333,1496333,17.7,1,0,0,"24.03.2025","0321200022025000399"],[171,64,21,1500000,1500000,0.1,2,0,0,"28.03.2025","0375200002225000014"],[171,64,21,1500000,1500000,0.0,2,0,0,"01.04.2025","0375200002225000023"],[60,84,29,1496863,1412220,5.7,1,0,1,"04.04.2025","0348300016025000108"],[166,96,42,1499052,1499052,0.0,1,0,0,"08.04.2025","0372200047725000302"],[41,27,12,1500000,1500000,8.6,1,0,0,"10.04.2025","0134200000125001756"],[103,57,48,1321903,1713910,0.0,1,0,1,"15.04.2025","0363100015125000173"],[110,67,55,1474800,1474800,0.0,1,0,1,"16.04.2025","0367100000825000193"],[60,84,29,1496863,1412220,5.7,1,0,1,"18.04.2025","0348300016025000123"],[162,35,42,1500000,1500000,0.0,1,0,0,"05.05.2025","0372100030625000481"],[162,35,42,1500000,1500000,0.0,1,0,0,"05.05.2025","0372100030625000482"],[162,35,42,1500000,1500000,0.0,1,0,0,"05.05.2025","0372100030625000479"],[162,35,42,1500000,1500000,0.0,1,0,0,"05.05.2025","0372100030625000483"],[163,104,42,1410750,1410750,0.0,1,0,0,"07.05.2025","0372100010625000550"],[87,99,39,1361900,1361900,0.0,1,0,1,"13.05.2025","0358300068925000236"],[17,8,51,1290000,1290000,0.0,1,0,1,"13.05.2025","0311300098125000236"],[60,84,29,1496863,1412220,5.7,1,0,1,"14.05.2025","0348300016025000153"],[34,11,2,1499999,1499999,0.0,1,0,0,"16.05.2025","0324300031925000179"],[164,99,42,1000000,1000000,0.0,1,0,0,"20.05.2025","0372100033825000372"],[164,99,42,1000000,1000000,0.0,1,0,0,"20.05.2025","0372100033825000373"],[152,93,42,1500000,1500000,0.0,1,0,0,"26.05.2025","0372100003425000341"],[171,64,21,1500000,1500000,0.5,2,0,0,"27.05.2025","0375200002225000051"],[60,84,29,1496863,1412220,5.7,1,0,1,"02.06.2025","0348300016025000171"],[49,30,16,1250400,1150000,8.0,2,0,1,"06.06.2025","0139200000125008351"],[127,113,14,1114500,1411700,0.0,1,0,1,"17.06.2025","0373100068225000018"],[127,113,14,1114500,1102557,0.0,1,0,1,"17.06.2025","0373100068225000019"],[90,97,39,1485000,1485000,0.0,1,0,0,"17.06.2025","0358200007025000166"],[90,97,39,1495000,1495000,0.0,1,0,0,"17.06.2025","0358200007025000168"],[103,57,48,1472992,1890551,0.0,1,0,1,"18.06.2025","0363100015125000307"],[24,41,1,1479800,1479800,0.0,1,0,1,"18.06.2025","0317100032925000197"],[0,76,0,1500000,1500000,0.0,1,0,0,"18.06.2025","0176200005525001309"],[171,64,21,1500000,1500000,0.0,1,0,0,"18.06.2025","0375200002225000064"],[153,94,42,1469356,1469356,0.0,1,0,0,"20.06.2025","0372100049625001456"],[103,57,48,1472992,1791492,0.0,1,0,1,"27.06.2025","0363100015125000319"],[7,5,11,1436400,1436400,0.0,1,0,1,"11.07.2025","0114500000825001854"],[140,75,28,1381723,1796240,0.0,1,0,1,"15.07.2025","0373100094325000774"],[76,118,34,1470400,1470400,0.0,1,0,1,"17.07.2025","9126141"],[152,93,42,1500000,1500000,0.0,1,0,0,"18.07.2025","0372100003425000586"],[76,117,34,3882400,3808027,0.0,1,0,1,"23.07.2025","32515064205"],[1,123,3,1475000,1475000,0.0,1,0,1,"45866","0301300068225000289"],[113,119,59,1506933,1506933,null,1,0,1,"18.08.2025","32515133485"],[156,99,42,1500000,1500000,0.0,1,0,0,"18.08.2025","0372200277525000458"],[67,40,31,1777000,1777000,0.0,1,0,1,"26.08.2025","0332100022725000806"],[31,83,49,1136364,1136364,0.0,1,0,1,"23.09.2025","0321200022025000878"],[72,41,32,1874000,1874000,0.0,1,0,0,"29.09.2025","0351100021325000526"],[152,93,42,1500000,1500000,0.0,1,0,0,"01.10.2025","0372100003425001116"],[55,34,24,1500000,1500000,0.0,1,0,0,"06.10.2025","0345200004025001143"],[152,93,42,1500000,1500000,0.0,1,0,0,"08.10.2025","0372100003425001156"],[14,41,47,5128450,5128450,0.0,1,0,1,"08.10.2025","0310100009925000094"],[78,21,35,1702175,1702175,0.0,1,0,1,"08.10.2025","0154200000725001139"],[155,35,42,1360000,1360000,0.0,1,0,0,"13.10.2025","0372100001025000458"],[127,113,14,1114500,1114500,0.0,1,0,1,"16.10.2025","0373100068225000118"],[171,10,21,1500000,1500000,0.6,2,0,0,"21.10.2025","0375200002225000139"],[127,113,14,1114500,1319486,0.0,1,0,1,"24.10.2025","0373100068225000127"],[166,96,42,1391411,1391411,0.0,1,0,0,"27.10.2025","0372200047725001154"],[152,93,42,1500000,1500000,0.0,1,0,0,"28.10.2025","0372100003425001342"],[165,96,42,1140000,1140000,0.0,1,0,0,"30.10.2025","0372200074125000323"],[117,117,61,10251500,9810500,0.0,1,0,1,"30.10.2025","32515357537"],[57,97,25,2926000,3080000,0.0,1,0,1,"05.11.2025","0346200002825000674"],[171,10,21,1500000,1500000,0.7,2,0,0,"12.11.2025","0375200002225000195"],[124,75,28,2097769,2074350,1.1,1,0,1,"12.11.2025","32515393167"],[83,96,19,1500000,1500000,0.0,1,0,0,"12.11.2025","0358100011225000246"],[29,116,49,1138683,1138683,0.0,1,0,1,"17.11.2025","0321100017625000597"],[171,64,21,1500000,1500000,0.6,2,0,0,"20.11.2025","0375200002225000216"],[103,57,48,1491629,1491629,0.0,1,0,1,"21.11.2025","0363100015125000577"],[84,54,39,1499600,1499600,0.0,1,0,0,"21.11.2025","0358300079425000962"],[15,47,47,1186000,1186000,0.0,1,0,1,"28.11.2025","0310100005925000423"],[162,105,42,1500000,1500000,0.0,1,0,0,"01.12.2025","0372100030625001589"],[162,105,42,1500000,1500000,0.0,1,0,0,"01.12.2025","0372100030625001590"],[162,105,42,1500000,1500000,0.0,1,0,0,"01.12.2025","0372100030625001591"],[76,117,34,4165000,3962500,0.0,1,0,1,"02.12.2025","32515478662"],[83,96,19,1500000,1500000,0.0,1,0,0,"03.12.2025","0358100011225000329"],[8,104,15,1486170,1486170,0.0,1,0,1,"04.12.2025","0306300031625000289"],[47,118,14,1470001,1470001,0.0,1,0,1,"04.12.2025","311989"],[159,96,42,1720844,1720844,0.0,1,0,0,"05.12.2025","0372200105025000460"],[171,64,21,1500000,1500000,0.1,2,0,0,"09.12.2025","0375200002225000275"],[20,7,51,1056627,1056627,0.0,1,0,0,"09.12.2025","0711200005925000493"],[103,57,48,1491629,1491629,0.0,1,0,1,"10.12.2025","0363100015125000668"],[121,115,28,1500000,1500000,0.0,1,0,0,"10.12.2025","0373100072125001650"],[157,90,42,1000000,1000000,0.0,1,0,0,"11.12.2025","0372200005425000787"],[32,83,49,1000000,1000000,0.0,1,0,0,"18.12.2025","0321300003925000408"],[31,73,49,1185750,1185750,0.0,1,0,1,"23.12.2025","0321200022025001326"],[168,35,58,1731156,1731156,0.0,1,0,1,"24.12.2025","0387200002825001592"],[90,96,39,1485000,1485000,0.0,1,0,0,"25.12.2025","0358200007025000840"],[90,96,39,1497000,1497000,0.0,1,0,0,"25.12.2025","0358200007025000842"],[10,51,18,1000000,1000000,0.0,1,0,0,"26.12.2025","0307200022425000949"],[33,15,2,1481253,1725131,0.0,1,0,1,"26.12.2025","0324200004525000206"],[30,116,49,1500000,1500000,0.0,1,0,0,"27.12.2025","0321300054625000664"],[23,13,1,1362960,1362960,0.0,1,0,1,"29.12.2025","0817200000325023280"],[10,51,18,1000000,1000000,0.0,1,0,0,"29.12.2025","0307200022425000953"],[41,75,12,1500000,1500000,0.2,2,0,0,"29.12.2025","0134200000125006614"],[14,41,47,8238200,8238200,0.0,1,0,1,"29.12.2025","0310100009925000194"]],"pos":[[0,6,10,290000,2900000,0,"",1,10,2900000],[1,7,400,3490,1396000,1,"40",1,0,0],[2,9,500,3384,1692000,1,"60",1,0,0],[3,7,200,7025,1405000,-1,"40",1,0,0],[4,9,0,3928,0,1,"40",1,0,0],[4,3,0,6841,0,1,"40",1,437,2989329],[4,1,0,12704,0,1,"40",1,0,0],[5,11,60,17575,1054500,0,"20",1,50,878750],[6,12,180,7532,1355701,0,"40",1,180,1355701],[7,9,411,3687,1515315,1,"40",1,411,1515316],[7,9,50,3771,188535,1,"40",1,50,188535],[8,9,265,3827,1014258,0,"40",1,265,1014258],[9,3,0,4630,0,0,"20",1,0,0],[9,3,0,5190,0,0,"40",1,60,311400],[9,3,0,4630,0,0,"20",1,0,0],[9,3,0,5190,0,0,"40",1,20,103800],[9,3,0,5190,0,1,"20",1,0,0],[9,3,0,6030,0,1,"40",1,55,331650],[9,3,0,5190,0,1,"20",1,0,0],[9,3,0,6030,0,1,"40",1,10,60300],[9,14,0,4200,0,0,"40",1,35,147000],[10,9,0,4472,0,0,"40",1,250,1118105],[10,9,0,5052,0,0,"20",1,0,0],[11,3,0,7580,0,1,"40",1,250,1895000],[12,12,40,7116,284634,0,"40",1,40,284634],[12,3,110,6740,741391,0,"40",1,110,741391],[12,9,250,6740,1684980,0,"40",1,250,1684980],[13,3,0,5623,0,0,"40",1,50,281150],[13,3,0,7531,0,1,"40",1,146,1099526],[14,9,280,2490,697200,0,"40",1,280,697200],[15,12,620,5000,3100000,1,"40",1,100,500000],[16,5,820,1938,1588750,0,"40",1,804,1557750],[17,3,0,5070,0,0,"20",1,0,0],[17,3,0,5670,0,0,"40",1,81,459270],[17,3,0,5070,0,0,"20",1,0,0],[17,3,0,5670,0,0,"40",1,0,0],[17,3,0,5670,0,1,"20",1,0,0],[17,3,0,6650,0,1,"40",1,81,538650],[17,3,0,5670,0,1,"20",1,0,0],[17,3,0,6650,0,1,"40",1,0,0],[18,3,0,5153,0,-1,"20",1,0,0],[18,3,0,6107,0,-1,"40",1,0,0],[18,3,0,5153,0,-1,"20",1,0,0],[18,3,0,6100,0,-1,"40",1,0,0],[18,3,0,5770,0,-1,"20",1,0,0],[18,3,0,6447,0,-1,"40",1,149,960554],[18,3,0,5770,0,-1,"20",1,0,0],[18,3,0,6447,0,-1,"40",1,83,535074],[19,9,515,4890,2518350,1,"40",1,515,2518350],[20,6,0,99819,0,0,"",1,35,3493665],[21,7,0,8643,0,1,"40",1,0,0],[21,9,0,8747,0,1,"40",1,1200,10496400],[21,1,0,12988,0,1,"40",1,0,0],[21,12,0,7468,0,1,"40",1,1329,9924972],[22,9,1300,2111,2744820,0,"40",1,1300,2744820],[23,3,191,7667,1464397,1,"40",1,191,1464397],[23,1,3,11563,34689,1,"40",1,0,0],[24,9,415,2596,1077286,0,"40",1,415,1077286],[25,9,630,2618,1649234,0,"40",1,630,1649233],[26,6,100,143605,14360500,0,"",1,100,14360500],[27,3,400,6947,2778800,1,"40",1,400,2778800],[28,13,25,40827,1020667,0,"25",1,25,1020667],[29,12,230,4500,1035000,-1,"40",1,0,0],[30,6,0,168750,0,0,"",1,10,1687500],[31,3,140,7817,1094334,0,"40",1,15,117250],[31,3,104,9237,960614,1,"40",1,104,960614],[32,3,510,5123,2612898,1,"40",1,280,1434532],[32,3,510,4393,2240598,0,"40",1,380,1669465],[33,9,0,4911,0,0,"40",1,1,4911],[33,14,0,5610,0,0,"40",1,213,1194958],[34,9,0,5396,0,-1,"25",1,0,0],[34,9,0,5396,0,-1,"40",1,209,1127718],[35,7,120,18000,2160000,-1,"45",1,0,0],[36,3,515,5539,2852585,1,"40",1,515,2852585],[37,9,175,6208,1086342,0,"40",1,175,1086342],[38,9,135,10121,1366268,0,"20",1,135,1366268],[39,10,40,71364,2854560,0,"26",1,40,2854560],[40,9,180,4914,884558,1,"40",1,180,884558],[40,9,20,5088,101769,1,"60",1,20,101769],[41,9,400,2364,945580,0,"40",1,400,945580],[42,9,0,5229,0,1,"40",1,250,1307250],[42,3,0,4250,0,1,"20",1,30,127500],[42,3,0,5100,0,1,"40",1,400,2040000],[43,5,3500,2187,7654605,0,"40",1,3500,7654605],[44,9,250,3648,912094,1,"40",1,0,0],[45,12,780,4650,3627000,1,"40",1,780,3627000],[46,3,492,5822,2864318,1,"40",1,492,2864316],[47,3,0,3751,0,0,"20",1,50,187550],[47,3,0,4235,0,0,"40",1,1724,7301140],[47,3,0,4235,0,1,"20",1,70,296450],[47,3,0,4972,0,1,"40",1,2456,12211232],[48,9,0,3020,0,0,"40",1,258,779160],[48,9,0,4943,0,1,"40",1,245,1211116],[49,10,20,83437,1668730,0,"",1,20,1668730],[50,9,0,3792,0,0,"40",1,250,947918],[51,1,0,12000,0,1,"",1,0,0],[51,14,0,6000,0,0,"40",1,60,360000],[51,9,0,6000,0,0,"40",1,189,1134000],[52,9,0,2030,0,0,"",1,2286,4639437],[52,9,0,2030,0,0,"",1,0,0],[52,9,0,1986,0,0,"",1,410,814445],[52,9,0,1986,0,0,"",1,0,0],[53,14,265,5924,1569773,0,"40",1,225,1332826],[54,6,10,290000,2900000,0,"",1,10,2900000],[55,3,10,6000,60000,1,"40",1,10,60000],[55,9,225,4050,911250,0,"40",1,225,911250],[56,3,10,6000,60000,1,"40",1,10,60000],[56,9,225,4050,911250,0,"40",1,225,911250],[57,13,40,26460,1058400,0,"26",1,40,1058400],[58,3,0,6690,0,1,"40",1,224,1498560],[58,3,0,5080,0,0,"20",1,0,0],[59,14,1300,3800,4940000,0,"40",1,1300,4940000],[60,3,369,4950,1826550,0,"40",1,369,1826550],[60,9,20,4400,88000,0,"40",1,20,88000],[61,12,1096,4565,5003240,1,"40",1,1096,5003240],[62,12,365,3442,1256404,0,"40",1,365,1256403],[63,3,136,6061,824251,0,"40",1,136,824251],[63,3,60,6061,363640,1,"40",1,60,363640],[64,3,794,5830,4629020,1,"40",1,794,4629020],[64,9,8,4620,36960,1,"40",1,8,36960],[65,1,0,11120,0,1,"40",1,0,0],[65,9,0,7890,0,1,"40",1,21,165690],[65,9,0,4220,0,0,"40",1,221,932620],[65,9,0,4050,0,0,"40",1,0,0],[66,10,30,45144,1354332,0,"",1,30,1354332],[67,1,0,11120,0,1,"40",1,0,0],[67,9,0,7890,0,1,"40",1,22,173580],[67,9,0,4220,0,0,"40",1,219,924180],[67,9,0,4050,0,0,"40",1,0,0],[68,14,300,4404,1321138,0,"40",1,300,1321137],[68,14,10,9786,97862,1,"41",1,0,0],[69,1,5,15000,75000,1,"",1,0,0],[69,11,46,16000,736000,1,"20",1,46,736000],[69,9,100,3950,395000,0,"40",1,75,296250],[70,9,24,45000,1080000,0,"",1,24,1080000],[71,9,2780,1765,4906700,-1,"40",1,0,0],[72,7,296,6060,1793760,-1,"40",1,0,0],[73,9,260,3335,867100,0,"60",1,260,867100],[74,5,260,6130,1593800,1,"40",1,260,1593800],[75,11,195,11520,2246400,0,"20",1,195,2246400],[76,9,800,2182,1745792,0,"40",1,800,1745792],[77,9,0,3690,0,1,"40",1,200,738000],[78,11,0,19568,0,0,"20",1,74,1448056],[78,10,0,73244,0,0,"",1,0,0],[79,3,160,6370,1019208,1,"40",1,30,191102],[80,13,70,33467,2342667,0,"26",1,70,2342667],[81,11,83,16735,1388977,0,"20",1,83,1388977],[82,9,200,4300,860000,0,"60",1,200,860000],[82,12,200,3960,792000,0,"40",1,200,792000],[82,10,5,42500,212500,0,"26",1,0,0],[83,12,1010,6642,6708420,1,"40",1,1010,6708420],[84,9,0,2857,0,0,"40",1,455,1299935],[84,1,0,9780,0,1,"59",1,0,0],[85,3,200,8600,1720000,1,"40",1,200,1720000],[86,9,1000,3429,3428597,1,"40",1,470,1611441],[87,12,0,5000,0,1,"40",1,851,4255000],[88,9,200,4300,860000,0,"60",1,200,860000],[88,12,200,3960,792000,0,"40",1,200,792000],[88,10,5,42500,212500,0,"26",1,0,0],[89,3,300,6096,1828833,-1,"40",1,0,0],[89,3,100,6661,666132,-1,"40",1,0,0],[90,3,300,6241,1872417,-1,"",1,0,0],[90,3,100,6727,672696,-1,"",1,0,0],[91,9,200,4300,860000,0,"60",1,200,860000],[91,12,200,3960,792000,0,"40",1,200,792000],[91,10,5,42500,212500,0,"26",1,0,0],[92,10,20,83437,1668730,0,"26",1,20,1668730],[93,9,200,4700,940000,-1,"40",1,0,0],[93,9,20,7200,144000,-1,"40",1,0,0],[94,9,80,7200,576000,-1,"40",1,0,0],[94,9,237,4700,1113900,-1,"40",1,0,0],[95,12,2000,3400,6800000,1,"40",1,2000,6800000],[96,5,0,4560,0,1,"40",1,656,2991360],[97,9,1200,2087,2503800,0,"60",1,1200,2503800],[98,9,800,4299,3438960,1,"60",1,800,3438960],[99,6,5,290000,1450000,0,"",1,5,1450000],[100,14,290,4400,1276000,0,"40",1,0,0],[100,14,10,6900,69000,1,"40",1,0,0],[101,9,585,2171,1270152,0,"40",1,585,1270152],[102,9,0,7204,0,1,"40",1,146,1051718],[102,3,0,6093,0,1,"40",1,2,12185],[103,9,283,3648,1032399,1,"40",1,283,1032398],[104,3,1000,3542,3542000,1,"20",1,20,70840],[104,3,1000,4125,4125000,1,"40",1,1000,4125000],[104,3,200,3542,708400,1,"20",1,199,704858],[104,3,2000,4125,8250000,1,"40",1,2000,8250000],[105,3,100,3168,316800,0,"20",1,50,158400],[105,3,400,3542,1416800,0,"40",1,400,1416800],[105,11,70,12045,843150,0,"20",1,70,843150],[106,3,0,9133,0,1,"40",1,200,1826666],[106,1,0,15433,0,1,"40",1,0,0],[107,9,200,3416,683186,1,"40",1,200,683186],[108,10,25,53372,1334308,0,"26",1,25,1334308],[109,9,500,1721,860250,0,"40",1,200,344100],[110,0,0,207700,0,0,"",1,3,623100],[110,0,0,72000,0,0,"",1,4,288000],[111,9,0,2720,0,0,"40",1,1680,4569600],[111,9,0,2720,0,0,"60",1,0,0],[111,9,0,2690,0,0,"40",1,0,0],[112,9,0,3840,0,1,"40",1,350,1344000],[112,9,0,3840,0,1,"60",1,60,230400],[112,9,0,3790,0,1,"40",1,0,0],[112,7,0,6000,0,1,"",1,0,0],[113,9,0,2150,0,-1,"40",1,0,0],[113,9,0,3280,0,-1,"40",1,0,0],[114,9,200,4300,860000,0,"60",1,200,860000],[114,12,200,3960,792000,0,"40",1,200,792000],[114,10,5,42500,212500,0,"26",1,0,0],[115,9,0,6000,0,0,"40",1,249,1494000],[115,14,0,6000,0,0,"40",1,0,0],[115,1,0,12000,0,1,"59",1,0,0],[116,9,281,3448,968804,1,"40",1,281,968804],[117,9,0,2118,0,0,"60",1,0,0],[117,9,0,1728,0,0,"40",1,220,380167],[117,9,0,13903,0,0,"",1,20,278064],[118,14,290,4500,1305000,0,"40",1,0,0],[118,14,10,7000,70000,1,"40",1,0,0],[119,9,450,3430,1543703,1,"40",1,100,343045],[120,5,169,9237,1560997,1,"40",1,169,1560997],[121,5,200,5940,1188000,0,"40",1,200,1188000],[121,5,2,10440,20880,1,"40",1,2,20880],[122,10,20,83437,1668730,0,"26",1,20,1668730],[123,9,200,4300,860000,0,"60",1,200,860000],[123,12,200,3960,792000,0,"40",1,200,792000],[123,10,5,42500,212500,0,"26",1,0,0],[124,9,1000,1637,1636508,0,"40",1,1000,1636510],[125,9,110,1971,216810,0,"60",1,60,118260],[125,9,6300,1971,12417300,0,"40",1,3300,6504300],[126,9,0,16118,0,0,"25",1,0,0],[126,11,0,17638,0,0,"20",1,62,1093576],[126,13,0,20936,0,0,"26",1,0,0],[127,7,590,1979,1167610,0,"40",1,0,0],[128,7,300,1981,594300,-1,"40",1,0,0],[129,9,200,4300,860000,0,"",1,200,860000],[129,12,200,3960,792000,0,"40",1,200,792000],[129,10,5,42500,212500,0,"26",1,0,0],[130,10,0,117500,0,0,"26",1,46,5405000],[130,5,0,25000,0,0,"20",1,76,1900000],[131,13,35,32000,1120000,0,"26",1,35,1120000],[132,9,0,4403,0,0,"40",1,175,770513],[133,12,0,3200,0,0,"40",1,211,675200],[133,12,0,3900,0,1,"",1,211,822900],[134,9,500,4950,2475000,0,"40",1,500,2475000],[134,12,20,4400,88000,0,"40",1,20,88000],[135,3,1379,5830,8039570,1,"40",1,1379,8039570],[135,9,8,4620,36960,1,"40",1,8,36960],[136,9,320,2207,706328,0,"40",1,280,618038],[136,9,40,3421,136845,1,"40",1,0,0],[137,3,0,8100,0,0,"40",1,0,0],[137,9,0,4100,0,0,"40",1,0,0],[137,1,0,15000,0,1,"",1,0,0],[138,9,100,11110,1110958,0,"25",1,100,1110958],[138,9,700,2390,1672830,0,"40",1,700,1672832],[139,9,1800,3196,5753565,1,"40",1,1800,5753574],[140,11,70,14634,1024401,0,"20",1,70,1024401],[141,3,0,5623,0,0,"",1,120,674784],[141,3,0,6547,0,1,"",1,120,785664],[141,3,0,7154,0,1,"40",1,0,0],[142,9,475,2689,1277104,1,"60",1,60,161318],[143,9,630,2155,1357959,0,"40",1,280,603537],[144,9,0,2050,0,-1,"40",1,0,0],[144,9,0,3150,0,-1,"40",1,0,0],[145,12,300,4565,1369500,1,"",1,300,1369500],[146,10,20,83437,1668730,0,"26",1,20,1668730],[147,3,300,10207,3062100,1,"40",1,20,204140],[148,3,0,3751,0,0,"20",1,38,142538],[148,3,0,4235,0,0,"40",1,1205,5103175],[148,3,0,4235,0,1,"20",1,0,0],[148,3,0,4972,0,1,"40",1,1700,8452400],[149,5,0,4800,0,1,"40",1,907,4353600],[150,3,200,10207,2041400,1,"40",1,63,643041],[151,3,40,8729,349147,1,"40",1,40,349147],[151,3,160,8729,1396587,1,"40",1,160,1396587],[151,3,300,8729,2618601,1,"40",1,100,872867],[152,9,769,2512,1931728,0,"40",1,0,0],[152,9,1,2614,2614,0,"40",1,0,0],[153,9,180,3161,569007,1,"40",1,65,205475],[154,1,0,12000,0,1,"59",1,0,0],[154,14,0,6000,0,0,"40",1,0,0],[154,9,0,6000,0,0,"40",1,249,1494000],[155,14,460,4500,2070000,0,"40",1,26,117000],[156,11,0,25172,0,0,"20",1,39,981708],[157,7,326,2890,942140,-1,"40",1,0,0],[158,9,1000,2123,2122610,0,"40",1,1000,2122610],[159,12,0,6100,0,0,"40",1,60,366000],[159,9,0,7700,0,0,"40",1,60,462000],[159,14,0,6100,0,0,"40",1,0,0],[160,5,589,1938,1141188,0,"40",1,442,856375],[161,9,0,1880,0,0,"40",1,1313,2468440],[162,9,240,5281,1267517,1,"40",1,240,1267517],[163,3,631,5830,3678730,1,"40",1,631,3678730],[163,9,8,4620,36960,1,"40",1,8,36960],[164,14,0,3960,0,0,"40",1,600,2376000],[165,9,200,3500,700000,1,"40",1,200,700000],[166,10,7,99500,696500,0,"26",1,7,696500],[166,5,15,22700,340500,0,"40",1,15,340500],[167,3,0,6853,0,1,"40",1,196,1343253],[167,3,0,5920,0,1,"20",1,0,0],[167,3,0,5920,0,0,"40",1,0,0],[167,3,0,5920,0,1,"20",1,0,0],[167,3,0,6853,0,1,"40",1,0,0],[167,3,0,5277,0,0,"20",1,0,0],[167,3,0,5920,0,0,"40",1,0,0],[167,3,0,5277,0,0,"20",1,0,0],[168,9,245,2039,499506,0,"40",1,245,499506],[169,12,186,8548,1589876,1,"40",1,186,1589876],[170,3,0,5804,0,0,"20",1,0,0],[170,3,0,6512,0,0,"40",1,0,0],[170,3,0,5804,0,0,"20",1,0,0],[170,3,0,6512,0,0,"40",1,0,0],[170,3,0,6512,0,1,"20",1,0,0],[170,3,0,7616,0,1,"",1,0,0],[170,3,0,6512,0,1,"20",1,0,0],[170,3,0,7616,0,1,"40",1,200,1523132],[171,9,200,4300,860000,0,"60",1,200,860000],[171,12,200,3960,792000,0,"40",1,200,792000],[171,10,5,42500,212500,0,"26",1,0,0],[172,9,1500,5000,7500000,1,"40",1,600,3000000],[172,1,100,8190,819000,1,"40",1,0,0],[173,9,200,4300,860000,0,"60",1,200,860000],[173,12,200,3960,792000,0,"40",1,200,792000],[173,10,5,42500,212500,0,"26",1,0,0],[174,9,200,3322,664400,0,"40",1,35,116270],[174,9,54,4153,224235,1,"40",1,40,166100],[175,5,110,8962,985784,1,"40",1,40,358467],[175,3,60,7867,472000,0,"40",1,60,472000],[176,9,548,3800,2082400,0,"40",1,324,1231200],[177,9,0,2788,0,0,"40",1,100,278760],[177,9,0,3194,0,1,"40",1,50,159706],[178,9,1500,2163,3244725,0,"40",1,1080,2336202],[179,0,30,35000,1050000,0,"",1,30,1050000],[180,9,0,14282,0,0,"25",1,0,0],[180,11,0,15878,0,0,"20",1,24,381064],[180,13,0,18808,0,0,"26",1,0,0],[181,9,320,8900,2848000,1,"40",1,69,614100],[181,1,7,21600,151200,1,"40",1,0,0],[182,3,0,3751,0,0,"20",1,0,0],[182,3,0,4235,0,0,"40",1,400,1694000],[182,3,0,4235,0,0,"40",1,200,847000],[182,3,0,4235,0,1,"20",1,0,0],[182,3,0,4972,0,1,"40",1,900,4474800],[183,9,905,2565,2321325,1,"60",1,175,448875],[184,14,460,3800,1748000,0,"40",1,0,0],[185,9,0,3990,0,0,"40",1,0,0],[185,3,0,6946,0,1,"40",1,300,2083800],[185,1,0,12943,0,1,"",1,0,0],[186,10,20,83000,1660000,0,"26",1,20,1660000],[187,3,0,5968,0,0,"40",1,20,119360],[187,3,0,7993,0,1,"40",1,0,0],[188,9,200,4300,860000,0,"",1,200,860000],[188,12,200,3960,792000,0,"40",1,200,792000],[188,10,5,42500,212500,0,"26",1,0,0],[189,1,0,12150,0,1,"",1,0,0],[189,9,0,5000,0,1,"",1,40,200000],[189,9,0,4000,0,0,"",1,92,368000],[189,9,0,3900,0,0,"",1,0,0],[190,9,500,3992,1996000,0,"40",1,200,798400],[190,14,335,5070,1698450,0,"40",1,146,740220],[191,9,400,3200,1280000,0,"40",1,0,0],[191,9,400,3900,1560000,1,"40",1,0,0],[192,5,0,3850,0,0,"40",1,0,0],[192,5,0,6397,0,1,"40",1,0,0],[192,5,0,13585,0,0,"20",1,0,0],[192,9,0,5173,0,0,"40",1,0,0],[193,3,600,4920,2952000,0,"40",1,245,1205400],[193,3,200,5729,1145800,1,"40",1,0,0],[194,7,232,6060,1405920,-1,"",1,0,0],[195,3,0,7243,0,1,"40",1,250,1810833],[195,9,0,6474,0,1,"40",1,0,0],[195,3,0,3439,0,1,"40",1,0,0],[196,0,0,37811,0,0,"",1,30,1134320],[197,3,400,5648,2259314,1,"40",1,400,2259316],[198,9,0,2720,0,0,"40",1,235,639200],[198,9,0,2720,0,0,"60",1,65,176800],[198,9,0,2690,0,0,"40",1,0,0],[199,9,400,2103,841297,0,"40",1,160,336518],[200,9,0,3840,0,1,"40",1,20,76800],[200,9,0,3840,0,1,"60",1,0,0],[200,9,0,3790,0,1,"40",1,0,0],[200,3,0,6000,0,1,"",1,0,0],[201,9,200,4300,860000,0,"60",1,200,860000],[201,12,200,3960,792000,0,"40",1,200,792000],[201,10,5,42500,212500,0,"26",1,0,0],[202,9,0,5550,0,1,"40",1,100,555000],[202,3,0,4303,0,1,"20",1,0,0],[202,3,0,5444,0,1,"40",1,0,0],[203,6,15,143592,2153875,0,"",1,15,2153875],[204,9,220,3140,690867,1,"40",1,120,376837],[205,1,0,12000,0,1,"59",1,0,0],[205,9,0,6000,0,0,"40",1,249,1494000],[205,14,0,6000,0,0,"40",1,0,0],[206,12,210,6735,1414350,1,"40",1,210,1414350],[207,9,2,4169,8339,1,"40",1,0,0],[207,9,300,2598,779274,0,"40",1,0,0],[208,9,3,4169,12508,1,"40",1,0,0],[208,9,300,2598,779274,0,"40",1,190,493540],[209,9,0,4402,0,1,"40",1,0,0],[209,9,0,2421,0,0,"40",1,0,0],[210,9,330,2651,874766,0,"40",1,0,0],[211,14,10,17000,170000,1,"",1,10,170000],[211,9,600,6600,3960000,1,"40",1,200,1320000],[211,9,300,5000,1500000,0,"40",1,100,500000],[212,9,1160,1938,2247500,0,"40",1,90,174375],[213,10,85,49379,4197192,0,"26",1,3,148136],[213,6,15,119657,1794848,0,"",1,0,0],[213,6,15,84266,1263986,0,"",1,2,168531],[214,9,200,4300,860000,0,"60",1,0,0],[214,12,200,3960,792000,0,"40",1,0,0],[214,10,5,42500,212500,0,"26",1,0,0],[215,9,500,3084,1542170,1,"40",1,250,771085],[216,3,95,6050,574750,1,"40",1,0,0],[216,14,95,3850,365750,0,"",1,0,0],[216,11,30,18330,549900,0,"20",1,0,0],[217,5,3500,1800,6300000,0,"40",1,0,0],[218,5,250,2565,641250,1,"40",1,0,0],[219,3,950,5801,5510808,1,"40",1,600,3480510],[219,9,8,4597,36775,1,"40",1,0,0],[220,12,0,5000,0,1,"40",1,125,625000],[221,11,170,14758,2508918,0,"20",1,30,442750],[222,9,1000,3639,3638960,1,"40",1,0,0],[223,9,2000,2249,4497060,0,"40",1,0,0],[224,12,494,4650,2297100,1,"",1,200,930000],[225,8,100,20773,2077273,0,"20",1,60,1246364],[226,14,0,4734,0,0,"40",1,0,0],[226,14,0,18016,0,1,"41",1,0,0],[227,9,200,4300,860000,0,"60",1,0,0],[227,12,200,3960,792000,0,"40",1,0,0],[227,10,5,42500,212500,0,"26",1,0,0],[228,11,35,22000,770000,0,"20",1,0,0],[228,5,40,17333,693333,0,"20",1,0,0],[229,11,75,22084,1656300,0,"20",1,0,0],[230,9,200,4300,860000,0,"",1,0,0],[230,12,200,3960,792000,0,"40",1,0,0],[230,10,5,42500,212500,0,"26",1,0,0],[231,3,2600,4800,12480000,0,"40",1,0,0],[232,3,400,5300,2120000,1,"40",1,0,0],[233,14,332,7290,2420293,-1,"40",1,0,0],[233,14,168,7290,1224725,-1,"40",1,0,0],[234,9,545,2174,1184558,0,"40",1,200,434700],[235,1,10,14587,145870,-1,"40",1,0,0],[235,9,65,4824,313555,-1,"",1,0,0],[235,11,10,11228,112284,-1,"20",1,0,0],[235,9,65,7443,483816,-1,"40",1,0,0],[236,3,320,4744,1517920,1,"40",1,0,0],[237,11,90,28973,2607581,-1,"20",1,0,0],[238,3,255,4400,1122000,1,"40",1,60,264000],[239,9,2200,2309,5080834,0,"40",1,470,1085451],[240,0,30,33600,1008000,0,"",1,4,134400],[241,14,450,3800,1710000,-1,"40",1,0,0],[241,14,50,7000,350000,-1,"40",1,0,0],[242,9,300,3317,995049,1,"40",1,20,66337],[243,9,500,2291,1145400,0,"40",1,150,343620],[244,9,320,3352,1072646,1,"40",1,50,167601],[245,14,0,2950,0,0,"40",1,0,0],[245,3,0,6660,0,1,"40",1,0,0],[246,10,20,83000,1660000,0,"26",1,20,1660000],[247,7,0,9670,0,1,"40",1,0,0],[247,7,0,8730,0,0,"40",1,0,0],[248,12,700,4565,5482565,1,"",1,327,1492755],[249,12,663,3442,2282179,0,"",1,235,808917],[250,13,50,31867,1593334,0,"26",1,50,1593334],[251,9,0,3500,0,1,"40",1,0,0],[251,9,0,3500,0,0,"60",1,0,0],[251,1,0,7875,0,1,"40",1,0,0],[251,9,0,2700,0,0,"40",1,0,0],[252,6,5,290000,1450000,0,"",1,4,1160000],[253,9,0,5100,0,1,"40",1,100,510000],[253,5,0,4500,0,1,"40",1,0,0],[254,14,0,4200,0,0,"40",1,0,0],[254,3,0,4630,0,0,"20",1,0,0],[254,3,0,4630,0,0,"20",1,0,0],[254,3,0,5190,0,0,"40",1,0,0],[254,3,0,5190,0,0,"40",1,0,0],[254,3,0,5190,0,1,"20",1,0,0],[254,3,0,5190,0,1,"20",1,0,0],[254,3,0,6030,0,1,"40",1,0,0],[254,3,0,6030,0,1,"40",1,0,0],[255,3,0,5070,0,0,"20",1,0,0],[255,3,0,5670,0,0,"40",1,0,0],[255,3,0,5070,0,0,"20",1,0,0],[255,3,0,5670,0,0,"40",1,79,447930],[255,3,0,5670,0,1,"20",1,0,0],[255,3,0,6650,0,1,"40",1,0,0],[255,3,0,5670,0,1,"20",1,0,0],[255,3,0,6650,0,1,"40",1,83,551950],[256,3,0,8648,0,1,"40",1,0,0],[256,9,0,8748,0,1,"40",1,600,5248956],[256,1,0,12990,0,1,"40",1,0,0],[256,12,0,7990,0,1,"40",1,300,2397006],[257,11,5,74029,370146,-1,"",1,5,370146],[257,11,35,23089,808128,0,"",1,10,230894],[257,11,30,74029,2220878,-1,"",1,5,370146],[258,5,20,16150,323000,0,"",1,20,323000],[258,11,20,9980,199600,-1,"",1,20,199600],[258,11,20,69000,1380000,-1,"",0,20,1380000],[259,11,0,43007,0,-1,"",1,0,0],[259,7,0,7333,0,-1,"",1,0,0],[259,7,0,7333,0,-1,"",1,0,0],[259,11,0,15375,0,0,"",1,5,76876],[259,15,0,43769,0,-1,"",1,1,43769],[259,15,0,43769,0,-1,"",1,4,175076],[260,4,0,9300,0,-1,"",0,0,0],[260,9,0,4700,0,1,"",1,33,155100],[260,9,0,3700,0,0,"",1,0,0],[260,9,0,3700,0,0,"",1,220,814000],[260,1,0,6800,0,-1,"",1,0,0],[261,3,270,4920,1328484,-1,"",1,270,1328484],[261,3,5,8500,42498,-1,"",1,5,42498],[261,3,5,8500,42499,-1,"",1,5,42499],[262,9,325,19033,6185839,0,"",1,325,6185839],[262,9,325,73787,23980713,-1,"",1,325,23980713],[263,11,5,14614,73070,0,"",1,5,73070],[263,7,5,41387,206935,-1,"",1,5,206935],[263,7,24,11225,269400,-1,"",0,24,269400],[263,7,50,12740,637000,-1,"",0,50,637000],[264,7,200,4060,812000,-1,"",0,200,812000],[264,7,6,6656,39933,-1,"",0,6,39933],[264,5,10,22765,227650,0,"",1,10,227650],[265,9,0,13030,0,0,"",1,6,78178],[265,9,0,57700,0,-1,"",1,18,1038600],[266,9,0,4850,0,0,"",1,308,1493800],[266,1,0,6850,0,-1,"",1,0,0],[266,4,0,9117,0,-1,"",0,0,0],[267,7,0,46800,0,-1,"",1,13,608400],[267,13,0,27000,0,0,"",1,14,378000],[268,7,15,25000,375000,-1,"",0,15,375000],[268,11,10,28000,280000,1,"",1,10,280000],[268,7,10,40000,400000,-1,"",1,10,400000],[269,9,325,2640,858000,0,"",1,325,858000],[269,9,20,5060,101200,1,"",1,20,101200],[269,1,200,6280,1256000,-1,"",1,200,1256000],[269,4,150,7670,1150500,-1,"",0,150,1150500],[270,15,15,50630,759450,-1,"",1,15,759450],[270,13,20,31020,620400,0,"",1,20,620400],[271,13,30,31020,930600,0,"",1,30,930600],[271,15,10,50630,506300,-1,"",1,10,506300],[272,15,0,40300,0,-1,"",1,23,926900],[272,13,0,23250,0,0,"",1,24,558000],[273,2,0,5087,0,-1,"",0,0,0],[273,9,0,5313,0,0,"",1,281,1493012],[274,9,0,5649,0,0,"",1,100,564933],[274,14,0,5276,0,1,"",1,177,933790],[274,7,0,43383,0,-1,"",0,0,0],[275,9,0,5709,0,0,"",1,0,0],[275,14,0,5331,0,1,"",1,281,1498053],[275,7,0,43840,0,-1,"",0,0,0],[276,3,100,5625,562500,-1,"",1,100,562500],[276,3,67,7160,479720,-1,"",1,67,479720],[276,3,50,6550,327500,-1,"",1,50,327500],[276,3,5,8500,42500,-1,"",1,5,42500],[277,4,0,12123,0,-1,"",0,0,0],[277,9,0,3312,0,0,"",1,0,0],[277,9,0,3297,0,0,"",1,400,1318668],[278,4,0,1219,0,-1,"",1,64,78032],[278,9,0,9998,0,0,"",1,75,749840],[278,9,0,6523,0,0,"",1,72,469656],[278,4,0,5060,0,-1,"",1,40,202396],[279,7,80,12740,1019200,-1,"",0,80,1019200],[279,7,12,11225,134700,-1,"",0,12,134700],[279,11,10,14614,146140,0,"",1,10,146140],[279,7,10,41387,413870,-1,"",1,10,413870],[280,11,60,12980,778800,0,"",1,60,778800],[280,7,100,6960,696000,-1,"",0,100,696000],[281,3,100,5625,562500,-1,"",1,100,562500],[281,3,67,7160,479720,-1,"",1,67,479720],[281,3,50,6550,327500,-1,"",1,50,327500],[281,3,5,8500,42500,-1,"",1,5,42500],[282,7,0,38840,0,-1,"",1,22,854489],[282,7,0,5180,0,-1,"",0,49,253840],[282,11,0,17590,0,0,"",1,20,351800],[282,7,0,38840,0,-1,"",1,1,38840],[283,7,0,38840,0,-1,"",1,18,699127],[283,7,0,5180,0,-1,"",0,52,269381],[283,11,0,17590,0,0,"",1,30,527700],[283,7,0,38840,0,-1,"",1,0,0],[284,7,0,38840,0,-1,"",1,20,776808],[284,7,0,5180,0,-1,"",0,30,155412],[284,11,0,17590,0,0,"",1,30,527700],[284,7,0,38840,0,-1,"",1,1,38840],[285,11,0,38840,0,-1,"",1,31,1204052],[285,11,0,5180,0,-1,"",0,23,119149],[285,11,0,17590,0,0,"",1,10,175900],[285,11,0,38840,0,-1,"",1,0,0],[286,11,0,38840,0,-1,"",1,25,971000],[286,11,0,17590,0,0,"",1,25,439750],[286,11,0,38840,0,-1,"",1,0,0],[287,1,1,9500,9500,-1,"",1,0,0],[287,9,195,5120,998400,0,"",1,195,998400],[287,4,30,11800,354000,-1,"",0,30,354000],[288,11,20,43800,876000,-1,"",1,20,876000],[288,11,20,14200,284000,0,"",1,20,284000],[288,11,20,6500,130000,-1,"",0,20,130000],[289,3,100,5625,562500,-1,"",1,100,562500],[289,3,67,7160,479720,-1,"",1,67,479720],[289,3,50,6550,327500,-1,"",1,50,327500],[289,3,5,8500,42500,-1,"",1,5,42500],[290,3,0,6118,0,1,"",1,110,672939],[290,3,0,7910,0,-1,"",1,40,316391],[291,4,0,8500,0,-1,"",0,84,714000],[291,9,0,4500,0,1,"",1,63,283500],[292,4,0,8500,0,-1,"",0,0,0],[292,9,0,4500,0,1,"",1,222,999000],[293,9,0,4350,0,0,"",1,226,983100],[293,9,0,5020,0,1,"",1,73,366460],[293,1,0,5400,0,-1,"",1,0,0],[293,4,0,7500,0,-1,"",0,20,150000],[294,14,0,15439,0,1,"",1,0,0],[294,14,0,5370,0,0,"",1,279,1498291],[294,7,0,43612,0,-1,"",0,0,0],[295,3,100,5625,562500,-1,"",1,100,562500],[295,3,67,7160,479720,-1,"",1,67,479720],[295,3,50,6550,327500,-1,"",1,50,327500],[295,3,5,8500,42500,-1,"",1,5,42500],[296,7,20,35525,710500,-1,"",1,20,710500],[296,11,21,13250,278250,0,"",1,21,278250],[296,7,15,5375,80625,-1,"",1,15,80625],[296,7,15,5375,80625,-1,"",1,15,80625],[297,11,19,23886,453833,0,"",1,19,453833],[297,7,19,50414,957867,-1,"",1,19,957867],[298,11,5,23886,119430,0,"",1,5,119430],[298,7,15,50414,756210,-1,"",1,15,756210],[298,11,10,22692,226917,0,"",1,10,226917],[299,9,0,4959,0,1,"",1,110,545490],[299,1,0,9649,0,1,"",1,0,0],[299,9,0,5100,0,0,"",1,184,938400],[299,1,0,6159,0,-1,"",1,0,0],[300,9,0,4959,0,1,"",1,120,595080],[300,1,0,9649,0,1,"",1,0,0],[300,9,0,5100,0,0,"",1,176,897600],[300,1,0,6159,0,-1,"",1,0,0],[301,11,25,14614,365350,0,"",1,25,365350],[301,7,23,41387,951901,-1,"",1,23,951901],[301,7,45,12740,573300,-1,"",0,45,573300],[302,11,30,11100,333000,0,"",1,20,222000],[302,7,160,4610,737600,-1,"",0,80,368800],[302,7,40,10230,409200,-1,"",1,20,204600],[303,7,0,40300,0,-1,"",1,10,403000],[303,13,0,23250,0,0,"",1,10,232500],[304,14,0,16167,0,1,"",1,0,0],[304,7,0,5623,0,0,"",1,266,1495806],[304,7,0,45667,0,-1,"",0,0,0],[305,7,0,47050,0,-1,"",0,0,0],[305,7,0,41067,0,-1,"",1,23,944533],[305,5,0,19095,0,0,"",1,16,305524],[305,7,0,41633,0,-1,"",0,5,208167],[306,7,55,12740,700700,-1,"",0,55,700700],[306,11,18,14614,263052,0,"",1,18,263052],[306,7,20,41387,827740,-1,"",1,20,827740],[307,5,15,50160,752400,0,"",1,15,752400],[307,7,15,45600,684000,-1,"",1,15,684000],[308,9,156,6795,1060076,1,"",1,156,1060076],[308,9,65,10006,650364,-1,"",1,50,500280],[308,9,65,1320,85800,-1,"",1,50,66000],[309,7,14,78467,1098533,-1,"",1,0,0],[309,7,20,18593,371867,-1,"",1,0,0],[310,9,0,4350,0,0,"",1,248,1078800],[310,9,0,5020,0,1,"",1,54,271080],[310,1,0,5400,0,-1,"",1,0,0],[310,4,0,7500,0,-1,"",0,20,150000],[311,7,40,78467,3138667,-1,"",1,0,0],[311,7,30,18593,557800,-1,"",1,0,0],[311,7,10,11156,111560,-1,"",1,0,0],[312,10,10,48000,480000,-1,"",1,10,480000],[312,10,10,99500,995000,0,"",1,10,995000],[313,7,20,51247,1024933,-1,"",1,0,0],[313,7,20,8371,167420,-1,"",0,0,0],[313,7,20,15729,314580,-1,"",1,0,0],[314,9,0,3800,0,0,"",1,273,1037400],[314,9,0,5100,0,1,"",1,14,71400],[314,9,0,3900,0,0,"",1,100,390000],[314,1,0,5600,0,-1,"",1,0,0],[314,4,0,1200,0,-1,"",1,0,0],[315,5,35,10000,350000,0,"",1,35,350000],[315,7,1,62000,62000,-1,"",0,0,0],[315,7,35,39000,1365000,-1,"",1,35,1365000],[316,9,150,5000,750000,0,"",1,150,750000],[316,2,50,7727,386364,-1,"",0,0,0],[317,11,0,11090,0,0,"",1,30,332700],[317,7,0,31150,0,-1,"",1,30,934500],[317,7,0,4610,0,-1,"",0,30,138300],[318,9,0,4350,0,0,"",1,100,435000],[318,9,0,5020,0,1,"",1,0,0],[318,1,0,5400,0,-1,"",1,0,0],[318,4,0,7500,0,-1,"",0,0,0],[319,9,0,4843,0,0,"",1,0,0],[319,4,0,12800,0,-1,"",0,0,0],[319,9,0,4843,0,0,"",1,35,169510],[319,8,0,4843,0,0,"",1,0,0],[319,4,0,12800,0,-1,"",0,0,0],[319,9,0,8411,0,1,"",1,0,0],[319,7,0,750,0,0,"",0,66,49500],[320,9,0,4350,0,0,"",1,0,0],[320,9,0,5020,0,1,"",1,0,0],[320,1,0,5400,0,-1,"",1,0,0],[320,4,0,7500,0,-1,"",0,0,0],[321,11,150,7940,1191000,-1,"",0,50,397000],[321,7,150,9229,1384350,-1,"",1,100,922900],[321,3,250,7106,1776500,-1,"",1,100,710600],[321,3,100,7766,776600,1,"",1,80,621280],[322,11,25,21800,545000,0,"",1,25,545000],[322,7,25,46287,1157175,-1,"",1,25,1157175],[323,7,0,38840,0,-1,"",1,5,194200],[323,7,0,5180,0,-1,"",0,6,31080],[323,11,0,17590,0,0,"",1,7,123130],[324,11,15,23886,358290,0,"",1,0,0],[324,7,15,50414,756210,-1,"",1,0,0],[325,14,0,15309,0,1,"",1,0,0],[325,14,0,5380,0,0,"",1,278,1495696],[325,7,0,43439,0,-1,"",0,0,0],[326,11,3,23886,71658,0,"",1,3,71658],[326,7,18,50414,907453,-1,"",1,15,756210],[326,11,15,22692,340375,0,"",1,12,272300],[327,4,0,12322,0,-1,"",0,0,0],[327,9,0,3358,0,0,"",1,0,0],[327,9,0,3582,0,0,"",1,0,0],[327,9,0,6338,0,1,"",1,0,0],[328,9,0,4350,0,0,"",1,0,0],[328,9,0,5020,0,1,"",1,0,0],[328,1,0,5400,0,-1,"",1,0,0],[328,4,0,7500,0,-1,"",0,0,0],[329,9,0,3800,0,0,"",1,120,456000],[329,9,0,3800,0,0,"",1,0,0],[329,9,0,5100,0,1,"",1,50,255000],[329,9,0,5100,0,1,"",1,0,0],[329,1,0,6000,0,-1,"",1,0,0],[329,4,0,1000,0,-1,"",1,0,0],[330,3,681,6500,4426500,-1,"",1,0,0],[330,7,16,9500,152000,-1,"",0,0,0],[330,7,5,22000,110000,-1,"",0,0,0],[330,7,630,2800,1764000,-1,"",0,0,0],[330,7,280,2600,728000,-1,"",0,0,0],[330,7,100,5500,550000,-1,"",0,0,0],[330,9,400,5200,2080000,-1,"",1,0,0],[331,7,40,52000,2080000,-1,"",1,9,468000],[331,7,40,25000,1000000,0,"",1,9,225000],[332,9,0,5361,0,0,"",1,0,0],[332,7,0,5485,0,1,"",1,0,0],[332,7,0,44818,0,-1,"",0,0,0],[333,9,230,5980,1375400,-1,"",1,0,0],[333,9,80,7100,568000,-1,"",1,0,0],[333,9,485,270,130950,-1,"",1,0,0],[334,4,0,8800,0,-1,"",0,0,0],[334,1,0,5900,0,-1,"",1,30,177000],[334,9,0,4200,0,0,"",1,60,252000],[334,9,0,4200,0,0,"",1,110,462000],[335,14,152,6005,912710,0,"",1,152,912710],[335,7,76,2693,204693,0,"",0,76,204693],[335,7,76,280,21280,-1,"",0,76,21280],[336,14,0,15340,0,1,"",1,0,0],[336,14,0,5402,0,0,"",1,200,1080450],[336,7,0,43596,0,-1,"",0,0,0],[337,7,50,12740,637000,-1,"",0,0,0],[337,11,16,14614,233824,0,"",1,14,204596],[337,7,15,41387,620805,-1,"",1,0,0],[338,7,0,44800,0,-1,"",1,7,313600],[338,11,0,17200,0,0,"",1,15,258000],[338,7,0,7000,0,-1,"",0,0,0],[338,7,0,89900,0,-1,"",0,10,899000],[339,9,200,2530,506000,0,"",1,100,253000],[339,1,50,6100,305000,-1,"",1,0,0],[339,4,50,7500,375000,-1,"",0,0,0],[340,7,0,40690,0,-1,"",1,18,732420],[340,7,0,5420,0,-1,"",0,56,303520],[340,11,0,18430,0,0,"",1,25,460750],[340,7,0,38840,0,-1,"",1,0,0],[341,7,0,5420,0,-1,"",0,45,243900],[341,11,0,18430,0,0,"",1,25,460750],[341,7,0,38840,0,-1,"",1,0,0],[341,7,0,40690,0,-1,"",1,18,732420],[342,7,0,5420,0,-1,"",0,0,0],[342,11,0,18430,0,0,"",1,0,0],[342,7,0,38840,0,-1,"",1,0,0],[342,7,0,40690,0,-1,"",1,3,122070],[343,9,1000,3900,3900000,-1,"",1,0,0],[343,4,5,12500,62500,-1,"",0,0,0],[344,4,0,8800,0,-1,"",0,0,0],[344,7,0,5900,0,-1,"",1,0,0],[344,9,0,4200,0,0,"",1,0,0],[344,9,0,4200,0,0,"",1,0,0],[345,7,27,38110,1028970,-1,"",1,27,1028970],[345,11,30,15240,457200,0,"",1,30,457200],[346,9,200,3800,760000,-1,"",1,0,0],[346,7,300,2367,710001,-1,"",0,0,0],[347,4,0,10472,0,-1,"",0,7,73302],[347,9,0,4575,0,0,"",1,0,0],[347,9,0,4473,0,0,"",1,70,313134],[347,9,0,5592,0,1,"",1,37,206891],[347,9,0,5660,0,1,"",1,0,0],[347,1,0,7625,0,-1,"",1,0,0],[348,7,0,45057,0,-1,"",0,0,0],[348,9,0,5389,0,1,"",1,100,538933],[348,14,0,5515,0,0,"",1,0,0],[349,9,0,8460,0,1,"",1,14,118440],[349,7,0,52203,0,-1,"",1,2,104407],[349,7,0,37400,0,-1,"",1,5,187000],[349,9,0,13280,0,0,"",1,5,66398],[349,7,0,8000,0,-1,"",1,4,32000],[349,9,0,5530,0,1,"",1,0,0],[349,9,0,14400,0,0,"",1,2,28800],[350,7,50,12740,637000,-1,"",0,0,0],[350,11,16,14614,233824,0,"",1,0,0],[350,7,15,41387,620805,-1,"",1,0,0],[351,7,0,158700,0,0,"",1,0,0],[351,7,0,54200,0,-1,"",1,0,0],[352,9,0,3600,0,0,"",1,0,0],[352,9,0,4500,0,1,"",1,0,0],[352,9,0,6700,0,0,"",1,0,0],[352,9,0,8800,0,1,"",1,0,0],[352,2,0,6500,0,-1,"",0,0,0],[353,2,0,7683,0,-1,"",0,0,0],[353,9,0,4863,0,0,"",1,72,350160],[354,13,15,28050,420750,0,"",1,0,0],[354,7,15,51000,765000,-1,"",1,0,0],[355,7,10,52914,529144,-1,"",1,5,264572],[355,7,5,30567,152833,-1,"",1,5,152833],[355,7,5,10003,50017,-1,"",0,0,0],[355,7,12,10767,129200,-1,"",0,12,129200],[355,7,3,66600,199800,-1,"",0,0,0],[355,7,3,45287,135862,-1,"",0,0,0],[355,11,30,17810,534300,0,"",1,10,178100],[356,9,0,4959,0,1,"",1,0,0],[356,1,0,9649,0,1,"",1,0,0],[356,9,0,5100,0,0,"",1,0,0],[356,9,0,5100,0,0,"",1,0,0],[356,1,0,5984,0,-1,"",1,0,0],[357,9,0,4959,0,1,"",1,40,198360],[357,1,0,9649,0,1,"",1,0,0],[357,9,0,5100,0,0,"",1,0,0],[357,9,0,5100,0,0,"",1,20,102000],[357,1,0,5984,0,-1,"",1,0,0],[358,7,0,46800,0,-1,"",1,7,327600],[358,13,0,27000,0,0,"",1,12,324000],[358,7,0,172800,0,-1,"",0,2,345600],[359,3,270,6097,1646174,1,"",1,20,121939],[359,3,10,7896,78957,-1,"",1,0,0],[360,11,0,20497,0,0,"",1,5,102483],[360,7,0,38974,0,-1,"",1,5,194872],[360,7,0,149667,0,-1,"",0,0,0],[360,7,0,9953,0,-1,"",0,0,0],[360,9,0,5493,0,0,"",1,57,313120],[361,9,50,5600,280000,1,"",1,4,22400],[361,7,100,5620,562000,-1,"",0,20,112400],[361,7,2,260480,520960,-1,"",0,0,0],[362,7,0,46800,0,-1,"",1,7,327600],[362,13,0,27000,0,0,"",1,3,81000],[362,7,0,15030,0,-1,"",0,4,60120],[362,7,0,172800,0,-1,"",0,3,518400],[363,7,0,800,0,-1,"",1,1,800],[363,9,0,5200,0,0,"",1,1,5200],[363,9,0,8240,0,0,"",1,1,8240],[363,7,0,4000,0,-1,"",1,1,4000],[364,7,450,6460,2907000,0,"",1,0,0],[364,7,200,7060,1412000,1,"",1,0,0],[364,7,240,7940,1905600,-1,"",0,0,0],[364,7,240,8390,2013600,-1,"",1,0,0]],"fed":["Южный","Сибирский","Северо-Западный","Приволжский","Центральный","Центральный","Дальневосточный","Центральный","Южный","—","Центральный","Северо-Кавказский","Сибирский","Северо-Западный","Центральный","Северо-Западный","Сибирский","Приволжский","Северо-Западный","Южный","Сибирский","Южный","Уральский","Центральный","Северо-Западный","Центральный","Дальневосточный","Приволжский","Центральный","Центральный","Северо-Западный","Приволжский","Сибирский","Сибирский","Приволжский","Центральный","Приволжский","Приволжский","Северо-Западный","Южный","Центральный","Приволжский","Северо-Западный","Приволжский","Дальневосточный","Дальневосточный","Уральский","Северо-Кавказский","Центральный","Северо-Кавказский","Центральный","Приволжский","Центральный","Сибирский","Центральный","Уральский","Приволжский","Сибирский","Уральский","Уральский","Приволжский","Центральный"],"regsShort":["Адыгея","Алтайский край","Архангельская обл.","Башкортостан","Белгородская обл.","Брянская обл.","Бурятия","Владимирская обл.","Волгоградская обл.","Запорожская обл.","Ивановская обл.","Ингушетия","Иркутская обл.","Калининградская обл.","Калужская обл.","Карелия","Кузбасс","Кировская обл.","Коми","Краснодарский край","Красноярский край","Крым","Курганская обл.","Курская обл.","Ленинградская обл.","Липецкая обл.","Магаданская обл.","Мордовия","Москва","Московская обл.","Мурманская обл.","Нижегородская обл.","Новосибирская обл.","Омская обл.","Оренбургская обл.","Орловская обл.","Пензенская обл.","Пермский край","Псковская обл.","Ростовская обл.","Рязанская обл.","Самарская обл.","Санкт-Петербург","Саратовская обл.","Саха (Якутия)","Сахалинская обл.","Свердловская обл.","Северная Осетия","Смоленская обл.","Ставропольский край","Тамбовская обл.","Татарстан","Тверская обл.","Томская обл.","Тульская обл.","Тюменская обл.","Ульяновская обл.","Хакасия","Ханты-Мансийский АО","Челябинская обл.","Чувашия","Ярославская обл."]}</script>
+<script>
+(function(){
+"use strict";
+var D = JSON.parse(document.getElementById('ds').textContent);
+// lots: [cust, supp, reg, nmck, ck, sn, zay, mono, vol, date, regnum]
+// pos:  [lot, man, qc, price, sc, lek, gr, cem, qd, sd]
+var L=D.lots, P=D.pos;
+
+var MAN={
+ 'СИНИМЕД с.а.р.л.':'Synimed Sàrl','ДеПью':'DePuy','ТЕКРЕС спа.':'Tecres S.p.A.',
+ 'Медос Интернешнл':'Medos International','Синтез ГмбХ':'Synthes GmbH','Страйкер':'Stryker',
+ 'Хоумедика Остеоникс (Страйкер)':'Howmedica Osteonics (Stryker)','Хераус Медикал':'Heraeus Medical',
+ 'Биомет Франс':'Biomet France','Зиммер':'Zimmer','Айкон Лаб ГмбХ':'Icon Lab GmbH',
+ 'КЕЙ АРТ МЕДИКАЛ':'Key Art Medikal',
+ 'ООО "ТехноМедЛаб"':'ТехноМедЛаб','Не указан':'Производитель не указан','Неизвестно':'Производитель не указан'
+};
+function manName(i){ var n=D.mans[i]; return MAN[n]||n; }
+function manOrig(i){ var n=D.mans[i]; return (MAN[n]&&MAN[n]!==n)?n:''; }
+function coName(s){
+  s=String(s).replace(/"([^"]+)"/g,'«$1»').replace(/(ООО|ОАО|ЗАО|АО|ПАО|ИП|НАО)«/g,'$1 «');
+  if(s.indexOf('Неизвестно (223')===0) return 'Поставщик не раскрыт (223-ФЗ)';
+  return s;
+}
+
+var byCust={},bySupp={},byMan={},byReg={},posByLot={};
+L.forEach(function(l,i){
+  (byCust[l[0]]=byCust[l[0]]||[]).push(i);
+  (bySupp[l[1]]=bySupp[l[1]]||[]).push(i);
+  (byReg[l[2]]=byReg[l[2]]||[]).push(i);
+});
+P.forEach(function(p){ (posByLot[p[0]]=posByLot[p[0]]||[]).push(p); (byMan[p[1]]=byMan[p[1]]||{})[p[0]]=1; });
+function manLots(i){ return Object.keys(byMan[i]||{}).map(Number); }
+
+/* ---------- метрика ---------- */
+var M='t';
+var MTXT={
+ t:'Общая: по лотам с объёмом берём количество и суммы из контракта, по лотам без объёма — фактическую поставку.',
+ c:'Контракт: количество и суммы из позиций контрактов. В лотах без объёма их нет — там показана только цена за единицу.',
+ d:'Поставка: фактически поставленное количество и оплаченные суммы по реестру исполнения.'
+};
+function pq(p){ return M==='c'? p[2] : M==='d'? p[8] : (L[p[0]][8]? p[2] : p[8]); }
+function ps(p){ return M==='c'? p[4] : M==='d'? p[9] : (L[p[0]][8]? p[4] : p[9]); }
+
+/* ---------- формат ---------- */
+function fmtRub(v){
+  if(!v) return '—';
+  if(v>=1e6) return (v/1e6).toFixed(v>=1e7?0:1).replace('.',',')+' млн ₽';
+  if(v>=1e3) return Math.round(v/1e3)+' тыс. ₽';
+  return Math.round(v)+' ₽';
+}
+function fmtPrice(v){ return v? Math.round(v).toLocaleString('ru-RU')+' ₽' : '—'; }
+function fmtNum(v){ return v? v.toLocaleString('ru-RU') : '—'; }
+function pct(v){ return v==null? '—' : (Math.round(v*10)/10).toString().replace('.',',')+'%'; }
+function one(v){ return v==null? '—' : v.toFixed(1).replace('.',','); }
+function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+
+function lotStats(idx){
+  var ck=0,nm=0,sn=[],z=[];
+  idx.forEach(function(i){var l=L[i];ck+=l[4];nm+=l[3];if(l[5]!=null)sn.push(l[5]);z.push(l[6]);});
+  var avg=function(a){return a.length? a.reduce(function(x,y){return x+y;},0)/a.length : null;};
+  return {n:idx.length,ck:ck,nmck:nm,sn:avg(sn),z:avg(z)};
+}
+function posOf(idx){ var o=[]; idx.forEach(function(i){(posByLot[i]||[]).forEach(function(p){o.push(p);});}); return o; }
+function agg(list){
+  var q=0,s=0,pr=[];
+  list.forEach(function(p){ q+=pq(p); s+=ps(p); if(p[3]>0) pr.push(p[3]); });
+  var price = q>0 ? s/q : (pr.length? pr.reduce(function(a,b){return a+b;},0)/pr.length : 0);
+  return {q:q,s:s,price:price,exact:q>0};
+}
+function cem(list){ return list.filter(function(p){return p[7];}); }
+function groupBy(list,fn){ var m={}; list.forEach(function(p){ (m[fn(p)]=m[fn(p)]||[]).push(p); }); return m; }
+function sortKeys(m,val){ return Object.keys(m).sort(function(a,b){return val(m[b])-val(m[a]);}); }
+function manPosOf(idx,i){
+  var o=[]; idx.forEach(function(k){(posByLot[k]||[]).forEach(function(p){ if(p[1]===i&&p[7]) o.push(p); });});
+  return o;
+}
+
+/* ---------- справочник ---------- */
+var kind='r', sortState={}, dirEl, headEl, hint, mhint, qEl, panelsEl, closeAll;
+
+var COLS={
+ r:[{k:'name',t:'Регион',type:'s'},{k:'fed',t:'Округ',type:'s'},{k:'n',t:'Лотов'},{k:'nmck',t:'НМЦК',f:fmtRub},
+    {k:'ck',t:'ЦК',f:fmtRub},{k:'sn',t:'Сниж.',f:pct},{k:'z',t:'Заявок',f:one},
+    {k:'q',t:'Количество',f:fmtNum},{k:'s',t:'Сумма',f:fmtRub},{k:'price',t:'Ср. цена',f:fmtPrice},
+    {k:'nc',t:'ЛПУ'},{k:'nsup',t:'Поставщиков'}],
+ c:[{k:'name',t:'Заказчик',type:'s'},{k:'inn',t:'ИНН',type:'s'},{k:'reg',t:'Регион',type:'s'},
+    {k:'n',t:'Лотов'},{k:'nmck',t:'НМЦК',f:fmtRub},{k:'ck',t:'ЦК',f:fmtRub},{k:'sn',t:'Сниж.',f:pct},
+    {k:'z',t:'Заявок',f:one},{k:'q',t:'Количество',f:fmtNum},{k:'s',t:'Сумма',f:fmtRub},
+    {k:'price',t:'Ср. цена',f:fmtPrice},{k:'nsup',t:'Поставщиков'}],
+ s:[{k:'name',t:'Поставщик',type:'s'},{k:'inn',t:'ИНН',type:'s'},{k:'nreg',t:'Регионов'},
+    {k:'n',t:'Лотов'},{k:'nmck',t:'НМЦК',f:fmtRub},{k:'ck',t:'ЦК',f:fmtRub},{k:'sn',t:'Сниж.',f:pct},
+    {k:'z',t:'Заявок',f:one},{k:'q',t:'Количество',f:fmtNum},{k:'s',t:'Сумма',f:fmtRub},
+    {k:'price',t:'Ср. цена',f:fmtPrice},{k:'nc',t:'ЛПУ'}],
+ m:[{k:'name',t:'Производитель',type:'s'},{k:'n',t:'Лотов'},{k:'ck',t:'ЦК лотов',f:fmtRub},
+    {k:'q',t:'Количество',f:fmtNum},{k:'s',t:'Сумма',f:fmtRub},{k:'price',t:'Ср. цена',f:fmtPrice},
+    {k:'p0',t:'Без антибиотика',f:fmtPrice},{k:'p1',t:'С антибиотиком',f:fmtPrice},
+    {k:'nsup',t:'Поставщиков'},{k:'nc',t:'ЛПУ'}]
+};
+
+function rowsFor(k){
+  var out=[];
+  if(k==='r'){
+    D.regs.forEach(function(r,i){
+      var idx=byReg[i]||[]; if(!idx.length) return;
+      var st=lotStats(idx), a=agg(cem(posOf(idx))), c={}, s={};
+      idx.forEach(function(x){ c[L[x][0]]=1; s[L[x][1]]=1; });
+      out.push({id:i,name:D.regsShort[i],fed:D.fed[i],n:st.n,nmck:st.nmck,ck:st.ck,sn:st.sn,z:st.z,
+        q:a.q,s:a.s,price:a.price,nc:Object.keys(c).length,nsup:Object.keys(s).length});
+    });
+  } else if(k==='c'){
+    D.cust.forEach(function(c,i){
+      var idx=byCust[i]||[], st=lotStats(idx), a=agg(cem(posOf(idx))), sp={};
+      idx.forEach(function(x){ sp[L[x][1]]=1; });
+      out.push({id:i,name:coName(c[0]),inn:c[1]||'—',reg:D.regsShort[c[2]],n:st.n,nmck:st.nmck,ck:st.ck,
+        sn:st.sn,z:st.z,q:a.q,s:a.s,price:a.price,nsup:Object.keys(sp).length});
+    });
+  } else if(k==='s'){
+    D.supp.forEach(function(su,i){
+      var idx=bySupp[i]||[], st=lotStats(idx), a=agg(cem(posOf(idx))), rg={}, c={};
+      idx.forEach(function(x){ rg[L[x][2]]=1; c[L[x][0]]=1; });
+      out.push({id:i,name:coName(su[0]),inn:su[1]||'—',nreg:Object.keys(rg).length,n:st.n,nmck:st.nmck,
+        ck:st.ck,sn:st.sn,z:st.z,q:a.q,s:a.s,price:a.price,nc:Object.keys(c).length});
+    });
+  } else {
+    D.mans.forEach(function(mn,i){
+      var idx=manLots(i); if(!idx.length) return;
+      var st=lotStats(idx), mine=cem(P.filter(function(p){return p[1]===i;})), a=agg(mine), sp={}, c={};
+      idx.forEach(function(x){ sp[L[x][1]]=1; c[L[x][0]]=1; });
+      out.push({id:i,name:manName(i),n:st.n,ck:st.ck,q:a.q,s:a.s,price:a.price,
+        p0:agg(mine.filter(function(p){return p[5]===0;})).price,
+        p1:agg(mine.filter(function(p){return p[5]===1;})).price,
+        nsup:Object.keys(sp).length,nc:Object.keys(c).length});
+    });
+  }
+  return out;
+}
+function renderDir(){
+  var cols=COLS[kind], st=sortState[kind]||(sortState[kind]={k:'ck',dir:-1});
+  var q=qEl.value.trim().toLowerCase();
+  var rows=rowsFor(kind).filter(function(r){
+    if(!q) return true;
+    return String(r.name).toLowerCase().indexOf(q)>-1 ||
+           (r.inn&&String(r.inn).indexOf(q)===0) ||
+           (r.reg&&String(r.reg).toLowerCase().indexOf(q)>-1) ||
+           (r.fed&&String(r.fed).toLowerCase().indexOf(q)>-1);
+  });
+  var col=cols.filter(function(c){return c.k===st.k;})[0]||cols[0];
+  rows.sort(function(a,b){
+    var x=a[st.k], y=b[st.k];
+    if(col.type==='s') return String(x||'').localeCompare(String(y||''),'ru')*st.dir;
+    x=(x==null?-1:x); y=(y==null?-1:y);
+    return (x-y)*st.dir;
+  });
+  hint.textContent = (q?'Найдено: ':'Всего: ')+rows.length+
+    (kind==='r'?' регионов':kind==='c'?' заказчиков':kind==='s'?' поставщиков':' марок')+
+    ' · сортировка по столбцу «'+col.t+'» · клик по строке открывает карточку';
+  var head='<tr>'+cols.map(function(c,i){
+    var on = c.k===st.k;
+    return '<th'+(i?' class="num"':'')+'><button class="sortb'+(on?' on':'')+'" type="button" data-sort="'+c.k+'">'+
+      c.t+'<span class="arw">'+(on?(st.dir>0?'↑':'↓'):'')+'</span></button></th>';
+  }).join('')+'</tr>';
+  var body=rows.map(function(r){
+    return '<tr class="drow" data-id="'+r.id+'">'+cols.map(function(c,i){
+      var v=r[c.k];
+      var txt = c.f? c.f(v) : (c.type==='s'? esc(v==null?'—':v) : (v==null?'—':v));
+      return '<td'+(i?' class="num"':'')+'>'+txt+'</td>';
+    }).join('')+'</tr>';
+  }).join('');
+  dirEl.innerHTML='<table class="dir"><thead>'+head+'</thead><tbody>'+body+'</tbody></table>';
+}
+
+/* ---------- таблицы в карточках ---------- */
+function tbl(head,rows){
+  if(!rows.length) return '<p class="small">Нет данных.</p>';
+  return '<div class="tblwrap"><table><thead><tr>'+head.map(function(h,i){
+    return '<th'+(i?' class="num"':'')+'>'+h+'</th>';}).join('')+'</tr></thead><tbody>'+rows.join('')+'</tbody></table></div>';
+}
+function stat(v,l){ return '<div class="stat"><div class="v">'+v+'</div><div class="l">'+l+'</div></div>'; }
+function link(k,id,text,pill){
+  return '<button class="lnk" type="button" data-go="'+k+'" data-id="'+id+'">'+esc(text)+'</button>'+
+    (pill?'<span class="pill">'+esc(pill)+'</span>':'');
+}
+function manRows(list){
+  var m=groupBy(cem(list),function(p){return p[1];});
+  return sortKeys(m,function(g){return g.reduce(function(s,p){return s+ps(p);},0);}).map(function(k){
+    var a=agg(m[k]);
+    return '<tr><td>'+link('m',k,manName(+k))+'</td><td class="num">'+fmtNum(a.q)+'</td>'+
+      '<td class="num">'+fmtRub(a.s)+'</td><td class="num">'+fmtPrice(a.price)+(a.exact?'':' <span class="approx">≈</span>')+'</td></tr>';
+  });
+}
+function suppRowsFrom(idx,extra){
+  var by={}; idx.forEach(function(k){(by[L[k][1]]=by[L[k][1]]||[]).push(k);});
+  return sortKeys(by,function(g){return lotStats(g).ck;}).slice(0,30).map(function(k){
+    var s=lotStats(by[k]), a=agg(cem(posOf(by[k])));
+    return '<tr><td>'+link('s',k,coName(D.supp[k][0]),extra&&D.supp[k][1]?('ИНН '+D.supp[k][1]):'')+'</td>'+
+      '<td class="num">'+s.n+'</td><td class="num">'+fmtRub(s.ck)+'</td><td class="num">'+pct(s.sn)+'</td>'+
+      '<td class="num">'+one(s.z)+'</td><td class="num">'+fmtPrice(a.price)+'</td></tr>';
+  });
+}
+function custRowsFrom(idx){
+  var by={}; idx.forEach(function(k){(by[L[k][0]]=by[L[k][0]]||[]).push(k);});
+  return sortKeys(by,function(g){return lotStats(g).ck;}).slice(0,30).map(function(k){
+    var s=lotStats(by[k]), a=agg(cem(posOf(by[k])));
+    return '<tr><td>'+link('c',k,coName(D.cust[k][0]),D.cust[k][1]?('ИНН '+D.cust[k][1]):'')+'</td>'+
+      '<td class="num">'+esc(D.regsShort[D.cust[k][2]])+'</td><td class="num">'+s.n+'</td>'+
+      '<td class="num">'+fmtRub(s.ck)+'</td><td class="num">'+fmtNum(a.q)+'</td>'+
+      '<td class="num">'+fmtPrice(a.price)+'</td></tr>';
+  });
+}
+
+/* ---------- карточки ---------- */
+function custBody(i){
+  var c=D.cust[i], idx=byCust[i]||[], st=lotStats(idx), a=agg(cem(posOf(idx)));
+  var vol=idx.filter(function(k){return L[k][8];}).length;
+  var lrows=idx.slice().sort(function(x,y){return L[y][4]-L[x][4];}).slice(0,40).map(function(k){
+    var l=L[k];
+    return '<tr><td>'+esc(l[9])+'</td><td class="num">'+(l[7]?'моно':'смеш')+' · '+(l[8]?'с объёмом':'без объёма')+'</td>'+
+      '<td class="num">'+fmtRub(l[3])+'</td><td class="num">'+fmtRub(l[4])+'</td><td class="num">'+pct(l[5])+'</td>'+
+      '<td class="num">'+l[6]+'</td><td class="num">'+esc(l[10]||'—')+'</td></tr>';
+  });
+  return {kind:'Заказчик', name:coName(c[0]),
+    meta:[c[1]?('ИНН '+c[1]):'',D.regs[c[2]]].filter(Boolean).join(' · '),
+    stats: stat(st.n,'лотов')+stat(fmtRub(st.nmck),'НМЦК')+stat(fmtRub(st.ck),'цена контрактов')+
+      stat(pct(st.sn),'среднее снижение')+stat(one(st.z),'заявок на лот')+
+      stat(fmtNum(a.q),'единиц цемента')+stat(fmtRub(a.s),'сумма')+stat(fmtPrice(a.price),'средняя цена за единицу'),
+    note: vol===0 ? 'Все лоты этого заказчика — без объёма: количество и суммы в контрактах не зафиксированы. В метрике «Контракт» здесь видна только средняя цена за единицу.' : '',
+    body:'<div class="psec"><h4>Производители</h4><div class="ph">клик по строке открывает карточку рядом</div>'+
+        tbl(['Производитель','Количество','Сумма','Средняя цена'],manRows(posOf(idx)))+'</div>'+
+      '<div class="psec"><h4>Кто ему поставляет</h4>'+
+        tbl(['Поставщик','Лотов','ЦК','Снижение','Заявок','Ср. цена'],suppRowsFrom(idx,true))+'</div>'+
+      '<div class="psec"><h4>Лоты</h4><div class="ph">по реестровому номеру закупка открывается поиском в ЕИС</div>'+
+        tbl(['Дата','Тип лота','НМЦК','ЦК','Снижение','Заявок','Реестровый номер'],lrows)+
+        (idx.length>40?'<p class="small">Показаны 40 крупнейших из '+idx.length+'.</p>':'')+'</div>'};
+}
+function suppBody(i){
+  var s=D.supp[i], idx=bySupp[i]||[], st=lotStats(idx), a=agg(cem(posOf(idx)));
+  var regs={}; idx.forEach(function(k){var r=D.regsShort[L[k][2]];regs[r]=(regs[r]||0)+L[k][4];});
+  var regList=Object.keys(regs).sort(function(x,y){return regs[y]-regs[x];});
+  return {kind:'Поставщик', name:coName(s[0]), meta:s[1]?('ИНН '+s[1]):'',
+    stats: stat(st.n,'лотов')+stat(fmtRub(st.nmck),'НМЦК')+stat(fmtRub(st.ck),'цена контрактов')+
+      stat(pct(st.sn),'среднее снижение')+stat(one(st.z),'заявок на лот')+stat(regList.length,'регионов')+
+      stat(fmtNum(a.q),'единиц цемента')+stat(fmtRub(a.s),'сумма')+stat(fmtPrice(a.price),'средняя цена за единицу'),
+    note:'',
+    body:'<div class="psec"><h4>Кому поставляет</h4><div class="ph">'+esc(regList.slice(0,4).join(' · '))+
+        (regList.length>4?' и ещё '+(regList.length-4):'')+'</div>'+
+        tbl(['Заказчик','Регион','Лотов','ЦК','Количество','Ср. цена'],custRowsFrom(idx))+'</div>'+
+      '<div class="psec"><h4>Чьи марки возит</h4>'+
+        tbl(['Производитель','Количество','Сумма','Средняя цена'],manRows(posOf(idx)))+'</div>'};
+}
+function manBody(i){
+  var idx=manLots(i), mine=cem(P.filter(function(p){return p[1]===i;})), st=lotStats(idx), a=agg(mine);
+  var pick=function(f){ return agg(mine.filter(f)).price; };
+  var byG=groupBy(mine,function(p){return p[6]||'—';});
+  var grows=Object.keys(byG).sort().map(function(g){
+    var list=byG[g], ga=agg(list);
+    return '<tr><td>'+(g==='—'?'граммовка не указана':g+' г')+'</td><td class="num">'+fmtNum(ga.q)+'</td>'+
+      '<td class="num">'+fmtPrice(agg(list.filter(function(p){return p[5]===0;})).price)+'</td>'+
+      '<td class="num">'+fmtPrice(agg(list.filter(function(p){return p[5]===1;})).price)+'</td></tr>';
+  });
+  var bySu={}; idx.forEach(function(k){(bySu[L[k][1]]=bySu[L[k][1]]||[]).push(k);});
+  var srows=sortKeys(bySu,function(g){return lotStats(g).ck;}).slice(0,30).map(function(k){
+    var ss=lotStats(bySu[k]), ma=agg(manPosOf(bySu[k],i));
+    return '<tr><td>'+link('s',k,coName(D.supp[k][0]))+'</td><td class="num">'+ss.n+'</td>'+
+      '<td class="num">'+fmtRub(ss.ck)+'</td><td class="num">'+fmtNum(ma.q)+'</td>'+
+      '<td class="num">'+fmtPrice(ma.price)+'</td></tr>';
+  });
+  var byC={}; idx.forEach(function(k){(byC[L[k][0]]=byC[L[k][0]]||[]).push(k);});
+  var crows=sortKeys(byC,function(g){return lotStats(g).ck;}).slice(0,30).map(function(k){
+    var cs=lotStats(byC[k]), ma=agg(manPosOf(byC[k],i));
+    return '<tr><td>'+link('c',k,coName(D.cust[k][0]))+'</td><td class="num">'+esc(D.regsShort[D.cust[k][2]])+'</td>'+
+      '<td class="num">'+cs.n+'</td><td class="num">'+fmtRub(cs.ck)+'</td><td class="num">'+fmtNum(ma.q)+'</td></tr>';
+  });
+  return {kind:'Производитель', name:manName(i), meta:manOrig(i)?('в реестре: '+manOrig(i)):'',
+    stats: stat(st.n,'лотов')+stat(fmtRub(st.ck),'ЦК лотов с этой маркой')+stat(fmtNum(a.q),'единиц')+
+      stat(fmtRub(a.s),'сумма')+stat(fmtPrice(a.price),'средняя цена')+
+      stat(fmtPrice(pick(function(p){return p[5]===0;})),'без антибиотика')+
+      stat(fmtPrice(pick(function(p){return p[5]===1;})),'с антибиотиком')+stat(one(st.z),'заявок на лот'),
+    note:'',
+    body:'<div class="psec"><h4>Цена по граммовке</h4>'+
+        tbl(['Упаковка','Количество','Без антибиотика','С антибиотиком'],grows)+'</div>'+
+      '<div class="psec"><h4>Кто возит эту марку</h4>'+
+        tbl(['Поставщик','Лотов','ЦК','Количество','Ср. цена'],srows)+'</div>'+
+      '<div class="psec"><h4>Куда идёт</h4>'+
+        tbl(['Заказчик','Регион','Лотов','ЦК','Количество'],crows)+'</div>'};
+}
+function regBody(i){
+  var idx=byReg[i]||[], st=lotStats(idx), a=agg(cem(posOf(idx)));
+  return {kind:'Регион', name:D.regsShort[i], meta:D.fed[i]!=='—'?(D.fed[i]+' федеральный округ'):'',
+    stats: stat(st.n,'лотов')+stat(fmtRub(st.nmck),'НМЦК')+stat(fmtRub(st.ck),'цена контрактов')+
+      stat(pct(st.sn),'среднее снижение')+stat(one(st.z),'заявок на лот')+
+      stat(fmtNum(a.q),'единиц цемента')+stat(fmtRub(a.s),'сумма')+stat(fmtPrice(a.price),'средняя цена за единицу'),
+    note:'',
+    body:'<div class="psec"><h4>Заказчики региона</h4>'+
+        tbl(['Заказчик','Регион','Лотов','ЦК','Количество','Ср. цена'],custRowsFrom(idx))+'</div>'+
+      '<div class="psec"><h4>Поставщики региона</h4>'+
+        tbl(['Поставщик','Лотов','ЦК','Снижение','Заявок','Ср. цена'],suppRowsFrom(idx,true))+'</div>'+
+      '<div class="psec"><h4>Производители</h4>'+
+        tbl(['Производитель','Количество','Сумма','Средняя цена'],manRows(posOf(idx)))+'</div>'};
+}
+function build(k,id){ return k==='c'?custBody(+id):k==='s'?suppBody(+id):k==='m'?manBody(+id):regBody(+id); }
+
+/* ---------- панели ---------- */
+var open=[];
+function paint(){
+  panelsEl.innerHTML = open.map(function(o){
+    var b=build(o.k,o.id);
+    return '<article class="panel" data-key="'+o.k+':'+o.id+'">'+
+      '<header class="phead"><div><div class="kind">'+b.kind+'</div><h3>'+esc(b.name)+'</h3>'+
+      (b.meta?'<div class="meta">'+esc(b.meta)+'</div>':'')+'</div>'+
+      '<button class="x" type="button" data-close="'+o.k+':'+o.id+'" aria-label="Закрыть карточку">×</button></header>'+
+      '<div class="pbody"><div class="stats">'+b.stats+'</div>'+
+      (b.note?'<p class="small pnote">'+b.note+'</p>':'')+b.body+'</div></article>';
+  }).join('');
+  closeAll.hidden = open.length===0;
+}
+function openCard(k,id){
+  var key=k+':'+String(id);
+  if(open.some(function(o){return o.k+':'+String(o.id)===key;})){
+    var el=panelsEl.querySelector('[data-key="'+key+'"]');
+    if(el){ el.classList.add('flash'); el.scrollIntoView({block:'nearest',behavior:'smooth'});
+      setTimeout(function(){el.classList.remove('flash');},900); }
+    return;
+  }
+  open.push({k:k,id:id}); paint();
+  var el=panelsEl.lastElementChild; if(el) el.scrollIntoView({block:'nearest',behavior:'smooth'});
+}
+
+/* ---------- события ---------- */
+dirEl=document.getElementById('dir'); qEl=document.getElementById('q');
+hint=document.getElementById('hint'); mhint=document.getElementById('mhint');
+panelsEl=document.getElementById('panels'); closeAll=document.getElementById('closeall');
+
+dirEl.addEventListener('click',function(e){
+  var sb=e.target.closest('[data-sort]');
+  if(sb){
+    var st=sortState[kind], k=sb.dataset.sort;
+    if(st.k===k) st.dir=-st.dir; else { st.k=k; st.dir = (COLS[kind].filter(function(c){return c.k===k;})[0]||{}).type==='s' ? 1 : -1; }
+    renderDir(); return;
+  }
+  var row=e.target.closest('.drow'); if(row) openCard(kind,row.dataset.id);
+});
+panelsEl.addEventListener('click',function(e){
+  var x=e.target.closest('[data-close]');
+  if(x){ var key=x.dataset.close; open=open.filter(function(o){return o.k+':'+String(o.id)!==key;}); paint(); return; }
+  var go=e.target.closest('[data-go]'); if(go) openCard(go.dataset.go,go.dataset.id);
+});
+closeAll.addEventListener('click',function(){ open=[]; paint(); });
+document.querySelectorAll('.tab').forEach(function(t){
+  t.addEventListener('click',function(){
+    document.querySelectorAll('.tab').forEach(function(x){x.setAttribute('aria-selected','false');});
+    t.setAttribute('aria-selected','true'); kind=t.dataset.kind; renderDir();
+  });
+});
+document.getElementById('metric').addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(!b) return;
+  this.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false');});
+  b.setAttribute('aria-pressed','true'); M=b.dataset.m; mhint.textContent=MTXT[M]; renderDir(); paint();
+});
+document.getElementById('cols').addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(!b) return;
+  this.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false');});
+  b.setAttribute('aria-pressed','true'); panelsEl.style.setProperty('--cols',b.dataset.c);
+  panelsEl.querySelectorAll('.panel').forEach(function(p){ p.style.width=''; });
+});
+qEl.addEventListener('input',renderDir);
+mhint.textContent=MTXT[M];
+renderDir();
+})();
+</script>
+
+</body></html>
